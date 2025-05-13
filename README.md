@@ -38,6 +38,7 @@ Vores astro projekt, med vores mapper og filer, er bygget op i denne struktur
 │   │   └── ButtonText.astro
 │   │   └── PinkPulse.astro
 │   │   └── PinkPulseInstagram.astro
+│   │   └── Posters.astro
 │   │   └── Volunteer.astro
 │   ├── javascript/
 │   │   └── AOSinit.jsx
