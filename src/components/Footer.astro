@@ -1,4 +1,4 @@
-<footer>
+<footer class="text_margin">
   <div class="grid_1-2">
     <div class="footer_left">
       <div>
@@ -32,27 +32,129 @@
       <div>
         <div>
           <form action="/send-message" method="POST">
-            <label for="name"></label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Fulde navn"
-              required
-            />
-
-            <label for="phone"></label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Telefonnummer"
-              required
-            />
+            <div class="grid_1-1">
+              <div>
+                <label for="name"></label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Fulde navn"
+                  required
+                />
+              </div>
+              <div>
+                <label for="phone"></label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Telefonnummer"
+                  required
+                />
+              </div>
+            </div>
+            <label for="message"></label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Besked"
+              rows="5"
+              required></textarea>
+            <div class="email">
+              <div class="grid_1-1">
+                <div>
+                  <label for="email"></label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="E-mail"
+                    required
+                  />
+                </div>
+                <div>
+                  <input type="submit" value="Send" class="button" />
+                  <!-- import knap her -->
+                </div>
+              </div>
+              <div class="line"></div>
+            </div>
           </form>
         </div>
       </div>
     </div>
-    <div></div>
+    <div class="some_info">
+      <h4>Følg os på sociale medier!</h4>
+      <div class="img_some">
+        <a href="#" target="_blank">
+          <img src="public/assets/instagram.svg" alt="Instagram" />
+        </a>
+        <a href="#" target="_blank">
+          <img src="public/assets/Facebook.svg" alt="Facebook" />
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
+
+<style>
+  p {
+    color: var(--light_pink);
+  }
+
+  h2,
+  h4,
+  a {
+    color: var(--light_pink);
+  }
+
+  a:hover {
+    color: var(--pink);
+  }
+
+  img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+
+  footer {
+    background-color: var(--green);
+  }
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .some_info {
+    margin-top: 3rem;
+  }
+  .img_some {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  .img_some img {
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+  }
+
+  .grid_1-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .footer_left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer_right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+</style>
