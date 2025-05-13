@@ -23,6 +23,7 @@ html {
   --green: #3f4e3e;
   --light_pink: #fff5fa;
   --gray: #31302e;
+  scroll-behavior: smooth;
 }
 
 /* Andet */
