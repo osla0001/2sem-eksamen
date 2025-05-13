@@ -17,7 +17,7 @@ Eksempelvis: navn-header.
 Vi aftaler inden vi starter på kodningen, hvordan fordelingen af siderne sker. Man går ikke ind på en andens fil og ændre, med mindre man har kommunikeret det til individet, som har sagt god for det. Man skriver hvad man har added/removed/fixed i commit-beskeden, hvis man har lavet større ændringer. Hvis det er mindre ændringer, så som ændring i font farve, er det tilladt bare at skrive "fixes" etc.
 Når man merger en stor feature ind, kommunikerer man det til resten af gruppen via teams/messenger.
 
-## 🚀 Project Structure
+## Projectstruktur
 
 Vores astro projekt, med vores mapper og filer, er bygget op i denne struktur
 
@@ -30,7 +30,15 @@ Vores astro projekt, med vores mapper og filer, er bygget op i denne struktur
 │   │   └── Layout.astro
 ├── src/
 │   ├── components/
-│   │   └── -----
+│   │   └── Banner.astro
+│   │   └── Footer.astro
+│   │   └── Header.astro
+│   │   └── Hero.astro
+│   │   └── ButtonArrow.astro
+│   │   └── ButtonText.astro
+│   │   └── PinkPulse.astro
+│   │   └── PinkPulseInstagram.astro
+│   │   └── Volunteer.astro
 │   ├── javascript/
 │   │   └── AOSinit.jsx
 │   ├── layouts/
@@ -39,5 +47,17 @@ Vores astro projekt, med vores mapper og filer, er bygget op i denne struktur
 │   │   └── index.astro
 │   └── styles/
 │       └── general.css
-└── package.json
-```
+│
+├── .gitignore
+│
+├── .prettierrc.mjs
+│
+├── astro.config.mjs
+│
+├── package-lock.json
+│
+├── package.json
+│
+└── README.md
+
+
