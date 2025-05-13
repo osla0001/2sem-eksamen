@@ -1,0 +1,69 @@
+---
+import ButtonText from "./ButtonText.astro";
+import Burger from "./Burger.astro";
+---
+
+<header>
+  <div>
+    <a href="/">
+      <img src="/assets/BakkefestLogo.svg" alt="Logo" class="logo" /></a
+    >
+    <h5>11. - 13. juli</h5>
+  </div>
+  <div>
+    <ButtonText
+      text="Køb Billet"
+      text_color="var(--pink)"
+      background_color="var(--yellow)"
+    />
+    <Burger />
+  </div>
+</header>
+
+<style>
+  header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 1rem 6rem;
+    background-color: transparent;
+    z-index: 100;
+  }
+
+  .logo {
+    width: 50px;
+    height: auto;
+    aspect-ratio: 1/1;
+    transition: 0.3s;
+  }
+
+  .logo:hover {
+    scale: 1.2;
+    transition: 0.3s;
+  }
+
+  h5 {
+    font-family: owners-xwide, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: var(--pink);
+  }
+
+  div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  @media (max-width: 1000px) {
+    header {
+      padding: 1rem 2rem;
+    }
+  }
+</style>
