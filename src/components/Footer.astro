@@ -1,21 +1,58 @@
----
-import Layout from "../layouts/Layout.astro"
-import generel
----
+<footer>
+  <div class="grid_1-2">
+    <div class="footer_left">
+      <div>
+        <h2>KONTAKTINFO</h2>
+        <p>Telefon nr.: <a href="tel:+4548301932">48 30 19 32</a></p>
+        <p>
+          E-mailadresse: <a href="mailto:info@bakkefest.dk">info@bakkefest.dk</a
+          >
+        </p>
+        <p>
+          Adresse: Gilleleje Hallen / Festpladsen <br />Bøgebakken 19C, 3250
+          Gilleleje
+        </p>
+      </div>
+      <div>
+        <h2>ÅBNINGSTIDER</h2>
+        <p>Mandag – fredag: 8.00 – 15.30</p>
+        <p>Weekend efter aftale</p>
+      </div>
+    </div>
 
-<Layout>
-    <div class="footer">
-        <div class="footer__container">
-            <div class="footer__container__content">
-                <h2>Pink Pulse</h2>
-                <p>Pink Pulse er et fællesskab for alle, der ønsker at dele deres passion for skønhed og velvære. Vi tilbyder en platform til at dele tips, tricks og erfaringer med andre.</p>
-            </div>
-            <div class="footer__container__links">
-                <a href="/om-os">Om os</a>
-                <a href="/kontakt">Kontakt</a>
-                <a href="/privatlivspolitik">Privatlivspolitik</a>
-            </div>
+    <div class="footer_right">
+      <div>
+        <h2>Send os en besked!</h2>
+        <p>
+          Skriv dit navn og e-mailadresse herunder samt en besked indeholdende
+          din forspørgsel. Udfyld venligst hele kontaktformularen.
+        </p>
+      </div>
+
+      <div>
+        <div>
+          <form action="/send-message" method="POST">
+            <label for="name"></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Fulde navn"
+              required
+            />
+
+            <label for="phone"></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Telefonnummer"
+              required
+            />
+          </form>
         </div>
-    </div
-
-
+      </div>
+    </div>
+    <div></div>
+  </div>
+</footer>
