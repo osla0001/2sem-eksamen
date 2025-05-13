@@ -1,0 +1,152 @@
+---
+import Header from "./Header.astro";
+import ButtonText from "./ButtonText.astro";
+---
+
+<Header />
+<section class="hero">
+  <div class="grid_1-1-1">
+    <img src="/assets/Clamp.svg" alt="" class="clamp1" />
+    <div class="middle">
+      <img src="/assets/BakkefestWordMark.svg" alt="" class="wordmark" />
+      <ButtonText
+        text="Nedtælling"
+        text_color="var(--yellow)"
+        background_color="var(--pink)"
+      />
+      <div class="container">
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+      </div>
+    </div>
+    <img src="/assets/Clamp.svg" alt="" class="clamp2" />
+  </div>
+
+  <style>
+    .hero {
+      background-image: url("/assets/HeroImage.webp");
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .grid_1-1-1 {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      padding: 0 1rem;
+    }
+    .middle {
+      display: flex;
+      flex-direction: column;
+      place-self: center;
+      align-self: center;
+      place-items: center;
+      gap: 0.5rem;
+    }
+    .wordmark {
+      height: 5rem;
+      place-self: center;
+      align-self: center;
+      margin: 0 auto;
+    }
+
+    .clamp1,
+    .clamp2 {
+      height: 10rem;
+      place-self: center;
+      align-self: center;
+    }
+
+    .clamp2 {
+      transform: scaleX(-100%);
+    }
+
+    .container {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 24px;
+      height: 24px;
+    }
+
+    .chevron {
+      position: absolute;
+      width: 28px;
+      height: 2px;
+      opacity: 0;
+      transform: scale3d(0.5, 0.5, 0.5);
+      animation: move 3s ease-out infinite;
+    }
+
+    .chevron:first-child {
+      animation: move 3s ease-out 1s infinite;
+    }
+
+    .chevron:nth-child(2) {
+      animation: move 3s ease-out 2s infinite;
+    }
+
+    .chevron:before,
+    .chevron:after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 51%;
+      background: var(--yellow);
+    }
+
+    .chevron:before {
+      left: 0;
+      transform: skew(0deg, 30deg);
+    }
+
+    .chevron:after {
+      right: 0;
+      width: 50%;
+      transform: skew(0deg, -30deg);
+    }
+
+    @keyframes move {
+      25% {
+        opacity: 1;
+      }
+      33% {
+        opacity: 1;
+        transform: translateY(30px);
+      }
+      67% {
+        opacity: 1;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+      }
+    }
+
+    @keyframes pulse {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (min-width: 600px) {
+      .wordmark {
+        height: 8rem;
+      }
+      .clamp1,
+      .clamp2 {
+        height: 20rem;
+      }
+    }
+  </style>
+</section>
