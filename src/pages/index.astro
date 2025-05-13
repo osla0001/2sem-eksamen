@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import Banner from "../components/Banner.astro";
 import Posters from "../components/Posters.astro";
 import PinkPulse from "../components/PinkPulse.astro";
 import PinkPulseInstagram from "../components/PinkPulseInstagram.astro";
@@ -8,7 +9,9 @@ import PinkPulseInstagram from "../components/PinkPulseInstagram.astro";
 
 <Layout fanenavn={"Forside"}>
   <Hero />
-  <Posters />
+  <Banner background_color="var(--pink)" src="BannerLogoLightPink" />
+    <Posters />
   <PinkPulse />
   <PinkPulseInstagram />
+  <Banner background_color="var(--yellow)" src="BannerLogoPink" />
 </Layout>
