@@ -1,0 +1,95 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+/* Farver */
+html {
+  --variable: #000000;
+  --pink: #e71a73;
+  --yellow: #fffd87;
+  --green: #3f4e3e;
+  --light_pink: #fff5fa;
+  --gray: #31302e;
+}
+
+/* Andet */
+.white_space {
+  margin: 220px;
+}
+
+.text_margin {
+  max-width: 74ch;
+  margin: 0 auto;
+}
+
+/* Skrifttyper */
+h1 {
+  font-family: owners-wide, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+}
+
+h2 {
+  font-family: owners-narrow, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 38px;
+}
+
+h3 {
+  font-family: owners-narrow, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+}
+
+h4 {
+  font-family: owners-narrow, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+}
+
+p {
+  font-family: neue-haas-grotesk-display, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+}
+
+/* Mobilversion */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
