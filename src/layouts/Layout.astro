@@ -1,6 +1,8 @@
 ---
 import "../styles/general.css";
 import AOSInit from "../javascript/AOSInit.jsx";
+const { fanenavn } = Astro.props;
+// Har lavet fanenavnet(title) til en prop, så vi kan navngive fanerne forskeligt
 ---
 
 <!doctype html>
@@ -11,7 +13,7 @@ import AOSInit from "../javascript/AOSInit.jsx";
     <meta name="generator" content={Astro.generator} />
     <!-- Webfonts -->
     <link rel="stylesheet" href="https://use.typekit.net/gez7rds.css" />
-    <title>Bakkefest</title>
+    <title>{fanenavn}</title>
   </head>
   <body>
     <slot />
