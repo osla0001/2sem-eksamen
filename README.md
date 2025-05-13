@@ -59,4 +59,5 @@ Vores astro projekt, med vores mapper og filer, er bygget op i denne struktur
 ├── package.json
 │
 └── README.md
-```
+
+

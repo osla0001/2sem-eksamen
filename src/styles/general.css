@@ -31,8 +31,11 @@ html {
 }
 
 .text_margin {
-  max-width: 74ch;
-  margin: 0 auto;
+  margin: 120px;
+}
+
+body {
+  background-color: var(--light_pink);
 }
 
 /* Skrifttyper */
@@ -69,6 +72,7 @@ p {
   font-weight: 500;
   font-style: normal;
   font-size: 18px;
+  line-height: 1.7rem;
 }
 
 /* Mobilversion */
