@@ -30,12 +30,15 @@ html {
   margin: 220px;
 }
 
-.text_margin {
-  margin: 120px;
-}
-
 body {
   background-color: var(--light_pink);
+}
+
+.text_margin_m {
+  margin: 25px;
+}
+.text_margin_m_2 {
+  padding: 25px;
 }
 
 /* Skrifttyper */
@@ -95,5 +98,14 @@ p {
 
   p {
     font-size: 14px;
+  }
+}
+
+@media (min-width: 600px) {
+  .text_margin_dt {
+    margin: 120px;
+  }
+  .text_margin_dt_2 {
+    padding: 120px;
   }
 }
