@@ -1,12 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import Banner from "../components/Banner.astro";
 import PinkPulse from "../components/PinkPulse.astro";
 import PinkPulseInstagram from "../components/PinkPulseInstagram.astro";
 ---
 
-
 <Layout fanenavn={"Forside"}>
-<Hero />
-<PinkPulse />
-<PinkPulseInstagram />
+  <Hero />
+  <Banner background_color="var(--pink)" src="BannerLogoLightPink" />
+  <PinkPulse />
+  <PinkPulseInstagram />
+  <Banner background_color="var(--yellow)" src="BannerLogoPink" />
+</Layout>
