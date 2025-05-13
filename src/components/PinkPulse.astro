@@ -2,6 +2,9 @@
 
 ---
 
+<section class="wave-divider-1">
+  <img src="/assets/bakke-divider-1.svg" alt="" />
+</section>
 <section class="pink_pulse_box text_margin">
   <div class="pink-pulse-title">
     <h2>OPLEV DEN PINK PULS TIL BAKKEFEST 2025</h2>
@@ -21,14 +24,39 @@
     </p>
   </div>
 </section>
+<section class="wave-divider-2">
+  <img src="/assets/bakke-divider-2.svg" alt="" />
+</section>
 
 <style>
+  .wave-divider-1 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    /* -2px i margin bottom for at undgå den skilles og lyserød baggrund vises*/
+    margin-bottom: -2px;
+  }
+
+  .wave-divider-2 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    /* -2px i margin top for at undgå den skilles og lyserød baggrund vises*/
+    margin-top: -2px;
+  }
+
+  .wave-divider img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
   @media (min-width: 600px) {
     .pink_pulse_box {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0 20px;
       align-items: center;
+      padding-bottom: 20px;
     }
 
     .pink-pulse-img {

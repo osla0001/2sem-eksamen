@@ -1,0 +1,31 @@
+---
+const { url, text, text_color, background_color } = Astro.props;
+---
+
+<a href={url}>
+  <button style=`background-color: ${background_color};`>
+    <h5 style=`color: ${text_color};`>{text}</h5>
+  </button>
+</a>
+
+<style>
+  button {
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    padding: 0 5px;
+  }
+
+  button:hover {
+    scale: 1.2;
+    transition: 0.3s;
+  }
+
+  h5 {
+    font-family: owners-xwide, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 18px;
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+const { src, background_color } = Astro.props;
+---
+
+<figure class="scrolling-banner" style=`background-color: ${background_color};`>
+  <div class="banner-content">
+    <img src=`/assets/${src}.svg` alt="" />
+    <img src=`/assets/${src}.svg` alt="" />
+    <img src=`/assets/${src}.svg` alt="" />
+    <img src=`/assets/${src}.svg` alt="" />
+    <img src=`/assets/${src}.svg` alt="" />
+    <img src=`/assets/${src}.svg` alt="" />
+  </div>
+</figure>
+
+<style>
+  .scrolling-banner {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .banner-content {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 10s linear infinite;
+    height: 9rem;
+    padding: 1rem 0;
+  }
+
+  .banner-content img {
+    max-height: 10rem;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>
