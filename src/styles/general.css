@@ -34,10 +34,7 @@ body {
   background-color: var(--light_pink);
 }
 
-.text_margin_m {
-  margin: 25px;
-}
-.text_margin_m_2 {
+.text_margin {
   padding: 25px;
 }
 
@@ -102,10 +99,7 @@ p {
 }
 
 @media (min-width: 600px) {
-  .text_margin_dt {
-    margin: 120px;
-  }
-  .text_margin_dt_2 {
+  .text_margin {
     padding: 120px;
   }
 }
