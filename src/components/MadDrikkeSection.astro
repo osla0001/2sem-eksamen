@@ -8,8 +8,8 @@ import MadDrikkeInfo from "./MadDrikkeInfo.astro";
     <img src="/assets/bakke-divider-3.svg" alt="Bakkeform, der opdeler siden" />
   </section>
   <section class="green_section">
-    <section class="tekst_praktisk text_margin">
-      <div>
+    <section class="text_margin">
+      <div class="tekst_praktisk">
         <h1>MAD- OG DRIKKEBODER</h1>
         <p>
           Nedenfor kan du få et overblik over de forskellige mad- og
@@ -64,30 +64,33 @@ import MadDrikkeInfo from "./MadDrikkeInfo.astro";
     height: auto;
   }
 
-  .tekst_praktisk {
-    margin: 0 auto;
-    text-align: left;
-    color: var(--yellow);
-  }
-
   .accordion-wrapper {
     margin: 0 auto;
     margin-bottom: 6rem;
     text-align: left;
   }
 
-  .tekst_praktisk h1 {
+  h1 {
     font-size: 40px;
     color: var(--yellow);
+    margin-bottom: 1rem;
   }
 
-  .tekst_praktisk p {
+  p {
     font-size: 18px;
-    line-height: 1.7rem;
+    line-height: 1.8rem;
+    color: var(--yellow);
   }
 
   .green_section {
     background-color: var(--green);
     padding: 2rem 0;
+  }
+
+  @media (min-width: 600px) {
+    .tekst_praktisk {
+      max-width: 700px;
+      margin-bottom: 3rem;
+    }
   }
 </style>
