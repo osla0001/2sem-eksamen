@@ -1,3 +1,7 @@
+---
+import ButtonArrow from "./ButtonArrow.astro";
+---
+
 <footer class="text_margin">
   <div class="grid_1-2">
     <div class="footer_left">
@@ -31,70 +35,72 @@
       </div>
 
       <div>
-        <div>
-          <form action="/send-message" method="POST">
+        <form action="/send-message" method="POST">
+          <div class="grid_1-1">
+            <div>
+              <label for="name"></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Fulde navn"
+                required
+              />
+            </div>
+            <div>
+              <label for="phone"></label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Telefonnummer"
+                required
+              />
+            </div>
+          </div>
+          <label for="message"></label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Besked"
+            rows="5"
+            required></textarea>
+          <div class="email">
             <div class="grid_1-1">
               <div>
-                <label for="name"></label>
+                <label for="email"></label>
                 <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Fulde navn"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail"
                   required
                 />
               </div>
-              <div>
-                <label for="phone"></label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Telefonnummer"
-                  required
+              <div class="button_send">
+                <input type="submit" value="Send" class="button" />
+                <ButtonArrow
+                  url="/send-message"
+                  background_color="var(--yellow)"
+                  arrow_color="var(--green)"
                 />
               </div>
             </div>
-            <label for="message"></label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Besked"
-              rows="5"
-              required></textarea>
-            <div class="email">
-              <div class="grid_1-1">
-                <div>
-                  <label for="email"></label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="E-mail"
-                    required
-                  />
-                </div>
-                <div>
-                  <input type="submit" value="Send" class="button" />
-                  <!-- import knap her -->
-                </div>
-              </div>
-              <div class="line"></div>
-            </div>
-          </form>
-        </div>
+          </div>
+          <div class="line"></div>
+        </form>
       </div>
     </div>
-    <div class="some_info">
-      <h4>Følg os på sociale medier!</h4>
-      <div class="img_some">
-        <a href="#" target="_blank">
-          <img src="/assets/Instagram.svg" alt="Instagram" />
-        </a>
-        <a href="#" target="_blank">
-          <img src="/assets/Facebook.svg" alt="Facebook" />
-        </a>
-      </div>
+  </div>
+  <div class="some_info">
+    <h4>Følg os på sociale medier!</h4>
+    <div class="img_some">
+      <a href="#" target="_blank">
+        <img src="/assets/Instagram.svg" alt="Instagram" />
+      </a>
+      <a href="#" target="_blank">
+        <img src="/assets/Facebook.svg" alt="Facebook" />
+      </a>
     </div>
   </div>
 </footer>
@@ -254,7 +260,15 @@
     gap: 20px;
   }
 
-  @media (min-width: 600px) {
+  .button_send {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 800px) {
     .grid_1-1 {
       gap: 20px;
       grid-template-columns: 1fr 1fr;
