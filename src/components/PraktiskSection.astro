@@ -4,9 +4,12 @@ import PraktiskInfoBox from "./PraktiskInfoBox.astro";
 ---
 
 <div style="height: 150px;"></div>
+
+<!-- Skaber mellemrum mellem indholdet og toppen af siden -->
+
 <main>
   <section class="text_margin">
-    <div>
+    <div class="tekst_praktisk">
       <h1>PRAKTISK INFO</h1>
       <p>
         Her finder du den mest nødvendige information om Bakkefesten. Hvis du
@@ -47,6 +50,8 @@ import PraktiskInfoBox from "./PraktiskInfoBox.astro";
   </div>
 </main>
 <div style="height: 150px;"></div>
+<!-- 
+Skaber mellemrum mellem indholdet og bunden af siden -->
 
 <style>
   .accordion-wrapper {
@@ -56,10 +61,18 @@ import PraktiskInfoBox from "./PraktiskInfoBox.astro";
   h1 {
     font-size: 40px;
     color: var(--pink);
+    margin-bottom: 1rem;
   }
-
   p {
     font-size: 18px;
-    line-height: 1.7rem;
+    line-height: 1.8rem;
+    color: var(--pink);
+  }
+
+  @media (min-width: 600px) {
+    .tekst_praktisk {
+      max-width: 700px;
+      margin-bottom: 3rem;
+    }
   }
 </style>
