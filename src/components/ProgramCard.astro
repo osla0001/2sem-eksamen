@@ -1,9 +1,10 @@
 ---
-
+//@ts-ignore
+const { event } = Astro.props;
 ---
 
 <div class="card-container">
-  <img src="https://placehold.co/400x400" alt="MAS" />
+  <img src={event.img} alt="MAS" />
   <div class="hover-box">
     <div class="hover-inner">
       <img src="/assets/card-hover.svg" alt="" class="hover-svg" />
