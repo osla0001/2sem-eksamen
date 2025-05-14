@@ -1,8 +1,12 @@
+---
+import ButtonArrow from "./ButtonArrow.astro";
+---
+
 <footer class="text_margin">
   <div class="grid_1-2">
     <div class="footer_left">
       <div>
-        <h2>KONTAKTINFO</h2>
+        <h2>Kontaktinformation</h2>
         <p>Telefon nr.: <a href="tel:+4548301932">48 30 19 32</a></p>
         <p>
           E-mailadresse: <a href="mailto:info@bakkefest.dk">info@bakkefest.dk</a
@@ -12,9 +16,10 @@
           Adresse: Gilleleje Hallen / Festpladsen <br />Bøgebakken 19C, 3250
           Gilleleje
         </p>
+        <p class="CVR">CVR. nr.: 59173715</p>
       </div>
       <div>
-        <h2>ÅBNINGSTIDER</h2>
+        <h2>Åbningstider</h2>
         <p>Mandag – fredag: 8.00 – 15.30</p>
         <p>Weekend efter aftale</p>
       </div>
@@ -30,75 +35,165 @@
       </div>
 
       <div>
-        <div>
-          <form action="/send-message" method="POST">
+        <form action="/send-message" method="POST">
+          <div class="grid_1-1">
+            <div>
+              <label for="name"></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Fulde navn"
+                required
+              />
+            </div>
+            <div>
+              <label for="phone"></label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Telefonnummer"
+                required
+              />
+            </div>
+          </div>
+          <label for="message"></label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Besked"
+            rows="5"
+            required></textarea>
+          <div class="email">
             <div class="grid_1-1">
-              <div>
-                <label for="name"></label>
+              <div class="email_input">
+                <label for="email"></label>
                 <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Fulde navn"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="E-mail"
                   required
                 />
               </div>
-              <div>
-                <label for="phone"></label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="Telefonnummer"
-                  required
+              <div class="button_send">
+                <input type="submit" value="Send" class="button" />
+                <ButtonArrow
+                  url="/send-message"
+                  background_color="var(--yellow)"
+                  arrow_color="var(--green)"
                 />
               </div>
             </div>
-            <label for="message"></label>
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Besked"
-              rows="5"
-              required></textarea>
-            <div class="email">
-              <div class="grid_1-1">
-                <div>
-                  <label for="email"></label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="E-mail"
-                    required
-                  />
-                </div>
-                <div>
-                  <input type="submit" value="Send" class="button" />
-                  <!-- import knap her -->
-                </div>
-              </div>
-              <div class="line"></div>
-            </div>
-          </form>
-        </div>
+          </div>
+          <div class="line"></div>
+        </form>
       </div>
     </div>
-    <div class="some_info">
-      <h4>Følg os på sociale medier!</h4>
-      <div class="img_some">
-        <a href="#" target="_blank">
-          <img src="public/assets/instagram.svg" alt="Instagram" />
-        </a>
-        <a href="#" target="_blank">
-          <img src="public/assets/Facebook.svg" alt="Facebook" />
-        </a>
-      </div>
+  </div>
+  <div class="some_info">
+    <h4>Følg os på sociale medier!</h4>
+    <div class="img_some">
+      <a href="#" target="_blank">
+        <img src="/assets/Instagram.svg" alt="Instagram" />
+      </a>
+      <a href="#" target="_blank">
+        <img src="/assets/Facebook.svg" alt="Facebook" />
+      </a>
     </div>
   </div>
 </footer>
 
 <style>
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    max-width: 80%;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--pink);
+    opacity: 0.5;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+  }
+
+  input,
+  textarea {
+    font-family: neue-haas-grotesk-display, sans-serif;
+    color: var(--pink);
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+    text-align: left; /* Justering af teksten */
+  }
+
+  input,
+  textarea,
+  button {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+  }
+
+  /* her har jeg ændret indput feltet ved at tage fat først i input(generelle) så i type=email - som referer til boksen som automatisk er omkring email inputtet.*/
+  input[type="email"] {
+    font-size: 1.5rem;
+    color: var(--pink);
+    background: none;
+    border: none;
+    text-align: left;
+    outline: none;
+    padding: 0;
+  }
+
+  /* Herefter har jeg taget fat i type=email igen, men denne gang i placeholder, så jeg kan style teksten! */
+  input[type="email"]::placeholder {
+    font-size: 1.5rem;
+    color: var(--light_pink);
+    font-family: owners-narrow, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    opacity: 1;
+  }
+
+  /* samme for submit aka send knappen */
+  input[type="submit"] {
+    color: var(--light_pink);
+    background: none;
+    border: none;
+    text-align: right;
+    outline: none;
+    padding: 0;
+    font-family: owners-narrow, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+  }
+  input[type="submit"]::placeholder {
+    font-size: 1.5rem;
+    color: var(--light_pink);
+    font-family: owners-narrow, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+    opacity: 1;
+  }
+
+  button {
+    color: var(--light_pink);
+    border: none;
+  }
+  button:hover {
+    background-color: var(--pink);
+  }
   p {
     color: var(--light_pink);
   }
@@ -107,6 +202,11 @@
   h4,
   a {
     color: var(--light_pink);
+  }
+
+  .CVR {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 
   a:hover {
@@ -121,10 +221,28 @@
   footer {
     background-color: var(--green);
   }
+
   .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .email .grid_1-1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    margin-top: 0.5rem;
+  }
+
+  .email_input {
+    align-items: center;
+    margin-top: 6px;
+  }
+
+  .line {
+    height: 1px;
+    background-color: var(--light_pink);
+    width: auto;
   }
 
   .some_info {
@@ -144,8 +262,9 @@
 
   .grid_1-2 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 20px;
+    margin-top: 3rem;
   }
   .footer_left {
     display: flex;
@@ -156,5 +275,63 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  .button_send {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 10px;
+  }
+
+  @media (min-width: 800px) {
+    .grid_1-1 {
+      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .grid_1-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    button {
+      padding: 2rem;
+    }
+    .footer_right {
+      display: flex;
+      align-items: right;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .footer_right h2 {
+      text-align: right;
+    }
+    .footer_right p {
+      text-align: right;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      font-size: 18px;
+      line-height: 1.7rem;
+    }
+    .line {
+      margin-top: -0.3rem;
+    }
+
+    input,
+    textarea {
+      font-size: 18px;
+    }
   }
 </style>
