@@ -2,155 +2,154 @@
 // @ts-nocheck
 ---
 
-<nav>
-  <ul class="menu">
-    <li><a href="/">Køb Billet</a></li>
-    <li><a href="/">Forside</a></li>
-    <li><a href="/">Program</a></li>
-    <li><a href="/">Praktisk info</a></li>
-    <li><a href="/">Galleri</a></li>
-    <li><a href="/">Hvem er vi?</a></li>
-    <li><a href="/">Bliv Frivillig!</a></li>
-  </ul>
-  <div class="burger">
+<nav class="nav">
+  <!-- id=burger er sat så elementet kan hives fat i i javascript og få tilføjet class=active-->
+  <div class="burger" id="burger">
     <div class="line"></div>
     <div class="line"></div>
     <div class="line"></div>
   </div>
+
+  <ul class="menu" id="menu">
+    <li class="space-around"><a href="/">KØB BILLET</a></li>
+    <li><a href="/">PROGRAM</a></li>
+    <li><a href="/">PRAKTISK INFO</a></li>
+    <li><a href="/">GALLERI</a></li>
+    <li><a href="/">HVEM ER VI?</a></li>
+    <li class="space-around"><a href="/">BLIV FRIVILLIG</a></li>
+  </ul>
 </nav>
 
 <script>
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector("nav");
-  const menu = document.querySelector(".menu");
+  document.addEventListener("DOMContentLoaded", () => {
+    // opretter constanter, i elementerne burger og menu som findes i html
+    const burger = document.getElementById("burger");
+    const menu = document.getElementById("menu");
+    console.log(burger, menu);
 
-  burger.addEventListener("click", burgerClick);
-  function burgerClick() {
-    burger.classList.toggle("active");
-    nav.classList.toggle("active");
-  }
-  menu.addEventListener("click", menuClick);
-  function menuClick() {
-    burger.classList.remove("active");
-    nav.classList.remove("active");
-  }
+    burger.addEventListener("click", () => {
+      // aktiverer animation, som gør de tre streger bliver til et kryds
+      burger.classList.toggle("active");
+
+      // viser/skjuler menuen via CSS
+      menu.classList.toggle("active");
+
+      // tilføjer class=no-scroll som gør det ikke er muligt at scrolle når menuen er åben
+      document.body.classList.toggle("no-scroll");
+    });
+
+    // Luk menu når man klikker på et link
+    // denne funktion kører, hver gang der klikkes på noget inde i menuen (e står for event)
+    menu.addEventListener("click", (e) => {
+      // e.target er det element der blev klikket på og tagName er typen af element
+      if (e.target.tagName === "A") {
+        // krydset forsvinder
+        burger.classList.remove("active");
+
+        // skjuler menuen
+        menu.classList.remove("active");
+
+        // gør det muligt at scrolle menuen igen
+        document.body.classList.remove("no-scroll");
+      }
+    });
+  });
 </script>
 
 <style>
-  nav {
-    display: flex;
-    align-items: center;
+  .nav {
+    position: relative;
+    z-index: 100;
   }
 
-  .menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menu li {
-    margin-right: 20px;
-  }
-
-  .menu li:last-child {
-    margin-right: 0;
-  }
-
-  .menu a {
-    color: var(--yellow);
-    text-decoration: none;
-    transition: color 0.3s;
-    text-align: end;
-  }
-
-  .menu a:hover {
-    color: var(--light_pink);
-  }
-
+  /* styling af burger */
   .burger {
+    display: block;
     width: 30px;
-    height: 20px;
+    height: 24px;
+    position: relative;
+    z-index: 101;
     cursor: pointer;
   }
 
   .burger .line {
+    height: 3px;
     width: 100%;
-    height: 2px;
     background-color: var(--pink);
-    margin-bottom: 5px;
-    transition: 0.2s linear;
+    margin: 5px 0;
+    transition: all 0.3s ease;
   }
-  .burger {
-    display: none;
+
+  /* linjerne i burger bliver til et kryds når burgeren er aktiv */
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+
+    /* krydset bliver gult når burgeren er aktiv */
+    background-color: var(--yellow);
+  }
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+
+    /* krydset bliver gult når burgeren er aktiv */
+    background-color: var(--yellow);
+  }
+
+  /* tilføjer classen i body og html, så det ikke er muligt at scrolle når menuen er åben */
+  html.no-scroll,
+  body.no-scroll {
+    overflow: hidden;
+    height: 100%;
   }
 
   .menu {
-    display: none;
-  }
-  .burger {
-    display: block;
-  }
-  .burger.active .line:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-    transition: 0.2s linear;
-  }
-
-  .burger.active .line:nth-child(2) {
-    opacity: 0;
-    transition: 0.15s linear;
-  }
-
-  .burger.active .line:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-    transition: 0.2s linear;
-  }
-
-  nav.active .menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: var(--pink);
-    position: absolute;
-    top: 85px;
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100vw;
-    /* padding-top: 25vh; */
-    padding-bottom: 100vh;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: var(--pink);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.4s ease;
+    list-style: none;
+    margin: 0;
+    padding: 0 60px;
+    z-index: 100;
   }
 
-  nav.active .menu li {
-    margin: 0 8px 0 8px;
-    /* flex: 1 1 auto;  */
+  .menu.active {
+    transform: translateX(0);
   }
 
-  nav.active .menu a {
-    font-size: 15.9cqw;
-    letter-spacing: -2px;
-    line-height: 0.9;
+  .menu li {
+    margin: 10px 0;
   }
 
-  .logo:hover {
-    scale: 1.2;
-    transition: 0.3s;
-  }
-
-  .scale {
-    transition: 0.3s;
-  }
-
-  .scale:hover {
-    transition: 0.3s;
-    scale: 1.2;
-  }
-
-  li {
-    font-family: owners-narrow, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 24px;
+  .menu a {
+    font-size: 35px;
+    font-family: owners-wide, sans-serif;
+    letter-spacing: 1px;
+    font-weight: 600;
     color: var(--yellow);
+    text-decoration: none;
+    transition: 0.2s;
+  }
+
+  .space-around {
+    padding: 50px 0;
+  }
+
+  .space-around a {
+    text-decoration: underline;
+  }
+
+  .menu a:hover {
+    color: white;
   }
 </style>
