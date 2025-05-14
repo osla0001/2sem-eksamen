@@ -2,7 +2,8 @@
 
 ---
 
-<section class="wave-divider-1">
+<!-- section divider placeres som img i sin egen section, de steder det skal skille sektionerne -->
+<section class="section-divider-1">
   <img src="/assets/bakke-divider-1.svg" alt="" />
 </section>
 <section class="pink_pulse_box text_margin" id="pink-pulse">
@@ -24,28 +25,30 @@
     </p>
   </div>
 </section>
-<section class="wave-divider-2">
+<section class="section-divider-2">
   <img src="/assets/bakke-divider-2.svg" alt="" />
 </section>
 
 <style>
-  .wave-divider-1 {
+  .section-divider-1 {
     width: 100%;
+    /* skjuler indhold, der skulle gå udover grænsen */
     overflow: hidden;
-    line-height: 0;
+
     /* -2px i margin bottom for at undgå den skilles og lyserød baggrund vises*/
     margin-bottom: -2px;
   }
 
-  .wave-divider-2 {
+  .section-divider-2 {
     width: 100%;
+    /* skjuler indhold, der skulle gå udover grænsen */
     overflow: hidden;
-    line-height: 0;
     /* -2px i margin top for at undgå den skilles og lyserød baggrund vises*/
     margin-top: -2px;
   }
 
   .wave-divider img {
+    /* fylder hele bredden af det den har til rådighed */
     display: block;
     width: 100%;
     height: auto;
