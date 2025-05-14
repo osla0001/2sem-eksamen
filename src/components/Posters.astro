@@ -1,16 +1,55 @@
 ---
-
+import ButtonArrow from "./ButtonArrow.astro";
 ---
 
-<section>
+<section class="poster-grid">
   <img src="/assets/poster-fri.webp" alt="Bakkefest tidsplan for fridag" />
   <img src="/assets/poster-sat.webp" alt="Bakkefest tidsplan for lørdag" />
   <img src="/assets/poster-sun.webp" alt="Bakkefest tidsplan for søndag" />
 </section>
+<section class="poster-button text_margin">
+  <div class="flex_row">
+    <a href="/program"><h1>GÅ TIL PROGRAM</h1></a>
+    <ButtonArrow
+      url="/program"
+      background_color="var(--yellow)"
+      arrow_color="var(--green)"
+    />
+  </div>
+</section>
 
 <style>
+  .poster-button {
+    background-color: var(--green);
+    padding-top: 40px;
+    padding-bottom: 30px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .poster-button h1 {
+    color: var(--light_pink);
+  }
+  .poster-button a {
+    text-decoration: none;
+  }
+  .flex_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+  .flex_row:hover {
+    scale: 1.01;
+    color: var(--pink);
+    transition: 0.2s;
+  }
+
   @media (min-width: 600px) {
-    section {
+    .poster-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     }
