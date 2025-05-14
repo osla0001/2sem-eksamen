@@ -1,3 +1,18 @@
+---
+const url = "https://yhioxktrqmlazkwnvbit.supabase.co/rest/v1/events?select=*";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InloaW94a3RycW1sYXprd252Yml0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxNjM1MjksImV4cCI6MjA2MjczOTUyOX0.rPSCRtiiBeBLLMGOZz9pd4-ZgiCMnuScZxME3EDLybc";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const data = await fetch(url, options).then((res) => res.json());
+console.log(data);
+---
+
 <div class="white_space"></div>
 <section class="text_margin">
   <h2>Programoversigt</h2>
