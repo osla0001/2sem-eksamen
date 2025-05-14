@@ -28,7 +28,7 @@ html {
 
 /* Andet */
 .white_space {
-  margin: 220px;
+  height: 100px;
 }
 
 body {
@@ -99,8 +99,8 @@ p {
   }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .text_margin {
-    padding: 120px;
+    padding: 0 120px;
   }
 }

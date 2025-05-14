@@ -1,0 +1,96 @@
+---
+import ButtonArrow from "./ButtonArrow.astro";
+---
+
+<img src="/assets/bakke-up_big.svg" alt="" class="hill" />
+<section class="text_margin grid_1-1">
+  <div>
+    <h2>Lyden af bakkefest 2025</h2>
+    <p>
+      <b>Lyt til vores playliste for 2025 på Spotify</b>
+      <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+      ultricies tellus vitae dictum convallis. Vestibulum pretium sodales
+      volutpat. Nulla facilisi.
+    </p>
+    <div class="flex_row">
+      <h4>Gå til playliste</h4>
+      <ButtonArrow
+        url=""
+        background_color="var(--yellow)"
+        arrow_color="var(--pink)"
+      />
+    </div>
+  </div>
+  <iframe
+    style="border-radius:12px"
+    src="https://open.spotify.com/embed/playlist/6eYWPTB8yTQ5zJBM7VDLGd?utm_source=generator"
+    width="100%"
+    height="400px"
+    allowfullscreen=""
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"></iframe>
+</section>
+<img src="/assets/bakke-down_small.svg" alt="" class="hill2" />
+
+<style>
+  .hill {
+    margin-bottom: -2px;
+  }
+
+  .hill2 {
+    margin-top: -2px;
+  }
+
+  section {
+    background-color: var(--pink);
+  }
+
+  h2,
+  h3,
+  h4 {
+    color: var(--light_pink);
+    text-transform: uppercase;
+  }
+
+  p {
+    color: var(--light_pink);
+  }
+
+  .flex_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .text_margin {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  a {
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    scale: 1.02;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 800px) {
+    .grid_1-1 {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>
