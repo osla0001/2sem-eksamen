@@ -36,8 +36,8 @@ import ButtonArrow from "./ButtonArrow.astro";
     align-items: center;
     gap: 1rem;
     width: fit-content;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .flex_row:hover h4 {
@@ -81,7 +81,7 @@ import ButtonArrow from "./ButtonArrow.astro";
 
   .grid_1-1 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
 
@@ -95,10 +95,15 @@ import ButtonArrow from "./ButtonArrow.astro";
     transition: 0.2s;
   }
 
-  @media (max-width: 800px) {
+  @media (min-width: 800px) {
     .grid_1-1 {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 2rem;
+    }
+
+    .flex_row {
+      margin-top: 2rem;
+      margin-bottom: 4rem;
     }
   }
 </style>
