@@ -36,7 +36,7 @@ body {
 }
 
 .text_margin {
-  padding: 25px;
+  padding: 40px;
 }
 
 /* Skrifttyper */
@@ -74,6 +74,7 @@ p {
   font-style: normal;
   font-size: 18px;
   line-height: 1.7rem;
+  max-width: 47rem;
 }
 
 /* Mobilversion */
@@ -101,6 +102,6 @@ p {
 
 @media (min-width: 800px) {
   .text_margin {
-    padding: 0 120px;
+    padding: 0 220px;
   }
 }

@@ -1,0 +1,150 @@
+---
+import ButtonArrow from "./ButtonArrow.astro";
+---
+
+<img src="/assets/bakke-up_big.svg" alt="" class="hill" />
+<section>
+  <div class="text_margin">
+    <h2>Sponsorerne bag bakkefesten</h2>
+    <p>
+      En stor tak til alle vores sponsorer. Jeres fantastiske støtte gør en
+      afgørende forskel og er med til at gøre Bakkefesten mulig. Vi sætter stor
+      pris på jeres engagement og opbakning – uden jer ville det her ikke kunne
+      lade sig gøre.
+    </p>
+  </div>
+
+  <figure class="scrolling-banner">
+    <div class="banner-content">
+      <img src="/assets/sponsor/Img01.webp" alt="" />
+      <img src="/assets/sponsor/Img02.webp" alt="" />
+      <img src="/assets/sponsor/Img03.webp" alt="" />
+      <img src="/assets/sponsor/Img04.webp" alt="" />
+      <img src="/assets/sponsor/Img05.webp" alt="" />
+      <img src="/assets/sponsor/Img06.webp" alt="" />
+      <img src="/assets/sponsor/Img07.webp" alt="" />
+      <img src="/assets/sponsor/Img08.webp" alt="" />
+      <img src="/assets/sponsor/Img09.webp" alt="" />
+      <img src="/assets/sponsor/Img10.webp" alt="" />
+      <img src="/assets/sponsor/Img11.webp" alt="" />
+      <img src="/assets/sponsor/Img12.webp" alt="" />
+      <img src="/assets/sponsor/Img13.webp" alt="" />
+      <img src="/assets/sponsor/Img14.webp" alt="" />
+      <img src="/assets/sponsor/Img15.webp" alt="" />
+      <img src="/assets/sponsor/Img16.webp" alt="" />
+      <img src="/assets/sponsor/Img17.webp" alt="" />
+      <img src="/assets/sponsor/Img18.webp" alt="" />
+      <img src="/assets/sponsor/Img19.webp" alt="" />
+      <img src="/assets/sponsor/Img20.webp" alt="" />
+      <img src="/assets/sponsor/Img21.webp" alt="" />
+      <img src="/assets/sponsor/Img22.webp" alt="" />
+      <img src="/assets/sponsor/Img23.webp" alt="" />
+      <img src="/assets/sponsor/Img24.webp" alt="" />
+      <img src="/assets/sponsor/Img25.webp" alt="" />
+      <img src="/assets/sponsor/Img26.webp" alt="" />
+      <img src="/assets/sponsor/Img27.webp" alt="" />
+      <img src="/assets/sponsor/Img28.webp" alt="" />
+      <img src="/assets/sponsor/Img29.webp" alt="" />
+      <img src="/assets/sponsor/Img30.webp" alt="" />
+      <img src="/assets/sponsor/Img31.webp" alt="" />
+      <img src="/assets/sponsor/Img32.webp" alt="" />
+      <img src="/assets/sponsor/Img33.webp" alt="" />
+      <img src="/assets/sponsor/Img34.webp" alt="" />
+      <img src="/assets/sponsor/Img35.webp" alt="" />
+      <img src="/assets/sponsor/Img36.webp" alt="" />
+      <img src="/assets/sponsor/Img37.webp" alt="" />
+      <img src="/assets/sponsor/Img38.webp" alt="" />
+      <img src="/assets/sponsor/Img39.webp" alt="" />
+      <img src="/assets/sponsor/Img40.webp" alt="" />
+      <img src="/assets/sponsor/Img41.webp" alt="" />
+      <img src="/assets/sponsor/Img42.webp" alt="" />
+      <img src="/assets/sponsor/Img43.webp" alt="" />
+      <img src="/assets/sponsor/Img44.webp" alt="" />
+      <img src="/assets/sponsor/Img45.webp" alt="" />
+      <img src="/assets/sponsor/Img46.webp" alt="" />
+      <img src="/assets/sponsor/Img47.webp" alt="" />
+      <img src="/assets/sponsor/Img48.webp" alt="" />
+      <img src="/assets/sponsor/Img49.webp" alt="" />
+      <img src="/assets/sponsor/Img50.webp" alt="" />
+      <img src="/assets/sponsor/Img51.webp" alt="" />
+      <img src="/assets/sponsor/Img52.webp" alt="" />
+      <img src="/assets/sponsor/Img53.webp" alt="" />
+      <img src="/assets/sponsor/Img54.webp" alt="" />
+      <img src="/assets/sponsor/Img55.webp" alt="" />
+      <img src="/assets/sponsor/Img56.webp" alt="" />
+      <img src="/assets/sponsor/Img57.webp" alt="" />
+      <img src="/assets/sponsor/Img58.webp" alt="" />
+      <img src="/assets/sponsor/Img59.webp" alt="" />
+      <img src="/assets/sponsor/Img60.webp" alt="" />
+      <img src="/assets/sponsor/Img61.webp" alt="" />
+      <img src="/assets/sponsor/Img62.webp" alt="" />
+      <img src="/assets/sponsor/Img63.webp" alt="" />
+      <img src="/assets/sponsor/Img64.webp" alt="" />
+      <img src="/assets/sponsor/Img65.webp" alt="" />
+    </div>
+  </figure>
+</section>
+
+<style>
+  .hill {
+    margin-bottom: -2px;
+  }
+
+  section {
+    background-color: var(--pink);
+  }
+
+  h2,
+  h4 {
+    color: var(--light_pink);
+    text-transform: uppercase;
+  }
+
+  p {
+    color: var(--light_pink);
+  }
+
+  .text_margin {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+  }
+
+  .scrolling-banner {
+    overflow: hidden;
+    width: 100%;
+    background-color: var(--pink);
+  }
+
+  .banner-content {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    gap: 0.2rem;
+    animation: scroll 20s linear infinite;
+    padding: 1rem 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .banner-content img {
+    height: 110px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @media (max-width: 800px) {
+    .grid_1-1 {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

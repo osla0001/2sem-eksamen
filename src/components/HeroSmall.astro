@@ -1,13 +1,15 @@
 ---
+const { url, h1, fontSize } = Astro.props;
 import Header from "./Header.astro";
 ---
 
 <Header />
-<section class="grid_1-1-1">
+<section class="grid_1-1-1" style=`background-image: url(${url});`>
   <div class="filler"></div>
   <img src="/assets/Clamp.svg" alt="" class="clamp1" />
-  <h1>Program</h1>
+  <h1 style={`font-size: ${fontSize};`}>{h1}</h1>
   <img src="/assets/Clamp.svg" alt="" class="clamp2" />
+
   <img src="/assets/bakke-down_small.svg" alt="" class="hill" />
 </section>
 <div style="height: 2rem;"></div>
@@ -20,6 +22,7 @@ import Header from "./Header.astro";
     left: 0;
     z-index: -1;
     aspect-ratio: 1/1;
+    overflow: hidden;
   }
 
   h1 {
@@ -37,7 +40,6 @@ import Header from "./Header.astro";
     grid-template-rows: 5fr max-content;
     width: 100%;
     padding: 0 1rem;
-    background-image: url("/assets/HeroImage.webp");
     background-size: cover;
   }
 
@@ -58,14 +60,17 @@ import Header from "./Header.astro";
   }
 
   .hill {
-    filter: brightness(0) saturate(100%) invert(93%) sepia(34%) saturate(1981%)
-      hue-rotate(184deg) brightness(109%) contrast(111%);
+    filter: brightness(0) saturate(100%) invert(99%) sepia(24%) saturate(7489%)
+      hue-rotate(287deg) brightness(133%) contrast(113%);
     grid-column: 1 / span 3;
     margin-block-start: auto;
-    width: 100%;
+    width: 103.3%;
     height: max-content;
-    scale: 1.1;
+    margin: 0 auto;
     rotate: 180deg;
+    overflow: hidden;
+    margin-bottom: -1rem;
+    margin-left: -2rem;
   }
 
   @media (min-width: 600px) {
@@ -75,8 +80,6 @@ import Header from "./Header.astro";
     .clamp1,
     .clamp2 {
       height: 20rem;
-    }
-    .herosmall {
     }
   }
 </style>
