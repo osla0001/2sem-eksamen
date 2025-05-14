@@ -1,0 +1,82 @@
+---
+import Header from "./Header.astro";
+---
+
+<Header />
+<section class="grid_1-1-1">
+  <div class="filler"></div>
+  <img src="/assets/Clamp.svg" alt="" class="clamp1" />
+  <h1>Program</h1>
+  <img src="/assets/Clamp.svg" alt="" class="clamp2" />
+  <img src="/assets/bakke-down_small.svg" alt="" class="hill" />
+</section>
+<div style="height: 2rem;"></div>
+
+<style>
+  .herosmall {
+    height: 500px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    aspect-ratio: 1/1;
+  }
+
+  h1 {
+    color: var(--yellow);
+    font-size: 6rem;
+    text-transform: uppercase;
+    place-self: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .grid_1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 5fr max-content;
+    width: 100%;
+    padding: 0 1rem;
+    background-image: url("/assets/HeroImage.webp");
+    background-size: cover;
+  }
+
+  .clamp1,
+  .clamp2 {
+    height: 10rem;
+    place-self: center;
+    align-self: center;
+  }
+
+  .clamp2 {
+    transform: scaleX(-100%);
+  }
+
+  .filler {
+    grid-column: 1 / span 3;
+    height: 100px;
+  }
+
+  .hill {
+    filter: brightness(0) saturate(100%) invert(93%) sepia(34%) saturate(1981%)
+      hue-rotate(184deg) brightness(109%) contrast(111%);
+    grid-column: 1 / span 3;
+    margin-block-start: auto;
+    width: 100%;
+    height: max-content;
+    scale: 1.1;
+    rotate: 180deg;
+  }
+
+  @media (min-width: 600px) {
+    .h1 {
+      font-size: 1rem;
+    }
+    .clamp1,
+    .clamp2 {
+      height: 20rem;
+    }
+    .herosmall {
+    }
+  }
+</style>
