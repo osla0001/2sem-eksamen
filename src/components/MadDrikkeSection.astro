@@ -1,57 +1,51 @@
 ---
 //@ts-check
-import Layout from "../layouts/Layout.astro";
 import MadDrikkeInfo from "./MadDrikkeInfo.astro";
 ---
 
-<Layout>
-  <main>
-    <section class="section-divider-3 text-margin">
-      <img
-        src="/assets/bakke-divider-3.svg"
-        alt="Bakkeform, der opdeler siden"
-      />
-    </section>
-    <section class="green_section">
-      <section class="tekst_praktisk">
-        <div>
-          <h1>MAD- OG DRIKKEBODER</h1>
-          <p>
-            Nedenfor kan du få et overblik over de forskellige mad- og
-            drikkevarer, der tilbydes i år til Bakkefest. Her kan du se hvilke
-            muligheder, der er i både madboder, drinks- og ølbarer.
-          </p>
-        </div>
-      </section>
-      <div class="accordion-wrapper">
-        <MadDrikkeInfo
-          title="MADBOD 1"
-          content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-        />
-        <MadDrikkeInfo
-          title="MADBOD 2"
-          content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-        />
-        <MadDrikkeInfo
-          title="MADBOD 3"
-          content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-        />
-        <MadDrikkeInfo
-          title="MADBOD 4"
-          content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-        />
-        <MadDrikkeInfo
-          title="DRIKKE 1"
-          content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-        />
-        <MadDrikkeInfo
-          title="DRIKKE 2"
-          content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-        />
+<main>
+  <section class="section-divider-3">
+    <img src="/assets/bakke-divider-3.svg" alt="Bakkeform, der opdeler siden" />
+  </section>
+  <section class="green_section">
+    <section class="tekst_praktisk text_margin">
+      <div>
+        <h1>MAD- OG DRIKKEBODER</h1>
+        <p>
+          Nedenfor kan du få et overblik over de forskellige mad- og
+          drikkevarer, der tilbydes i år til Bakkefest. Her kan du se hvilke
+          muligheder, der er i både madboder, drinks- og ølbarer.
+        </p>
       </div>
     </section>
-  </main>
-</Layout>
+    <div class="accordion-wrapper text_margin">
+      <MadDrikkeInfo
+        title="MADBOD 1"
+        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+      />
+      <MadDrikkeInfo
+        title="MADBOD 2"
+        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+      />
+      <MadDrikkeInfo
+        title="MADBOD 3"
+        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+      />
+      <MadDrikkeInfo
+        title="MADBOD 4"
+        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+      />
+      <MadDrikkeInfo
+        title="DRIKKE 1"
+        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+      />
+      <MadDrikkeInfo
+        title="DRIKKE 2"
+        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+      />
+    </div>
+  </section>
+</main>
 
 <style>
   .section-divider-3 {
@@ -71,15 +65,12 @@ import MadDrikkeInfo from "./MadDrikkeInfo.astro";
   }
 
   .tekst_praktisk {
-    padding: 2rem 1rem;
-    max-width: 600px;
     margin: 0 auto;
     text-align: left;
     color: var(--yellow);
   }
 
   .accordion-wrapper {
-    max-width: 600px;
     margin: 0 auto;
     margin-bottom: 6rem;
     text-align: left;
