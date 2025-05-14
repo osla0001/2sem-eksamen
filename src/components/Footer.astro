@@ -6,7 +6,7 @@ import ButtonArrow from "./ButtonArrow.astro";
   <div class="grid_1-2">
     <div class="footer_left">
       <div>
-        <h2>KONTAKTINFO</h2>
+        <h2>Kontaktinformation</h2>
         <p>Telefon nr.: <a href="tel:+4548301932">48 30 19 32</a></p>
         <p>
           E-mailadresse: <a href="mailto:info@bakkefest.dk">info@bakkefest.dk</a
@@ -19,7 +19,7 @@ import ButtonArrow from "./ButtonArrow.astro";
         <p class="CVR">CVR. nr.: 59173715</p>
       </div>
       <div>
-        <h2>ÅBNINGSTIDER</h2>
+        <h2>Åbningstider</h2>
         <p>Mandag – fredag: 8.00 – 15.30</p>
         <p>Weekend efter aftale</p>
       </div>
@@ -67,7 +67,7 @@ import ButtonArrow from "./ButtonArrow.astro";
             required></textarea>
           <div class="email">
             <div class="grid_1-1">
-              <div>
+              <div class="email_input">
                 <label for="email"></label>
                 <input
                   type="email"
@@ -122,6 +122,17 @@ import ButtonArrow from "./ButtonArrow.astro";
     font-style: normal;
     font-size: 14px;
   }
+
+  input,
+  textarea {
+    font-family: neue-haas-grotesk-display, sans-serif;
+    color: var(--pink);
+    font-weight: 500;
+    font-style: normal;
+    font-size: 14px;
+    text-align: left; /* Justering af teksten */
+  }
+
   input,
   textarea,
   button {
@@ -158,7 +169,7 @@ import ButtonArrow from "./ButtonArrow.astro";
     color: var(--light_pink);
     background: none;
     border: none;
-    text-align: left;
+    text-align: right;
     outline: none;
     padding: 0;
     font-family: owners-narrow, sans-serif;
@@ -195,6 +206,7 @@ import ButtonArrow from "./ButtonArrow.astro";
 
   .CVR {
     margin-top: 1rem;
+    margin-bottom: 2rem;
   }
 
   a:hover {
@@ -222,10 +234,15 @@ import ButtonArrow from "./ButtonArrow.astro";
     margin-top: 0.5rem;
   }
 
+  .email_input {
+    align-items: center;
+    margin-top: 6px;
+  }
+
   .line {
     height: 1px;
     background-color: var(--light_pink);
-    width: 300px;
+    width: auto;
   }
 
   .some_info {
@@ -263,9 +280,8 @@ import ButtonArrow from "./ButtonArrow.astro";
   .button_send {
     display: flex;
     flex-direction: row;
+    justify-content: start;
     gap: 10px;
-    align-items: center;
-    justify-content: center;
   }
 
   @media (min-width: 800px) {
@@ -309,20 +325,13 @@ import ButtonArrow from "./ButtonArrow.astro";
       font-size: 18px;
       line-height: 1.7rem;
     }
-
-    input[type="email"] {
-      text-align: right;
-    }
-
-    input[type="submit"] {
-      text-align: right;
-    }
-
     .line {
-      height: 1px;
-      background-color: var(--light_pink);
-      width: 380px;
-      margin-left: auto;
+      margin-top: -0.3rem;
+    }
+
+    input,
+    textarea {
+      font-size: 18px;
     }
   }
 </style>
