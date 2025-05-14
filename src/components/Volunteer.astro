@@ -1,0 +1,99 @@
+---
+import ButtonArrow from "./ButtonArrow.astro";
+---
+
+<section class="text_margin grid_1-1">
+  <div>
+    <h2>UDEN FRIVILLIGE ER <br />DER INGEN BAKKEFEST</h2>
+    <p>
+      Bakkefesten ville ganske enkelt ikke kunne lade sig gøre uden den enorme
+      indsats fra vores mange frivillige og den opbakning, vi møder fra
+      lokalsamfundet. Det er alle jer, der giver en hånd med, uanset om det er
+      før, under eller efter festen, der gør hele forskellen. <br /> En kæmpe tak
+      til jer, der vælger at bruge tid og kræfter på at få det hele til at spille.
+      Jeres engagement og gåpåmod er med til at skabe rammerne for en tryg, sjov
+      og uforglemmelig festival for alle.
+    </p>
+    <div class="flex_row">
+      <a href="#"><h4>Bliv Frivillig</h4></a>
+
+      <ButtonArrow
+        url="https://bakkeselskabet.dk/"
+        background_color="var(--green)"
+        arrow_color="var(--yellow)"
+      />
+    </div>
+  </div>
+  <img src="/assets/volunteers.svg" alt="" />
+</section>
+
+<style>
+  .flex_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .flex_row:hover h4 {
+    color: var(--green);
+  }
+
+  .flex_row:hover {
+    scale: 1.01;
+    transition: 0.2s;
+  }
+
+  section {
+    background-color: var(--light_pink);
+  }
+
+  .grid_1-1 img {
+    height: auto;
+  }
+
+  h2,
+  h4 {
+    color: var(--grey);
+    text-transform: uppercase;
+  }
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: var(--grey);
+  }
+
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .text_margin {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  a {
+    text-decoration: none;
+    transition: 0.2s;
+    color: var(--grey);
+  }
+
+  @media (min-width: 800px) {
+    .grid_1-1 {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .flex_row {
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+  }
+</style>

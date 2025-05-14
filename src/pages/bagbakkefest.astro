@@ -1,0 +1,22 @@
+---
+import HeroSmall from "../components/HeroSmall.astro";
+import Layout from "../layouts/Layout.astro";
+import WhoAreWe from "../components/WhoAreWe.astro";
+import Anniversary from "../components/Anniversary.astro";
+import Volunteer from "../components/Volunteer.astro";
+import Sponsor from "../components/Sponsor.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout fanenavn={"Bag Bakkefest"}>
+  <HeroSmall
+    url="/assets/Hero_image-bagbakkefest.webp"
+    h1="Bag Bakkefest"
+    fontSize="5rem"
+  />
+  <WhoAreWe />
+  <Anniversary />
+  <Volunteer />
+  <Sponsor />
+  <Footer />
+</Layout>
