@@ -22,11 +22,14 @@ const { title, content } = Astro.props;
     margin: 0 auto;
     padding: 1rem;
   }
+  /* - .accordion-wrapper: Centrerer hele komponenten og begrænser bredden til 600px. */
 
   details.accordion {
     border: none;
     padding: 0.2rem 0;
   }
+
+  /* <details class="accordion">: Et standard HTML-element, der selv kan vise og skjule indhold, når man klikker på overskriften – uden brug af JavaScript. Skaber mindre kode = mere bæredygtighed */
 
   summary {
     display: flex;
@@ -39,6 +42,11 @@ const { title, content } = Astro.props;
     padding-bottom: 0.2rem;
     transition: 0.3s ease;
   }
+  /* <summary>: Det klikbare element inde i <details>, som fungerer som kontrolknap. Når brugeren klikker her, toggles (åbnes/lukkes) det underliggende indhold automatisk af browseren. */
+
+  /* - display: flex; justify-content: space-between; bruges til at placere teksten til venstre og plus-ikonet til højre. */
+
+  /* - border-bottom og padding-bottom skaber en visuel adskillelse mellem hvert accordion-element. */
 
   .plus_icon {
     margin-left: 1rem;
@@ -53,6 +61,10 @@ const { title, content } = Astro.props;
     transition: 0.3s ease;
   }
 
+  /* - .plus_icon: Viser "+"-ikon, som roteres 45° ved åbning vha. CSS-selector details[open]. */
+
+  /* - Farver og overgangseffekter styres af CSS-variabler og transition: 0.3s ease for glidende effekter. */
+
   .content {
     padding: 0.5rem 0 0.5rem 0;
     font-size: 0.95rem;
@@ -66,6 +78,7 @@ const { title, content } = Astro.props;
     font-style: normal;
     color: var(--pink);
   }
+  /* <h3>: Overskriften for hvert accordion-panel, lagt i <span> for struktur. */
 
   .content {
     font-size: 18px;
