@@ -1,12 +1,35 @@
+---
+import ProgramCard from "./ProgramCard.astro";
+---
+
 <div class="white_space"></div>
 <section class="text_margin">
   <h2>Programoversigt</h2>
-  <div class="grid_1-1-1">
-    <img src="https://placehold.co/1x1" />
-    <img src="https://placehold.co/1x1" />
-    <img src="https://placehold.co/1x1" />
-  </div>
+  <ProgramCard />
 </section>
+
+<style>
+  /* .grid_1-1-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    margin: 0 auto;
+  }
+
+  .card-hover:hover {
+    scale: 1.05;
+    transition: 0.3s;
+  } */
+
+  /* @media (max-width: 800px) {
+    .grid_1-1-1 {
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+      gap: 0.2rem;
+      margin: 0 auto;
+    }
+  } */
+</style>
 
 <style>
   h2,
@@ -14,15 +37,5 @@
   h4 {
     color: var(--pink);
     text-transform: uppercase;
-  }
-</style>
-
-<style>
-  .grid_1-1-1 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    flex-wrap: wrap;
-    gap: 0.2rem;
-    margin: 0 auto;
   }
 </style>
