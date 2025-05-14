@@ -10,7 +10,6 @@ const { title, content } = Astro.props;
       </span>
       <span class="plus_icon">+</span>
     </summary>
-    <p>{content}</p>
     <div class="content">
       <p>{content}</p>
     </div>
@@ -37,7 +36,7 @@ const { title, content } = Astro.props;
     font-weight: bold;
     font-size: 1rem;
     margin-bottom: 0.2rem;
-    border-bottom: 1px solid var(--pink);
+    border-bottom: 1px solid var(--yellow);
     padding-bottom: 0.2rem;
     transition: 0.3s ease;
   }
@@ -52,7 +51,7 @@ const { title, content } = Astro.props;
     font-weight: bold;
     font-size: 1.2rem;
     transition: 0.3s ease;
-    color: var(--pink);
+    color: var(--yellow);
   }
 
   details[open] .plus_icon {
@@ -66,8 +65,9 @@ const { title, content } = Astro.props;
 
   .content {
     padding: 0.5rem 0 0.5rem 0;
-    font-size: 0.95rem;
-    line-height: 1.4;
+    font-size: 18px;
+    line-height: 1.7rem;
+    color: var(--light_pink);
   }
 
   h3 {
@@ -75,28 +75,11 @@ const { title, content } = Astro.props;
     font-size: 30px;
     font-weight: 700;
     font-style: normal;
-    color: var(--pink);
+    color: var(--yellow);
   }
   /* <h3>: Overskriften for hvert accordion-panel, lagt i <span> for struktur. */
 
-  .content {
-    font-size: 18px;
-    line-height: 1.9rem;
-    color: var(--gray);
-  }
-
   h3:hover {
     transition: 0.3s;
-  }
-
-  @media {
-    (min-width: 600px;) {
-      summary {
-        font-size: 1.1rem;
-      }
-      .content {
-        font-size: 1.05rem;
-      }
-    }
   }
 </style>

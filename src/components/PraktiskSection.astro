@@ -1,75 +1,78 @@
 ---
 //@ts-check
-import Layout from "../layouts/Layout.astro";
 import PraktiskInfoBox from "./PraktiskInfoBox.astro";
 ---
 
-<Layout>
-  <main>
-    <section class="tekst_praktisk">
-      <div>
-        <h1>PRAKTISK INFO</h1>
-        <p>
-          Her finder du den mest nødvendige information om Bakkefesten. Hvis du
-          har yderligere spørgsmål, er du mere end velkommen til at kontakte os
-          på mail eller gennem vores Facebook-side.
-        </p>
-      </div>
-    </section>
-    <div class="accordion-wrapper">
-      <PraktiskInfoBox
-        title="ÅBNINGSTIDER TIL BAKKEFEST"
-        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-      />
-      <PraktiskInfoBox
-        title="ADGANGSBILLET"
-        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-      />
-      <PraktiskInfoBox
-        title="BETALING PÅ PLADSEN"
-        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-      />
-      <PraktiskInfoBox
-        title="ORDENSREGLER UNDER BAKKEFEST"
-        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-      />
-      <PraktiskInfoBox
-        title="KØRSELSVEJLEDNING OG PARKERINGSMULIGHEDER"
-        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-      />
-      <PraktiskInfoBox
-        title="OFFENTLIG TRANSPORTMULIGHEDER"
-        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-      />
-      <PraktiskInfoBox
-        title="DIN TRYGHED"
-        content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
-      />
+<div style="height: 150px;"></div>
+
+<!-- Skaber mellemrum mellem indholdet og toppen af siden -->
+
+<main>
+  <section class="text_margin">
+    <div class="tekst_praktisk">
+      <h1>PRAKTISK INFO</h1>
+      <p>
+        Her finder du den mest nødvendige information om Bakkefesten. Hvis du
+        har yderligere spørgsmål, er du mere end velkommen til at kontakte os på
+        mail eller gennem vores Facebook-side.
+      </p>
     </div>
-  </main>
-</Layout>
+  </section>
+  <div class="accordion-wrapper text_margin">
+    <PraktiskInfoBox
+      title="ÅBNINGSTIDER TIL BAKKEFEST"
+      content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+    />
+    <PraktiskInfoBox
+      title="ADGANGSBILLET"
+      content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+    />
+    <PraktiskInfoBox
+      title="BETALING PÅ PLADSEN"
+      content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+    />
+    <PraktiskInfoBox
+      title="ORDENSREGLER UNDER BAKKEFEST"
+      content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+    />
+    <PraktiskInfoBox
+      title="KØRSELSVEJLEDNING OG PARKERINGSMULIGHEDER"
+      content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+    />
+    <PraktiskInfoBox
+      title="OFFENTLIG TRANSPORTMULIGHEDER"
+      content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+    />
+    <PraktiskInfoBox
+      title="DIN TRYGHED"
+      content="lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates, quisquam, voluptatibus, cumque, quibusdam, voluptates"
+    />
+  </div>
+</main>
+<div style="height: 150px;"></div>
+<!-- 
+Skaber mellemrum mellem indholdet og bunden af siden -->
 
 <style>
-  .tekst_praktisk {
-    padding: 2rem 1rem;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-  }
-
   .accordion-wrapper {
-    max-width: 600px;
-    margin: 0 auto;
     text-align: left;
   }
 
-  .tekst_praktisk h1 {
+  h1 {
     font-size: 40px;
+    color: var(--pink);
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.8rem;
     color: var(--pink);
   }
 
-  .tekst_praktisk p {
-    font-size: 18px;
-    line-height: 1.7rem;
+  @media (min-width: 600px) {
+    .tekst_praktisk {
+      max-width: 700px;
+      margin-bottom: 3rem;
+    }
   }
 </style>
