@@ -1,6 +1,7 @@
 ---
 import "../styles/general.css";
 import AOSInit from "../javascript/AOSInit.jsx";
+import VolunteerClick from "../components/VolunteerClick.astro";
 const { fanenavn } = Astro.props;
 // Har lavet fanenavnet(title) til en prop, så vi kan navngive fanerne forskeligt
 ---
@@ -16,6 +17,7 @@ const { fanenavn } = Astro.props;
     <title>{fanenavn}</title>
   </head>
   <body>
+    <VolunteerClick />
     <slot />
     <AOSInit client:load />
   </body>
