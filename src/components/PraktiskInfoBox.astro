@@ -1,5 +1,5 @@
 ---
-const { title, content } = Astro.props;
+const { title, content, li } = Astro.props;
 ---
 
 <div class="accordion-wrapper">
@@ -10,7 +10,6 @@ const { title, content } = Astro.props;
       </span>
       <span class="plus_icon">+</span>
     </summary>
-    <p>{content}</p>
     <div class="content">
       <p>{content}</p>
     </div>
@@ -64,12 +63,6 @@ const { title, content } = Astro.props;
 
   /* - Farver og overgangseffekter styres af CSS-variabler og transition: 0.3s ease for glidende effekter. */
 
-  .content {
-    padding: 0.5rem 0 0.5rem 0;
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
-
   h3 {
     font-family: owners-narrow, sans-serif;
     font-size: 30px;
@@ -81,7 +74,7 @@ const { title, content } = Astro.props;
 
   .content {
     font-size: 18px;
-    line-height: 1.9rem;
+    line-height: 1.7rem;
     color: var(--gray);
   }
 
