@@ -5,6 +5,7 @@
 <div class="card-container">
   <img src="https://placehold.co/400x400" alt="MAS" />
   <div class="hover-box">
+    <!-- hover-inner er elementet der flipper åben når man hover -->
     <div class="hover-inner">
       <img src="/assets/card-hover.svg" alt="" class="hover-svg" />
       <h2 class="hover-text">MAS<br />KL. 18.00</h2>
@@ -15,7 +16,9 @@
 <style>
   .card-container {
     position: relative;
+    /* inline-block så containeren kun er ligeså stor som indholdet indeni */
     display: inline-block;
+    /* giver en 3d effekt */
     perspective: 1000px;
   }
 
@@ -28,42 +31,43 @@
   .hover-box {
     position: absolute;
     inset: 0;
-
-    transition: transform 0.6s ease;
-    pointer-events: none;
   }
 
-  .card-container:hover .hover-box {
-    transform: rotateX(0deg);
-    backface-visibility: hidden;
-    pointer-events: auto;
-  }
-
+  /* Dette element er “låget” der starter lukket */
   .hover-inner {
     position: relative;
-    width: 100%;
-    height: 100%;
+    margin: 40px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 30px;
     box-sizing: border-box;
-    transform: rotateX(-90deg);
+    transform: rotateY(-90deg);
+    /* åbner fra midten, som en dør der ses fra siden */
+    transform-origin: center;
+    transition: transform 0.5s ease;
+    /* "baggrunden" skjules når elementet er flippet */
+    backface-visibility: hidden;
+  }
+
+  .card-container:hover .hover-inner {
+    /* flipper åben fra midten */
+    transform: rotateY(0deg);
+    pointer-events: auto;
   }
 
   .hover-svg {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
     z-index: 1;
     pointer-events: none;
   }
 
   .hover-text {
     position: relative;
+    /* sætter teksten forrest */
     z-index: 2;
-    text-align: start;
   }
 </style>
