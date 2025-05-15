@@ -73,12 +73,12 @@ import ButtonArrow from "./ButtonArrow.astro";
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="E-mail"
+                  placeholder="E-MAIL"
                   required
                 />
               </div>
               <div class="button_send">
-                <input type="submit" value="Send" class="button" />
+                <input type="submit" value="SEND" class="button" />
                 <ButtonArrow
                   url="/send-message"
                   background_color="var(--yellow)"
@@ -95,10 +95,10 @@ import ButtonArrow from "./ButtonArrow.astro";
   <div class="some_info">
     <h4>Følg os på sociale medier!</h4>
     <div class="img_some">
-      <a href="#" target="_blank">
+      <a href="https://www.instagram.com/bakkefest" target="_blank">
         <img src="/assets/Instagram.svg" alt="Instagram" />
       </a>
-      <a href="#" target="_blank">
+      <a href="https://www.facebook.com/Bakkefesten/" target="_blank">
         <img src="/assets/Facebook.svg" alt="Facebook" />
       </a>
     </div>
@@ -110,7 +110,6 @@ import ButtonArrow from "./ButtonArrow.astro";
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    max-width: 80%;
   }
 
   input::placeholder,
@@ -204,6 +203,11 @@ import ButtonArrow from "./ButtonArrow.astro";
     color: var(--light_pink);
   }
 
+  h2,
+  h4 {
+    text-transform: uppercase;
+  }
+
   .CVR {
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -220,6 +224,8 @@ import ButtonArrow from "./ButtonArrow.astro";
 
   footer {
     background-color: var(--green);
+    padding-top: 1rem;
+    padding-bottom: 2rem;
   }
 
   .grid_1-1 {
