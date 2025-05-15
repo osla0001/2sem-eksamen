@@ -13,9 +13,7 @@
   <ul class="menu" id="menu">
     <li class="space-around">
       <a
-
         href='https://www.ticketmaster.dk/artist/bakkefest-billetter/972610?language=da-dk/"'
-
         target="_blank">KØB BILLET</a
       >
     </li>
@@ -43,36 +41,67 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // opretter constanter, i elementerne burger og menu som findes i html
+    // Opretter constanter for elementerne burger og menu som findes i HTML
     const burger = document.getElementById("burger");
     const menu = document.getElementById("menu");
-    console.log(burger, menu);
 
     burger.addEventListener("click", () => {
-      // aktiverer animation, som gør de tre streger bliver til et kryds
+      // Aktiverer animation, som gør de tre streger bliver til et kryds
       burger.classList.toggle("active");
 
-      // viser/skjuler menuen via CSS
+      // Viser/skjuler menuen via CSS
       menu.classList.toggle("active");
 
-      // tilføjer class=no-scroll som gør det ikke er muligt at scrolle når menuen er åben
+      // Tilføjer class=no-scroll som gør det ikke er muligt at scrolle når menuen er åben
       document.body.classList.toggle("no-scroll");
     });
 
     // Luk menu når man klikker på et link
-    // denne funktion kører, hver gang der klikkes på noget inde i menuen (e står for event)
+    // Denne funktion kører, hver gang der klikkes på noget inde i menuen (e står for event)
     menu.addEventListener("click", (e) => {
       // e.target er det element der blev klikket på og tagName er typen af element
       if (e.target.tagName === "A") {
-        // krydset forsvinder
+        // Krydset forsvinder
         burger.classList.remove("active");
 
-        // skjuler menuen
+        // Skjuler menuen
         menu.classList.remove("active");
 
-        // gør det muligt at scrolle menuen igen
+        // Gør det muligt at scrolle igen
         document.body.classList.remove("no-scroll");
       }
+    });
+
+    // Tilføjer scriptet til at ændre filter på burgerens linjer baseret på scrollposition
+    document.addEventListener("scroll", () => {
+      const lines = document.querySelectorAll(".burger .line");
+
+      // Find elementer ved specifikke koordinater (100px fra venstre og 60px fra toppen)
+      const elements = document.elementsFromPoint(100, 60);
+
+      // Tjek om nogen af elementerne har baggrundsfarven #E71A73 (var(--pink))
+      const isOverPink = Array.from(elements).some((el) => {
+        const styles = window.getComputedStyle(el);
+        const bgColor = styles.backgroundColor;
+        const bgImage = styles.backgroundImage;
+
+        // Ignorer elementer med baggrundsbilleder
+        if (bgImage !== "none") {
+          return false;
+        }
+
+        return bgColor === "rgb(231, 26, 115)"; // RGB for #E71A73
+      });
+
+      // Tilføj eller fjern filter baseret på scrollposition
+      lines.forEach((line) => {
+        if (isOverPink) {
+          line.style.filter =
+            "brightness(0) saturate(100%) invert(89%) sepia(56%) saturate(483%) hue-rotate(191deg) brightness(107%) contrast(103%)";
+        } else {
+          line.style.filter = ""; // Fjern filteret
+        }
+      });
     });
   });
 </script>
@@ -99,7 +128,6 @@
     width: 100%;
     background-color: var(--pink);
     margin: 4.3px 5px;
-    transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
