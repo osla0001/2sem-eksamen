@@ -88,9 +88,10 @@ import ButtonArrow from "./ButtonArrow.astro";
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    width: 100%;
+    width: fit-content;
     place-content: end;
     margin-top: 25px;
+    margin-inline-start: auto;
   }
 
   a {
@@ -98,9 +99,10 @@ import ButtonArrow from "./ButtonArrow.astro";
     transition: 0.3s;
   }
 
-  a:hover {
-    scale: 1.02;
-    transition: 0.3s;
+  .flex_row:hover {
+    scale: 1.01;
+    color: var(--pink);
+    transition: 0.2s;
   }
 
   @media (max-width: 600px) {

@@ -13,12 +13,16 @@ import ButtonArrow from "./ButtonArrow.astro";
       volutpat. Nulla facilisi.
     </p>
     <div class="flex_row">
-      <h4>Gå til playliste</h4>
-      <ButtonArrow
-        url=""
-        background_color="var(--yellow)"
-        arrow_color="var(--pink)"
-      />
+      <a
+        href="https://open.spotify.com/embed/playlist/6eYWPTB8yTQ5zJBM7VDLGd?utm_source=generator"
+      >
+        <h4>Gå til playliste</h4>
+        <ButtonArrow
+          url=""
+          background_color="var(--yellow)"
+          arrow_color="var(--pink)"
+        />
+      </a>
     </div>
   </div>
   <iframe
@@ -67,7 +71,7 @@ import ButtonArrow from "./ButtonArrow.astro";
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    width: 100%;
+    width: fit-content;
     margin-top: 25px;
   }
 
@@ -87,9 +91,13 @@ import ButtonArrow from "./ButtonArrow.astro";
     transition: 0.3s;
   }
 
-  a:hover {
-    scale: 1.02;
-    transition: 0.3s;
+  .flex_row h4:hover {
+    color: var(--yellow);
+  }
+  .flex_row:hover {
+    color: var(--yellow);
+    scale: 1.01;
+    transition: 0.2s;
   }
 
   @media (max-width: 800px) {
