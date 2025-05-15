@@ -1,6 +1,9 @@
 ---
 //@ts-ignore
 const { event } = Astro.props;
+
+// formaterer time_start til at fjerne sekunder og erstatte ":" med ".". Slice tager kun de første 5 tegn af nummeret (hh:mm:ss) og fjerner resten.
+const formattedTime = event.time_start.slice(0, 5).replace(":", ".");
 ---
 
 <div class="card-container">
@@ -9,7 +12,7 @@ const { event } = Astro.props;
     <!-- hover-inner er elementet der flipper åben når man hover -->
     <div class="hover-inner">
       <img src="/assets/card-hover.svg" alt="" class="hover-svg" />
-      <h2 class="hover-text">MAS<br />KL. 18.00</h2>
+      <h2 class="hover-text">{event.name}<br />KL. {formattedTime}</h2>
     </div>
   </div>
 </div>

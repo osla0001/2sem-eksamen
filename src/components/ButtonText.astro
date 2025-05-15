@@ -2,7 +2,7 @@
 const { url, text, text_color, background_color } = Astro.props;
 ---
 
-<a href={url} class="pulse">
+<a href={url} target="_blank" class="pulse">
   <button style=`background-color: ${background_color};`>
     <h5 style=`color: ${text_color};`>{text}</h5>
   </button>
