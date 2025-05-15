@@ -11,17 +11,20 @@
     <h2>OPLEV DEN PINK PULS <br /> TIL BAKKEFEST 2025</h2>
   </div>
   <div class="pink-pulse-img">
-    <img src="/assets/placeholder-2-1.webp" alt="Pink Pulse" />
+    <video autoplay muted loop playsinline width="400">
+      <source src="/assets/pinkpulse_video.webm" type="video/webm" />
+      Din browser understøtter ikke video-tagget.
+    </video>
   </div>
   <div class="pink-pulse-text">
     <p>
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum."
+      Kom og mærk den pulserende energi, når Pink Puls fylder luften til dette
+      års Bakkefest. Det bliver tre dage fyldt med fællesskab, fest og sitrende
+      sommerstemning, hvor du kan skabe uforglemmelige øjeblikke med dine venner
+      og familie. <br /><br />Lad den pinke puls føre dig gennem energiske
+      koncerter, lækre madoplevelser og sjove aktiviteter for både store og små.
+      Det bliver en fest, du ikke vil gå glip af, så glæd dig til at mærke den
+      Pink Puls og lad dig blive rystet igennem til rytmerne af Bakkefest. "
     </p>
   </div>
 </section>
@@ -57,7 +60,27 @@
   .pink-pulse-img {
     padding: 10px 0px;
   }
-  @media (min-width: 600px) {
+
+  .pulse_video {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    border-color: blue;
+    border-width: 5px;
+  }
+
+  .pink_pulse_box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 20px;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 50px;
+  }
+
+  @media (min-width: 800px) {
     .pink_pulse_box {
       display: grid;
       grid-template-columns: 1fr 1fr;
