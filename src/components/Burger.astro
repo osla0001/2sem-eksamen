@@ -13,7 +13,9 @@
   <ul class="menu" id="menu">
     <li class="space-around">
       <a
+
         href='https://www.ticketmaster.dk/artist/bakkefest-billetter/972610?language=da-dk/"'
+
         target="_blank">KØB BILLET</a
       >
     </li>
@@ -26,6 +28,16 @@
     </li>
     <li><a href="/bagbakkefest">HVEM ER VI?</a></li>
     <li class="space-around"><a href="/frivillig">BLIV FRIVILLIG</a></li>
+
+    <li><h3>FØLG OS PÅ <br /> SOCIALE MEDIER!</h3></li>
+    <li class="img_some">
+      <a href="https://www.instagram.com/bakkefest" target="_blank">
+        <img src="/assets/Instagram.svg" alt="Instagram" />
+      </a>
+      <a href="https://www.facebook.com/Bakkefesten/" target="_blank">
+        <img src="/assets/Facebook.svg" alt="Facebook" />
+      </a>
+    </li>
   </ul>
 </nav>
 
@@ -73,9 +85,10 @@
 
   /* styling af burger menuen */
   .burger {
+    margin-top: 0.7rem;
     display: block;
     width: 30px;
-    height: 24px;
+    height: 30px;
     position: relative;
     z-index: 101;
     cursor: pointer;
@@ -85,23 +98,25 @@
     height: 3px;
     width: 100%;
     background-color: var(--pink);
-    margin: 5px 0;
+    margin: 4.3px 5px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   /* linjerne i burger bliver til et kryds når burgeren er aktiv */
   .burger.active .line:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-
+    transition: 0.2s linear;
     /* krydset bliver gult når burgeren er aktiv */
     background-color: var(--yellow);
   }
   .burger.active .line:nth-child(2) {
     opacity: 0;
+    transition: 0.15s linear;
   }
   .burger.active .line:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-
+    transition: 0.2s linear;
     /* krydset bliver gult når burgeren er aktiv */
     background-color: var(--yellow);
   }
@@ -113,6 +128,27 @@
     height: 100%;
   }
 
+  .img_some {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0;
+    gap: 10px;
+  }
+  .img_some img {
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+  }
+
+  img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+
+  h3 {
+    color: var(--yellow);
+    text-align: end;
+  }
   .menu {
     position: fixed;
     top: 0;
@@ -164,7 +200,7 @@
 
   @media (min-width: 600px) {
     .menu a {
-      font-size: 35px;
+      font-size: 32px;
     }
 
     .space-around {
