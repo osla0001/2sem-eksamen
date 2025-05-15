@@ -22,6 +22,22 @@ import Burger from "./Burger.astro";
 </header>
 
 <style>
+  .pulse {
+    animation-name: pulse_kf;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes pulse_kf {
+    from {
+      scale: 1;
+    }
+    to {
+      scale: 0.9;
+    }
+  }
   header {
     display: flex;
     position: fixed;
