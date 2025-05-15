@@ -5,9 +5,9 @@ import Header from "./Header.astro";
 <Header />
 <section class="hero">
   <div class="grid_1-1-1">
-    <img src="/assets/Clamp.svg" alt="" class="clamp1" />
+    <img src="/assets/clamp.svg" alt="" class="clamp1" />
     <div class="middle">
-      <img src="/assets/BakkefestWordMark.svg" alt="" class="wordmark" />
+      <img src="/assets/bakkefestwordmark.svg" alt="" class="wordmark" />
       <!-- countdown sættes ind her og får id'en timer, som vi så kan hive fat i i javascript -->
       <div class="timer-button" id="timer"></div>
 
@@ -19,7 +19,7 @@ import Header from "./Header.astro";
         </div>
       </a>
     </div>
-    <img src="/assets/Clamp.svg" alt="" class="clamp2" />
+    <img src="/assets/clamp.svg" alt="" class="clamp2" />
   </div>
 
   <script>
@@ -46,7 +46,7 @@ import Header from "./Header.astro";
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       // Opdaterer HTML-elementet med nedtælling
-      timer.innerHTML = `${pad(days)}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s`;
+      timer.innerHTML = `${pad(days)}d ${pad(hours)}t ${pad(minutes)}m ${pad(seconds)}s`;
 
       // Hvis tiden er udløbet, vis fast tekst
       if (distance < 0) {
@@ -75,9 +75,10 @@ import Header from "./Header.astro";
       overflow: hidden;
       /* padding og border tælles med i elementets samlede bredde/højde */
       box-sizing: border-box;
+      border-radius: 3px;
     }
     .hero {
-      background-image: url("/assets/HeroImage.webp");
+      background-image: url("/assets/heroimage.webp");
       background-size: cover;
       height: 100vh;
       width: 100%;
