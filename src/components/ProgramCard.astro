@@ -13,6 +13,7 @@ const formattedTime = event.time_start.slice(0, 5).replace(":", ".");
     <div class="hover-inner">
       <img src="/assets/card-hover.svg" alt="" class="hover-svg" />
       <h2 class="hover-text">{event.name}<br />KL. {formattedTime}</h2>
+      <h2 class="hover-text">{event.day}</h2>
     </div>
   </div>
 </div>
@@ -35,6 +36,10 @@ const formattedTime = event.time_start.slice(0, 5).replace(":", ".");
   .hover-box {
     position: absolute;
     inset: 0;
+  }
+
+  h2 {
+    text-transform: uppercase;
   }
 
   /* Dette element er “låget” der starter lukket */
@@ -67,6 +72,7 @@ const formattedTime = event.time_start.slice(0, 5).replace(":", ".");
     left: 0;
     z-index: 1;
     pointer-events: none;
+    transform: translateY(10px);
   }
 
   .hover-text {
