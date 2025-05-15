@@ -6,9 +6,9 @@ import Burger from "./Burger.astro";
 <header>
   <div>
     <a href="/">
-      <img src="/assets/BakkefestLogo.svg" alt="Logo" class="logo" /></a
+      <img src="/assets/bakkefestlogo.svg" alt="Logo" class="logo" /></a
     >
-    <h5>11. - 13. juli</h5>
+    <h5>11. - 13. juli // Gilleleje</h5>
   </div>
   <div>
     <ButtonText
@@ -77,6 +77,10 @@ import Burger from "./Burger.astro";
     display: flex;
     gap: 10px;
     align-items: center;
+  }
+
+  img {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
   }
 
   @media (max-width: 1000px) {

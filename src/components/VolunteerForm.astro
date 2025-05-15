@@ -1,0 +1,218 @@
+<div style="height: 150px;"></div>
+<section class="text_margin" style="margin-bottom: 15px;">
+  <h1>Bliv frivillig</h1>
+  <p>
+    <b>Uden frivillige, ingen bakkefest</b>
+    <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+    ultricies tellus vitae dictum convallis. Vestibulum pretium sodales
+    volutpat. Nulla facilisi.
+  </p>
+</section>
+<section class="text_margin">
+  <form action="/be-volunteer" method="POST" class="grid_1-1">
+    <div class="form_flex">
+      <label for="name" class="visually-hidden">Fulde navn</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Fulde navn"
+        required
+      />
+      <label for="email" class="visually-hidden">E-mail</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="E-mail"
+        required
+      />
+      <label for="phone" class="visually-hidden">Telefon nr.</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="Telefonnummer"
+        required
+      />
+      <p class="accept">
+        Jeg giver hermed tilladelse til at Bakkefesten må gemme mine data i op
+        til 10 år. (Du kan altid få din data slettet ved at henvende dig til os
+        på mail til info@bakkefest.dk)<span class="red">*</span>
+      </p>
+      <label for="accept" style="margin-top: 1rem;">
+        <input type="checkbox" id="accept" name="accept" required />
+        Accepter ovenstående
+      </label>
+    </div>
+    <div class="form_flex">
+      <label for="arbejde"></label>
+      <select id="arbejde" name="arbejde" required>
+        <option value="" disabled selected>Jeg vil kunne arbejde...</option>
+        <option value="før-festen">Før bakkefesten</option>
+        <option value="under-festen">Under hele bakkefesten</option>
+        <option value="efter-festen">Om fredagen</option>
+        <option value="efter-festen">Om lørdagen</option>
+        <option value="efter-festen">Om søndagen</option>
+        <option value="hele-weekenden">Efter bakkefesten</option>
+      </select>
+
+      <label for="gruppe"></label>
+      <select id="gruppe" name="gruppe" required>
+        <option value="" disabled selected>Jeg ønsker at blive del af...</option
+        >
+        <option value="service">Service crew</option>
+        <option value="indgang">Indgangs crew</option>
+        <option value="vagt">Vagt crew</option>
+        <option value="indgang">Plads crew</option>
+        <option value="scene">Scene crew</option>
+        <option value="bar">Bar crew</option>
+      </select>
+
+      <label for="tshirt"></label>
+      <select id="tshirt" name="tshirt" required>
+        <option value="" disabled selected>Min T-shirt størrelse er...</option>
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+        <option value="xl">XL</option>
+        <option value="xxl">XXL</option>
+        <option value="xxl">XXXL</option>
+      </select>
+      <button type="submit">Bliv Frivillig</button>
+    </div>
+  </form>
+</section>
+<div style="height: 150px;"></div>
+
+<style>
+  section {
+    background-color: var(--light_pink);
+  }
+
+  .visually-hidden {
+    position: absolute;
+    left: -9999px;
+  }
+
+  h3,
+  h4,
+  a {
+    color: var(--grey);
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+    color: var(--pink);
+    text-transform: uppercase;
+  }
+
+  p {
+    color: var(--grey);
+  }
+
+  .grid_1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .form_flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .accept {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .red {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--pink);
+  }
+
+  form {
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2rem;
+    width: 100%;
+  }
+
+  /* Inputfelter og dropdowns */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    background-color: var(--light_pink);
+    color: var(--pink);
+    border: 1px solid var(--pink);
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  select {
+    padding: 7.05px;
+  }
+
+  /* Checkbox-label */
+  label[for="accept"] {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: var(--pink);
+    font-size: 18px;
+  }
+
+  /* Generel label styling hvis du bruger synlige labels */
+  label {
+    color: var(--pink);
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  /* Submit-knap */
+  button[type="submit"] {
+    padding: 12px 20px;
+    background-color: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: 0.3s;
+  }
+
+  button[type="submit"]:hover {
+    background-color: var(--dark_pink);
+  }
+
+  /* Skjul skjulte labels for screenreaders (hvis brugt) */
+  .visually-hidden {
+    position: absolute;
+    left: -9999px;
+  }
+
+  @media (max-width: 800px) {
+    .grid_1-1 {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>

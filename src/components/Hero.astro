@@ -1,19 +1,16 @@
 ---
 import Header from "./Header.astro";
-import ButtonText from "./ButtonText.astro";
 ---
 
 <Header />
 <section class="hero">
   <div class="grid_1-1-1">
-    <img src="/assets/Clamp.svg" alt="" class="clamp1" />
+    <img src="/assets/clamp.svg" alt="" class="clamp1" />
     <div class="middle">
-      <img src="/assets/BakkefestWordMark.svg" alt="" class="wordmark" />
-      <ButtonText
-        text="Nedtælling"
-        text_color="var(--yellow)"
-        background_color="var(--pink)"
-      />
+      <img src="/assets/bakkefestwordmark.svg" alt="" class="wordmark" />
+      <!-- countdown sættes ind her og får id'en timer, som vi så kan hive fat i i javascript -->
+      <div class="timer-button" id="timer"></div>
+
       <a href="#pink-pulse" class="scroll-down">
         <div class="container">
           <div class="chevron"></div>
@@ -22,12 +19,66 @@ import ButtonText from "./ButtonText.astro";
         </div>
       </a>
     </div>
-    <img src="/assets/Clamp.svg" alt="" class="clamp2" />
+    <img src="/assets/clamp.svg" alt="" class="clamp2" />
   </div>
 
+  <script>
+    // jeg opretter en konstant som henter timer elementet fra html'en
+    const timer = document.getElementById("timer");
+
+    // jeg opretter en const der sørger for at tallene i nedtællingen altid er to cifre, så teksten har en stabil bredde. (2 bliver til 02)
+    const pad = (n) => String(n).padStart(2, "0");
+
+    // datoen for festivalen vælges her
+    const countdownDate = new Date("Jul 11, 2025 16:00:00").getTime();
+
+    // opretter interval som kører hvert sekund
+    const countdownInterval = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      // Beregner dage, timer, minutter og sekunder i millisekunder
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Opdaterer HTML-elementet med nedtælling
+      timer.innerHTML = `${pad(days)}d ${pad(hours)}t ${pad(minutes)}m ${pad(seconds)}s`;
+
+      // Hvis tiden er udløbet, vis fast tekst
+      if (distance < 0) {
+        clearInterval(countdownInterval);
+        timer.innerHTML = "00d 00t 00m 00s";
+      }
+    }, 1000);
+  </script>
+
   <style>
+    .timer-button {
+      /* monospace for at sørge for at talle har samme bredde og ikke hopper når de skifter */
+      font-family: monospace, sans-serif;
+      font-variant-numeric: tabular-nums;
+      font-weight: 500;
+      font-size: 17px;
+      color: var(--yellow);
+      background-color: var(--pink);
+      letter-spacing: 2px;
+      width: 350px;
+      padding: 8px;
+      text-align: center;
+      /* teksten skal blive på samme linje og bryder ikke */
+      white-space: nowrap;
+      /* hvis teksten skulle blive længere end boksen, skjules det overskydende tekst */
+      overflow: hidden;
+      /* padding og border tælles med i elementets samlede bredde/højde */
+      box-sizing: border-box;
+      border-radius: 3px;
+    }
     .hero {
-      background-image: url("/assets/HeroImage.webp");
+      background-image: url("/assets/heroimage.webp");
       background-size: cover;
       height: 100vh;
       width: 100%;
@@ -148,6 +199,12 @@ import ButtonText from "./ButtonText.astro";
       .clamp1,
       .clamp2 {
         height: 20rem;
+      }
+
+      .timer-button {
+        margin-top: 10px;
+        font-size: 28px;
+        padding: 10px;
       }
     }
   </style>
