@@ -2,7 +2,7 @@
 import "../styles/general.css";
 import AOSInit from "../javascript/AOSInit.jsx";
 import VolunteerClick from "../components/VolunteerClick.astro";
-const { fanenavn } = Astro.props;
+const { fanenavn, meta } = Astro.props;
 // Har lavet fanenavnet(title) til en prop, så vi kan navngive fanerne forskeligt
 ---
 
@@ -12,6 +12,7 @@ const { fanenavn } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={meta} />
     <!-- Webfonts -->
     <link rel="stylesheet" href="https://use.typekit.net/gez7rds.css" />
     <title>{fanenavn}</title>

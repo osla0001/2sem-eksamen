@@ -6,9 +6,13 @@ const { url, text, text_color, background_color } = Astro.props;
 <Header />
 <section class="hero">
   <div class="grid_1-1-1">
-    <img src="/assets/clamp.svg" alt="" class="clamp1" />
+    <img src="/assets/clamp.svg" alt="Klamme illustration" class="clamp1" />
     <div class="middle">
-      <img src="/assets/bakkefestwordmark.svg" alt="" class="wordmark" />
+      <img
+        src="/assets/bakkefestwordmark.svg"
+        alt="Bakkefest wordmark"
+        class="wordmark"
+      />
 
       <!-- countdown sættes ind her og får id'en timer, som vi så kan hive fat i i javascript -->
       <div class="timer-button" id="timer"></div>
@@ -22,7 +26,7 @@ const { url, text, text_color, background_color } = Astro.props;
       </a>
     </div>
 
-    <img src="/assets/clamp.svg" alt="" class="clamp2" />
+    <img src="/assets/clamp.svg" alt="Klamme illustration" class="clamp2" />
   </div>
 
   <script>
