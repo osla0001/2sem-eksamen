@@ -72,34 +72,28 @@
       }
     });
 
-    // Tilføjer scriptet til at ændre filter på burgerens linjer baseret på scrollposition
+    // Til denne ændrene farve med filter sektion, kig i Header.astro for en forklaring på hvorfan det virker
     document.addEventListener("scroll", () => {
-      const lines = document.querySelectorAll(".burger .line");
+      const lines = document.querySelectorAll(".line");
 
-      // Find elementer ved specifikke koordinater (100px fra venstre og 60px fra toppen)
       const elements = document.elementsFromPoint(100, 60);
 
-      // Tjek om nogen af elementerne har baggrundsfarven #E71A73 (var(--pink))
       const isOverPink = Array.from(elements).some((el) => {
         const styles = window.getComputedStyle(el);
         const bgColor = styles.backgroundColor;
         const bgImage = styles.backgroundImage;
 
-        // Ignorer elementer med baggrundsbilleder
-        if (bgImage !== "none") {
-          return false;
-        }
-
-        return bgColor === "rgb(231, 26, 115)"; // RGB for #E71A73
+        return bgColor === "rgb(231, 26, 115)";
       });
 
-      // Tilføj eller fjern filter baseret på scrollposition
+      // her tilføjes et filter til linjerne i burger menuen enkelvis, når den kører over det ønskede punkt, og hvis det ikke er over det ønskede punkt, fjernes filteret
+      // forEach bruges for at sikre, at alle linjer får filteret, men uden at påvirke andet indhold, da man kun kan sætte style.filter direkte på ét element ad gangen.
       lines.forEach((line) => {
         if (isOverPink) {
           line.style.filter =
             "brightness(0) saturate(100%) invert(89%) sepia(56%) saturate(483%) hue-rotate(191deg) brightness(107%) contrast(103%)";
         } else {
-          line.style.filter = ""; // Fjern filteret
+          line.style.filter = "";
         }
       });
     });
@@ -135,8 +129,8 @@
   .burger.active .line:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
     transition: 0.2s linear;
-    /* krydset bliver gult når burgeren er aktiv */
-    background-color: var(--yellow);
+    /* krydset bliver lyserød når burgeren er aktiv, for at skælne mellem burgermenuens elementer */
+    background-color: var(--light_pink);
   }
   .burger.active .line:nth-child(2) {
     opacity: 0;

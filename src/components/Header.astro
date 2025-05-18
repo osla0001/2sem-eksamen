@@ -23,35 +23,32 @@ import Burger from "./Burger.astro";
 </header>
 
 <script>
+  // denne funktion kører når DOM'en er klar og lytter efter når der bliver scrollet og hiver fat i classen filter
   document.addEventListener("scroll", () => {
     const header = document.querySelector(".filter");
 
-    // Find elementer ved specifikke koordinater (20px fra toppen og 20px fra venstre)
+    // her finder vi et punkt på skærmen, som vi vil tjekke
+    // om der er et element med baggrundsfarven #E71A73, for at kunne ændre headerens farve når den kører over punketet
     const elements = document.elementsFromPoint(
       100, // 100px fra venstre
-      60, // 35px fra toppen
+      60, // 60px fra toppen
     );
 
-    // Tjek om nogen af elementerne har baggrundsfarven #E71A73 (var(--pink))
+    // tjekker om nogen af elementerne har baggrundsfarven #E71A73 (var(--pink)), i sidens styles baggrundsfarver og baggrundsbilleder
     const isOverPink = Array.from(elements).some((el) => {
       const styles = window.getComputedStyle(el);
       const bgColor = styles.backgroundColor;
       const bgImage = styles.backgroundImage;
 
-      // Ignorer elementer med baggrundsbilleder
-      if (bgImage !== "none") {
-        return false;
-      }
-
       return bgColor === "rgb(231, 26, 115)"; // RGB for #E71A73
     });
 
-    // Tilføj eller fjern filter baseret på scrollposition
+    // her tilføjes et filter til fliter classen, når den kører over det ønskede punkt, og hvis det ikke er over det ønskede punkt, fjernes filteret
     if (isOverPink) {
       header.style.filter =
         "brightness(0) saturate(100%) invert(89%) sepia(56%) saturate(483%) hue-rotate(191deg) brightness(107%) contrast(103%)";
     } else {
-      header.style.filter = ""; // Fjern filteret
+      header.style.filter = ""; // fjerner filteret
     }
   });
 </script>
