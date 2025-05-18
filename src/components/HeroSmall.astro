@@ -4,25 +4,44 @@ import Header from "./Header.astro";
 ---
 
 <Header />
-<section class="grid_1-1-1" style=`background-image: url(${url});`>
-  <div class="filler"></div>
-  <img src="/assets/clamp.svg" alt="" class="clamp1" />
-  <h1 style={`font-size: ${fontSize};`}>{h1}</h1>
-  <img src="/assets/clamp.svg" alt="" class="clamp2" />
+<section class="grid_1-1-1">
+  <!-- Baggrundsvideo -->
+  <video autoplay muted loop playsinline class="background-video">
+    <source src={url} type="video/mp4" />
+  </video>
 
-  <img src="/assets/bakke-down_small.svg" alt="" class="hill" />
+  <div class="filler"></div>
+  <img src="/assets/clamp.svg" alt="Klamme illustration" class="clamp1" />
+  <h1 style={`font-size: ${fontSize};`}>{h1}</h1>
+  <img src="/assets/clamp.svg" alt="Klamme illustration" class="clamp2" />
+
+  <img
+    src="/assets/bakke-down_small.svg"
+    alt="Illustration af bakke, brugt til at skille sektionerne ad"
+    class="hill"
+  />
 </section>
 <div style="height: 2rem;"></div>
 
 <style>
-  .herosmall {
-    height: 500px;
+  .grid_1-1-1 {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 5fr max-content;
     width: 100%;
+    padding: 0 1rem;
+    overflow: hidden;
+  }
+
+  .background-video {
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
-    aspect-ratio: 1/1;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Sørger for, at videoen dækker hele sektionen */
+    z-index: -1; /* Placerer videoen bag indholdet */
   }
 
   h1 {
@@ -31,16 +50,6 @@ import Header from "./Header.astro";
     place-self: center;
     text-align: center;
     margin: 0 auto;
-  }
-
-  .grid_1-1-1 {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 5fr max-content;
-    width: 100%;
-    padding: 0 1rem;
-    background-size: cover;
-    background-position: center center;
   }
 
   .clamp1,

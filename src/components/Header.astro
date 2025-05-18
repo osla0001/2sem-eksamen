@@ -4,10 +4,10 @@ import Burger from "./Burger.astro";
 ---
 
 <header>
-  <div>
+  <div class="filter">
     <a href="/">
-      <img src="/assets/bakkefestlogo.svg" alt="Logo" class="logo" /></a
-    >
+      <img src="/assets/bakkefestlogo.svg" alt="Bakkefest logo" class="logo" />
+    </a>
     <h5>11. - 13. juli // Gilleleje</h5>
   </div>
   <div>
@@ -17,9 +17,44 @@ import Burger from "./Burger.astro";
       background_color="var(--yellow)"
       url="https://www.ticketmaster.dk/artist/bakkefest-billetter/972610?language=da-dk"
     />
+
     <Burger />
   </div>
 </header>
+
+<script>
+  document.addEventListener("scroll", () => {
+    const header = document.querySelector(".filter");
+
+    // Find elementer ved specifikke koordinater (20px fra toppen og 20px fra venstre)
+    const elements = document.elementsFromPoint(
+      100, // 100px fra venstre
+      60, // 35px fra toppen
+    );
+
+    // Tjek om nogen af elementerne har baggrundsfarven #E71A73 (var(--pink))
+    const isOverPink = Array.from(elements).some((el) => {
+      const styles = window.getComputedStyle(el);
+      const bgColor = styles.backgroundColor;
+      const bgImage = styles.backgroundImage;
+
+      // Ignorer elementer med baggrundsbilleder
+      if (bgImage !== "none") {
+        return false;
+      }
+
+      return bgColor === "rgb(231, 26, 115)"; // RGB for #E71A73
+    });
+
+    // Tilføj eller fjern filter baseret på scrollposition
+    if (isOverPink) {
+      header.style.filter =
+        "brightness(0) saturate(100%) invert(89%) sepia(56%) saturate(483%) hue-rotate(191deg) brightness(107%) contrast(103%)";
+    } else {
+      header.style.filter = ""; // Fjern filteret
+    }
+  });
+</script>
 
 <style>
   .pulse {
@@ -38,6 +73,7 @@ import Burger from "./Burger.astro";
       scale: 0.9;
     }
   }
+
   header {
     display: flex;
     position: fixed;
@@ -49,6 +85,10 @@ import Burger from "./Burger.astro";
     padding: 1rem 6rem;
     background-color: transparent;
     z-index: 100;
+  }
+
+  header > div > ButtonText {
+    filter: none !important; /* Ekskluderer ButtonText fra at arve filteret */
   }
 
   .logo {

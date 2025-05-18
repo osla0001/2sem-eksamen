@@ -4,29 +4,34 @@
 
 <!-- section divider placeres som img i sin egen section, de steder det skal skille sektionerne -->
 <section class="section-divider-1">
-  <img src="/assets/bakke-divider-1.svg" alt="" />
+  <img
+    src="/assets/bakke-divider-1.svg"
+    alt="Illustration af bakke, brugt til at skille sektionerne ad"
+  />
 </section>
 <section class="pink_pulse_box text_margin" id="pink-pulse">
   <div class="pink-pulse-title">
     <h2>OPLEV DEN PINK PULS <br /> TIL BAKKEFEST 2025</h2>
   </div>
   <div class="pink-pulse-img">
-    <img src="/assets/placeholder-2-1.webp" alt="Pink Pulse" />
+    <video autoplay muted loop playsinline width="400">
+      <source src="/assets/pinkpulse_video.webm" type="video/webm" />
+    </video>
   </div>
   <div class="pink-pulse-text">
     <p>
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum."
+      Kom og mærk den pulserende energi, når Pink Puls fylder luften til dette
+      års Bakkefest. Det bliver tre dage fyldt med fællesskab, fest og sitrende
+      sommerstemning, hvor du kan skabe uforglemmelige øjeblikke med dine venner
+      og familie. <br /><br />Lad den pinke puls føre dig gennem energiske
+      koncerter, lækre madoplevelser og sjove aktiviteter for både store og små.
+      Det bliver en fest, du ikke vil gå glip af, så glæd dig til at mærke den
+      Pink Puls og lad dig blive rystet igennem til rytmerne af Bakkefest. "
     </p>
   </div>
 </section>
 <section class="section-divider-2">
-  <img src="/assets/bakke-divider-2.svg" alt="" />
+  <img src="/assets/bakke-divider-2.svg" alt="Section divider" />
 </section>
 
 <style>
@@ -56,11 +61,32 @@
 
   .pink-pulse-img {
     padding: 10px 0px;
+    place-self: center;
   }
-  @media (min-width: 600px) {
+
+  .pulse_video {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    border-color: blue;
+    border-width: 5px;
+  }
+
+  .pink_pulse_box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0 20px;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 50px;
+  }
+
+  @media (min-width: 800px) {
     .pink_pulse_box {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 0 20px;
       align-items: center;
       padding-bottom: 20px;

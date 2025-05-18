@@ -13,7 +13,7 @@ img {
 
 :root {
   scroll-behavior: smooth;
-  scroll-padding: 10rem;
+  /* scroll-padding: 10rem; */
 }
 
 /* Farver */

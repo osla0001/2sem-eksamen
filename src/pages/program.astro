@@ -9,8 +9,11 @@ import Footer from "../components/Footer.astro";
 import ButtonArrow from "../components/ButtonArrow.astro";
 ---
 
-<Layout fanenavn={"Program"}>
-  <HeroSmall url="/assets/heroimage.webp" h1="Program" fontSize="6vw" />
+<Layout
+  fanenavn={"Program"}
+  meta={"Læs om programmet til Bakkefest, herunder tidspunkter, artister og andre spændende arrangementer."}
+>
+  <HeroSmall url="/assets/programvideo.webm" h1="Program" fontSize="6vw" />
   <TimeSchedule />
   <Playlist />
   <ProgramView />
