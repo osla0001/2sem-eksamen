@@ -1,16 +1,19 @@
 ---
 //@ts-nocheck
 import ProgramCard from "./ProgramCard.astro";
+// henter data fra supabase med url og key
 const url = "https://yhioxktrqmlazkwnvbit.supabase.co/rest/v1/events?select=*";
 const key =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InloaW94a3RycW1sYXprd252Yml0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxNjM1MjksImV4cCI6MjA2MjczOTUyOX0.rPSCRtiiBeBLLMGOZz9pd4-ZgiCMnuScZxME3EDLybc";
 
+// sørger for, at nøglen sendes afsted så vi har adgang til dataerne
 const options = {
   headers: {
     apikey: key,
   },
 };
 
+// gør sådan vi kan se det i vores console og om dataene er hentet korrekt
 const data = await fetch(url, options).then((res) => res.json());
 console.log(data);
 ---
@@ -19,6 +22,7 @@ console.log(data);
 <section class="text_margin">
   <h2>Programoversigt</h2>
   <div class="grid_1-1-1">
+    <!-- viser listen af events, hvor hver event vises med sit eget kort på siden -->
     {data.map((event) => <ProgramCard {event} />)}
   </div>
 </section>
