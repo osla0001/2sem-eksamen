@@ -41,7 +41,9 @@ import ButtonArrow from "./ButtonArrow.astro";
     </div>
   </article>
   <div class="flex_row">
-    <a href="assets/bakkefestprogramoversigt.pdf"><h4>Download PROGRAM</h4></a>
+    <a href="assets/bakkefestprogramoversigt.pdf" target="_blank"
+      ><h4>Download PROGRAM</h4></a
+    >
     <ButtonArrow
       url="assets/BakkefestProgramoversigt.pdf"
       background_color="var(--pink)"
@@ -57,6 +59,10 @@ import ButtonArrow from "./ButtonArrow.astro";
   h4 {
     color: var(--pink);
     text-transform: uppercase;
+  }
+
+  h2 {
+    margin-top: 2rem;
   }
 
   .grid_1-1-1 {
@@ -111,7 +117,9 @@ import ButtonArrow from "./ButtonArrow.astro";
       grid-template-rows: 1fr fit-content 1fr fit-content 1fr;
       gap: 2rem;
     }
-
+    h2 {
+      margin-top: 0rem;
+    }
     .line {
       height: 1px;
       width: 100%;
