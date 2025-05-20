@@ -63,7 +63,7 @@ import PracticalInfoBox from "./PracticalInfoBox.astro";
         <li>
           Personer der uberettiget og med forsæt forsøger at skaffe sig adgang
           til et af festpladsens områder bliver politianmeldt for ulovlig
-          indtrængen og kan blive pålagt at betale en afgift på kr. 1000,-
+          indtrængen og kan blive pålagt at betale en afgift på
         </li>
         <li>
           Personer, som fremstår utryghedsskabende i deres påklædning,
@@ -102,17 +102,46 @@ import PracticalInfoBox from "./PracticalInfoBox.astro";
     </PracticalInfoBox>
 
     <PracticalInfoBox
-      title="OFFENTLIG TRANSPORTMULIGHEDER"
+      title="PARKERING"
+      content="Festpladsen er desværre byens største parkeringsplads, hvilket gør at parkering tæt på Festpladsen er tæt på umuligt. Derfor fraråder vi også at man tager bilen til Bakkefest. Hvis du alligevel vælger at tage bilen, er den nærmeste parkering her:"
+    >
+      <ul>
+        <li>Ved 365</li>
+        <li>På stationen</li>
+        <li>Ved Netto</li>
+        <li>Ved Rema</li>
+      </ul>
+    </PracticalInfoBox>
+
+    <PracticalInfoBox
+      title="OFFENTLIG TRANSPORT OG KØRSELSVEJLEDNING"
       content="Hvis offentlig transport er mere din stil, opfordrer vi dig til at tjekke rejseplanen for at undersøge, hvordan du nemmest kommer fra din dør til Festpladsen. Gilleleje Station er nabo til Festpladsen, hvilket gør denne transport til bedst mulige. Se herunder hvordan lokalbanen kører fredag og lørdag nat:"
     >
       <ul>
         <li>
-          Fredag: Ekstratog til Hillerød afgår fra Gilleleje kl. 00.33 og kl.
+          Fredag: Ekstra tog til Hillerød afgår fra Gilleleje kl. 00.33 og kl.
           01.30
         </li>
         <li>Fredag: Ekstra tog til Helsingør afgår fra Gilleleje kl. 01.30</li>
-        <li>Lørdag: Ekstratog til Hillerød afgår fra Gilleleje kl. 01.30</li>
+        <li>Lørdag: Ekstra tog til Hillerød afgår fra Gilleleje kl. 01.30</li>
         <li>Lørdag: Ekstra tog til Helsingør afgår fra Gilleleje kl. 01.30</li>
+      </ul>
+
+      <ul>
+        <li>Fra Helsingør-motorvejen</li>
+        <li>Hold til højre ved frakørsel nr. 4 (E47), kør 538 m</li>
+        <li>Drej til venstre ind på Hornbækvej (235), kør 757 m</li>
+        <li>Tag anden afkørsel i rundkørslen (retning ligeud).</li>
+        <li>Fortsæt ad Hornbækvej (235), kør 7.3 km</li>
+        <li>Drej til venstre ind på Esrumvej (205), kør 7.2 km</li>
+        <li>Drej til højre ind på Tilkørsel mod Rute 227, kør 165 m</li>
+        <li>Drej til højre og fortsæt ad Gillelejevej (227), kør 8.6 km</li>
+        <li>Tag anden afkørsel i rundkørslen (retning ligeud).</li>
+        <li>Fortsæt ad Bonderupvejen (227/237), kør 1.9 km</li>
+        <li>Tag første afkørsel i rundkørslen (retning højre).</li>
+        <li>Kør ind på Gilleleje Stationsvej, kør 32 m</li>
+        <li>Drej til venstre ind på Bøgebakken, kør 251 m</li>
+        <li>Du er fremme og klar til fest 😀</li>
       </ul>
     </PracticalInfoBox>
 
@@ -143,6 +172,7 @@ import PracticalInfoBox from "./PracticalInfoBox.astro";
       </ul>
     </PracticalInfoBox>
   </div>
+
   <div style="height: 100px;"></div>
   <!-- 
 Skaber mellemrum mellem indholdet og bunden af siden -->
@@ -158,7 +188,6 @@ Skaber mellemrum mellem indholdet og bunden af siden -->
       margin-bottom: 1rem;
     }
     p {
-      font-size: 18px;
       line-height: 1.8rem;
       color: var(--pink);
     }
@@ -167,12 +196,17 @@ Skaber mellemrum mellem indholdet og bunden af siden -->
       font-family: neue-haas-grotesk-display, sans-serif;
       margin-top: 1rem;
       margin-left: 1rem;
+      font-size: 14px;
     }
 
     @media (min-width: 600px) {
       .tekst_praktisk {
         max-width: 700px;
         margin-bottom: 3rem;
+      }
+
+      ul {
+        font-size: 18px;
       }
     }
   </style>
