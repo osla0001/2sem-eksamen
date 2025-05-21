@@ -10,7 +10,7 @@ const { url, text, text_color, background_color } = Astro.props;
     <img src="/assets/clamp.svg" alt="Klamme illustration" class="clamp1" />
     <div class="middle">
       <img
-        src="/assets/bakkefestwordmark.svg"
+        src="/assets/wordmark.svg"
         alt="Bakkefest wordmark"
         class="wordmark"
       />
@@ -204,7 +204,8 @@ const { url, text, text_color, background_color } = Astro.props;
 
     @media (min-width: 600px) {
       .wordmark {
-        height: 8rem;
+        height: 16rem;
+        width: auto;
       }
       .clamp1,
       .clamp2 {
