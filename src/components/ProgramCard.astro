@@ -8,81 +8,44 @@ const formattedTime = event.time_start.slice(0, 5).replace(":", ".");
 ---
 
 <div class="card-container">
-  <img src={event.img} alt={event.title} />
   <div class="hover-box">
-    <!-- hover-inner er elementet der flipper åben når man hover -->
-    <div class="hover-inner">
-      <img
-        src="/assets/card-hover.svg"
-        alt="Hover beskrivelses boks"
-        class="hover-svg"
-      />
-      <h2 class="hover-text">{event.name}<br />KL. {formattedTime}</h2>
-      <h2 class="hover-text">{event.day}</h2>
+    <img src={event.img} alt={event.title} />
+    <div class="card-text">
+      <h2>{event.name}</h2>
     </div>
   </div>
+
+  <style>
+    .card-container {
+      position: relative;
+      /* gør at billedet ikke går udover boksen når der bliver hover'et */
+      overflow: hidden;
+    }
+
+    .card-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+      /* så den også animere langsom ud, når musen går væk */
+      transition: 0.2s ease-in;
+    }
+
+    .hover-box:hover img {
+      transform: scale(1.05);
+      transition: 0.2s ease-out;
+    }
+
+    .card-text {
+      position: absolute;
+      z-index: 100;
+      bottom: 0;
+      transform: translateX(-50%);
+      left: 50%;
+      color: white;
+      text-align: center;
+      word-wrap: break-word;
+      text-shadow: black 1px 0 10px;
+      padding: 10px 0;
+    }
+  </style>
 </div>
-
-<style>
-  .card-container {
-    position: relative;
-    /* inline-block så containeren kun er ligeså stor som indholdet indeni */
-    display: inline-block;
-    /* giver en 3d effekt */
-    perspective: 1000px;
-  }
-
-  .card-container img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .hover-box {
-    position: absolute;
-    inset: 0;
-  }
-
-  h2 {
-    text-transform: uppercase;
-  }
-
-  /* Dette element er “låget” der starter lukket */
-  .hover-inner {
-    position: relative;
-    margin: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    padding: 30px;
-    box-sizing: border-box;
-    transform: rotateY(-90deg);
-    /* åbner fra midten, som en dør der ses fra siden */
-    transform-origin: center;
-    transition: transform 0.5s ease;
-    /* "baggrunden" skjules når elementet er flippet */
-    backface-visibility: hidden;
-  }
-
-  .card-container:hover .hover-inner {
-    /* flipper åben fra midten */
-    transform: rotateY(0deg);
-    pointer-events: auto;
-  }
-
-  .hover-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    pointer-events: none;
-    transform: translateY(10px);
-  }
-
-  .hover-text {
-    position: relative;
-    /* sætter teksten forrest */
-    z-index: 2;
-  }
-</style>
