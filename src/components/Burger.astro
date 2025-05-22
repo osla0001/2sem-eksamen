@@ -73,33 +73,33 @@
       }
     });
 
-    // Til denne ændrene farve med filter sektion, kig i Header.astro for en forklaring på hvorfan det virker
-    document.addEventListener("scroll", () => {
-      const lines = document.querySelectorAll(".line");
+    // // Til denne ændrene farve med filter sektion, kig i Header.astro for en forklaring på hvorfan det virker
+    // document.addEventListener("scroll", () => {
+    //   const lines = document.querySelectorAll(".line");
 
-      const elements = document.elementsFromPoint(100, 60);
+    //   const elements = document.elementsFromPoint(100, 60);
 
-      // Udvidet: Tjekker nu også om et element har klassen .hill_filter
-      const isOverPinkOrHill = Array.from(elements).some((el) => {
-        const styles = window.getComputedStyle(el);
-        const bgColor = styles.backgroundColor;
-        // Tjek for hill_filter class
-        const hasHillClass =
-          el.classList && el.classList.contains("hill_filter");
-        return bgColor === "rgb(231, 26, 115)" || hasHillClass;
-      });
+    //   // Udvidet: Tjekker nu også om et element har klassen .hill_filter
+    //   const isOverPinkOrHill = Array.from(elements).some((el) => {
+    //     const styles = window.getComputedStyle(el);
+    //     const bgColor = styles.backgroundColor;
+    //     // Tjek for hill_filter class
+    //     const hasHillClass =
+    //       el.classList && el.classList.contains("hill_filter");
+    //     return bgColor === "rgb(231, 26, 115)" || hasHillClass;
+    //   });
 
-      // her tilføjes et filter til linjerne i burger menuen enkelvis, når den kører over det ønskede punkt, og hvis det ikke er over det ønskede punkt, fjernes filteret
-      // forEach bruges for at sikre, at alle linjer får filteret, men uden at påvirke andet indhold, da man kun kan sætte style.filter direkte på ét element ad gangen.
-      lines.forEach((line) => {
-        if (isOverPinkOrHill) {
-          line.style.filter =
-            "brightness(0) saturate(100%) invert(89%) sepia(56%) saturate(483%) hue-rotate(191deg) brightness(107%) contrast(103%)";
-        } else {
-          line.style.filter = "";
-        }
-      });
-    });
+    //   // her tilføjes et filter til linjerne i burger menuen enkelvis, når den kører over det ønskede punkt, og hvis det ikke er over det ønskede punkt, fjernes filteret
+    //   // forEach bruges for at sikre, at alle linjer får filteret, men uden at påvirke andet indhold, da man kun kan sætte style.filter direkte på ét element ad gangen.
+    //   lines.forEach((line) => {
+    //     if (isOverPinkOrHill) {
+    //       line.style.filter =
+    //         "brightness(0) saturate(100%) invert(89%) sepia(56%) saturate(483%) hue-rotate(191deg) brightness(107%) contrast(103%)";
+    //     } else {
+    //       line.style.filter = "";
+    //     }
+    //   });
+    // });
   });
 </script>
 
