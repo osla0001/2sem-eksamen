@@ -1,0 +1,134 @@
+---
+import ButtonArrow from "./ButtonArrow.astro";
+---
+
+<div class="white_space"></div>
+<div class="white_space"></div>
+<section class="text_margin">
+  <h2>TAK FOR DIN TILMELDING – OG VELKOMMEN PÅ HOLDET!</h2>
+  <h4>
+    Vi er SÅ glade for, at du har meldt dig som frivillig til Bakkefest – og vi
+    glæder os til at have dig med!
+  </h4>
+
+  <p>
+    Med din hjælp er vi allerede ét skridt tættere på at skabe den bedste
+    festivaloplevelse for både publikum, medhjælpere og lokalsamfundet. Uanset
+    hvilken opgave du får, bliver du en vigtig del af det fællesskab og den
+    energi, der gør Bakkefest helt speciel.
+  </p>
+  <h4>
+    Vi kontakter dig snart med flere praktiske oplysninger om vagter, opgaver og
+    alt det andet, du har brug for at vide.
+  </h4>
+  <p>
+    I mellemtiden kan du glæde dig til kold drikkelse, varme smil og god
+    stemning – vi lover, det bliver både sjovt, hyggeligt og helt
+    uforglemmeligt. Velkommen til Bakkefest-familien! – og endnu engang tak,
+    fordi du har valgt at give en hånd med.
+  </p>
+  <div class="flex_row2">
+    <h4>Med Venlig Hilsen alle os fra</h4>
+    <img
+      src="/public/assets/wordmark.svg"
+      class="workmark_img"
+      alt="wordmark"
+    />
+  </div>
+  <div class="flex_row">
+    <a href="/"><h4>Tilbage til forsiden</h4></a>
+    <ButtonArrow
+      url="/"
+      background_color="var(--pink)"
+      arrow_color="var(--yellow)"
+    />
+  </div>
+</section>
+<div class="white_space"></div>
+<div class="white_space mobile_none"></div>
+<div class="white_space mobile_none"></div>
+
+<style>
+  .flex_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .flex_row2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    width: fit-content;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .flex_row h4 {
+    color: var(--green);
+  }
+  .flex_row:hover {
+    scale: 1.01;
+    transition: 0.2s;
+    color: var(--pink);
+  }
+
+  .flex_row h4:hover {
+    scale: 1.01;
+    transition: 0.2s;
+    color: var(--pink);
+  }
+
+  p {
+    color: var(--green);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: 47rem;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--green);
+  }
+  h4 {
+    color: var(--green);
+  }
+
+  a {
+    text-decoration: none;
+    transition: 0.3s;
+    color: var(--green);
+  }
+
+  .workmark_img {
+    width: 40%;
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(20%) sepia(92%) saturate(3045%)
+      hue-rotate(320deg) brightness(91%) contrast(98%);
+  }
+
+  .mobile_none {
+    display: none;
+  }
+
+  @media (min-width: 600px) {
+    .mobile_none {
+      display: block;
+    }
+    .flex_row {
+      margin-top: 5rem;
+      margin-bottom: 4rem;
+      align-items: center;
+    }
+
+    .workmark_img {
+      width: 40%;
+    }
+  }
+</style>

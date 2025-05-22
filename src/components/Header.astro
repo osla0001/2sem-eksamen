@@ -22,7 +22,7 @@ import Burger from "./Burger.astro";
   </div>
 </header>
 
-<script>
+<!-- <script>
   // denne funktion kører når DOM'en er klar og lytter efter når der bliver scrollet og hiver fat i classen filter
   document.addEventListener("scroll", () => {
     const header = document.querySelector(".filter");
@@ -51,7 +51,7 @@ import Burger from "./Burger.astro";
       header.style.filter = ""; // fjerner filteret
     }
   });
-</script>
+</script> -->
 
 <style>
   .filter a {
@@ -89,7 +89,7 @@ import Burger from "./Burger.astro";
     justify-content: space-between;
     width: 100vw;
     padding: 1rem 6rem;
-    background-color: transparent;
+    background-image: linear-gradient(var(--light_pink), transparent);
     z-index: 100;
   }
 

@@ -7,129 +7,148 @@ import ButtonArrow from "./ButtonArrow.astro";
   <article class="grid_1-1-1">
     <div>
       <h3>Fredag d. 11 juli</h3>
-      <li>16.00 – Festpladsen & Ankers tivoli åbner</li>
-      <li>18.00 – MAS på Friluftsscenen</li>
-      <li>20.15 – BOOTY BEATS i “Det Store Telt” (mellem koncerterne)</li>
-      <li>21.00 – GILLI på Friluftsscenen</li>
-      <li>23.00 – FAUSTIX på Friluftsscenen</li>
-      <li>01.30 – Tak for i aften & på gensyn lørdag</li>
+      <li><span>16.00</span> – Festpladsen & Ankers tivoli åbner</li>
+      <li><span>18.00</span> – MAS på Friluftsscenen</li>
+      <li>
+        <span>20.15</span> – BOOTY BEATS i “Det Store Telt” (mellem koncerterne)
+      </li>
+      <li><span>21.00</span> – GILLI på Friluftsscenen</li>
+      <li><span>23.00</span> – FAUSTIX på Friluftsscenen</li>
+      <li><span>01.30</span> – Tak for i aften & på gensyn lørdag</li>
     </div>
     <div class="line"></div>
     <div>
       <h3>Lørdag d. 12 juli</h3>
-      <li>12.00 – Festpladsen & Ankers tivoli åbner</li>
+      <li><span>12.00</span> – Festpladsen & Ankers tivoli åbner</li>
       <li>
-        13.00 – DAMEFROKOST i “Det Store Telt” lukket arrangement til kl. 17.00
+        <span>13.00</span> – DAMEFROKOST i “Det Store Telt” lukket arrangement til
+        kl. 17.00
       </li>
-      <li>13.00 – STRAY Underholder til Damefrokosten</li>
-      <li>13.00 – BØRNELAND med ansigtsmaling</li>
-      <li>17.00 – MUMLE på Friluftsscenen</li>
-      <li>19.00 – TOPGUNN på Friluftsscenen</li>
-      <li>20.15 – BOOTY BEATS i “Det Store Telt” (mellem koncerterne)</li>
-      <li>21.00 – AQUA på Friluftsscenen</li>
-      <li>23.00 – LAMIN på Friluftsscenen</li>
-      <li>01.30 – Tak for i aften & på gensyn søndag</li>
+      <li><span>13.00</span> – STRAY Underholder til Damefrokosten</li>
+      <li><span>13.00</span> – BØRNELAND med ansigtsmaling</li>
+      <li><span>17.00</span> – MUMLE på Friluftsscenen</li>
+      <li><span>19.00</span> – TOPGUNN på Friluftsscenen</li>
+      <li>
+        <span>20.15</span> – BOOTY BEATS i “Det Store Telt” (mellem koncerterne)
+      </li>
+      <li><span>21.00</span> – AQUA på Friluftsscenen</li>
+      <li><span>23.00</span> – LAMIN på Friluftsscenen</li>
+      <li><span>01.30</span> – Tak for i aften & på gensyn søndag</li>
     </div>
     <div class="line"></div>
     <div>
       <h3>Søndag d. 13 juli</h3>
-      <li>11.00 – KANDIS underholder til Danmarks største gratis Sildebord</li>
-      <li>12.00 – Festpladsen & Ankers tivoli åbner</li>
-      <li>13.00 – BØRNELAND med ansigtsmaling og meget mere</li>
-      <li>15.00 – WAFANDE på Friluftsscenen</li>
-      <li>18.30 – DJAMES BRAUN på Friluftsscenen</li>
-      <li>20.00 – Tak for i år & på gensyn i 2026!</li>
+      <li>
+        <span>11.00</span> – KANDIS underholder til Danmarks største gratis Sildebord
+      </li>
+      <li><span>12.00</span> – Festpladsen & Ankers tivoli åbner</li>
+      <li><span>13.00</span> – BØRNELAND med ansigtsmaling og meget mere</li>
+      <li>
+        <span>15.00</span> – WAFANDE på Friluftsscenen
+        <li>
+          <span>18.30</span> – DJAMES BRAUN på Friluftsscenen
+          <li>
+            <span>20.00</span> – Tak for i år & på gensyn i 2026!
+
+            <div class="flex_row">
+              <a href="assets/bakkefestprogramoversigt.pdf" target="_blank"
+                ><h4>Download PROGRAM</h4></a
+              >
+              <ButtonArrow
+                url="assets/BakkefestProgramoversigt.pdf"
+                background_color="var(--pink)"
+                arrow_color="var(--light_pink)"
+              />
+            </div>
+
+            <div class="white_space"></div>
+
+            <style>
+              span {
+                color: var(--pink);
+                font-weight: 700;
+              }
+              h2,
+              h3,
+              h4 {
+                color: var(--pink);
+                text-transform: uppercase;
+              }
+
+              h2 {
+                margin-top: 2rem;
+              }
+
+              .grid_1-1-1 {
+                display: grid;
+                grid-template-columns: 1fr max-content 1fr max-content 1fr;
+                gap: 1rem;
+              }
+
+              li {
+                font-family: neue-haas-grotesk-display, sans-serif;
+                font-weight: 500;
+                font-style: normal;
+                font-size: 18px;
+                line-height: 1.7rem;
+                list-style: none;
+                color: var(--pink);
+              }
+
+              .line {
+                width: 1px;
+                height: 100%;
+                background-color: var(--pink);
+                height: 100%;
+                margin: 0 auto;
+              }
+
+              .flex_row {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 1rem;
+                width: fit-content;
+                place-content: end;
+                margin-top: 25px;
+                margin-inline-start: auto;
+              }
+
+              a {
+                text-decoration: none;
+                transition: 0.3s;
+              }
+
+              .flex_row:hover {
+                scale: 1.01;
+                color: var(--pink);
+                transition: 0.2s;
+              }
+
+              @media (max-width: 600px) {
+                .grid_1-1-1 {
+                  grid-template-columns: 1fr;
+                  grid-template-rows: 1fr fit-content 1fr fit-content 1fr;
+                  gap: 2rem;
+                }
+                h2 {
+                  margin-top: 0rem;
+                }
+                .line {
+                  height: 1px;
+                  width: 100%;
+                  background-color: var(--pink);
+                  margin: 0 auto;
+                }
+
+                li {
+                  font-size: 15px;
+                }
+              }
+            </style>
+          </li>
+        </li>
+      </li>
     </div>
   </article>
-  <div class="flex_row">
-    <a href="assets/bakkefestprogramoversigt.pdf" target="_blank"
-      ><h4>Download PROGRAM</h4></a
-    >
-    <ButtonArrow
-      url="assets/BakkefestProgramoversigt.pdf"
-      background_color="var(--pink)"
-      arrow_color="var(--light_pink)"
-    />
-  </div>
 </section>
-<div class="white_space"></div>
-
-<style>
-  h2,
-  h3,
-  h4 {
-    color: var(--pink);
-    text-transform: uppercase;
-  }
-
-  h2 {
-    margin-top: 2rem;
-  }
-
-  .grid_1-1-1 {
-    display: grid;
-    grid-template-columns: 1fr max-content 1fr max-content 1fr;
-    gap: 1rem;
-  }
-
-  li {
-    font-family: neue-haas-grotesk-display, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 18px;
-    line-height: 1.7rem;
-    list-style: none;
-    color: var(--pink);
-  }
-
-  .line {
-    width: 1px;
-    height: 100%;
-    background-color: var(--pink);
-    height: 100%;
-    margin: 0 auto;
-  }
-
-  .flex_row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    width: fit-content;
-    place-content: end;
-    margin-top: 25px;
-    margin-inline-start: auto;
-  }
-
-  a {
-    text-decoration: none;
-    transition: 0.3s;
-  }
-
-  .flex_row:hover {
-    scale: 1.01;
-    color: var(--pink);
-    transition: 0.2s;
-  }
-
-  @media (max-width: 600px) {
-    .grid_1-1-1 {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr fit-content 1fr fit-content 1fr;
-      gap: 2rem;
-    }
-    h2 {
-      margin-top: 0rem;
-    }
-    .line {
-      height: 1px;
-      width: 100%;
-      background-color: var(--pink);
-      margin: 0 auto;
-    }
-
-    li {
-      font-size: 15px;
-    }
-  }
-</style>
