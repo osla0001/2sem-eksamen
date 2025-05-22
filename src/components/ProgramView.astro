@@ -19,6 +19,12 @@ console.log(data);
 ---
 
 <script type="text/javascript">
+  function getColumns() {
+    if (window.innerWidth <= 683) return 1;
+    if (window.innerWidth <= 1300) return 2;
+    return 3; // fallback til desktop
+  }
+
   function toggleDropdown(idx) {
     document
       .querySelectorAll(".dropdown-row")
@@ -27,8 +33,29 @@ console.log(data);
     if (dropdown) {
       dropdown.style.display =
         dropdown.style.display === "block" ? "none" : "block";
+
+      // Dynamisk antal kolonner baseret på skærmbredde
+      const columns = getColumns();
+
+      // Beregn hvilken grid-row dropdown skal have
+      const gridRow = Math.floor(idx / columns) + 2;
+
+      // Sæt grid-row på dropdown
+      dropdown.style.gridRow = gridRow;
     }
   }
+
+  // Opdater dropdown placering ved resize
+  window.addEventListener("resize", () => {
+    document
+      .querySelectorAll(".dropdown-row[style*='display: block']")
+      .forEach((dropdown) => {
+        const idx = Number(dropdown.id.replace("dropdown-", ""));
+        const columns = getColumns();
+        const gridRow = Math.floor(idx / columns) + 2;
+        dropdown.style.gridRow = gridRow;
+      });
+  });
 
   // Luk dropdown ved klik udenfor
   document.addEventListener("mousedown", function (event) {
@@ -108,7 +135,7 @@ console.log(data);
     border-radius: 10px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
     z-index: 2;
-    grid-row: 2;
+    grid-row: 3;
   }
   .program-card-wrapper {
     position: relative;
@@ -147,5 +174,11 @@ console.log(data);
   h4 {
     color: var(--pink);
     text-transform: uppercase;
+  }
+
+  @media (max-width: 684px) {
+    .dropdown-content {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
