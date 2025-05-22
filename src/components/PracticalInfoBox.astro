@@ -85,14 +85,12 @@ const { title, content } = Astro.props;
     transition: 0.3s;
   }
 
-  @media {
-    (min-width: 600px;) {
-      summary {
-        font-size: 1.1rem;
-      }
-      .content {
-        font-size: 1.05rem;
-      }
+  @media (min-width: 600px;) {
+    summary {
+      font-size: 1.1rem;
+    }
+    .content {
+      font-size: 1.05rem;
     }
   }
 </style>
