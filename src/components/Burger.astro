@@ -17,6 +17,7 @@
         target="_blank">KØB BILLET</a
       >
     </li>
+    <li><a href="/">FORSIDE</a></li>
     <li><a href="/program">PROGRAM</a></li>
     <li><a href="/praktisk">PRAKTISK INFO</a></li>
     <li>
@@ -78,18 +79,20 @@
 
       const elements = document.elementsFromPoint(100, 60);
 
-      const isOverPink = Array.from(elements).some((el) => {
+      // Udvidet: Tjekker nu også om et element har klassen .hill_filter
+      const isOverPinkOrHill = Array.from(elements).some((el) => {
         const styles = window.getComputedStyle(el);
         const bgColor = styles.backgroundColor;
-        const bgImage = styles.backgroundImage;
-
-        return bgColor === "rgb(231, 26, 115)";
+        // Tjek for hill_filter class
+        const hasHillClass =
+          el.classList && el.classList.contains("hill_filter");
+        return bgColor === "rgb(231, 26, 115)" || hasHillClass;
       });
 
       // her tilføjes et filter til linjerne i burger menuen enkelvis, når den kører over det ønskede punkt, og hvis det ikke er over det ønskede punkt, fjernes filteret
       // forEach bruges for at sikre, at alle linjer får filteret, men uden at påvirke andet indhold, da man kun kan sætte style.filter direkte på ét element ad gangen.
       lines.forEach((line) => {
-        if (isOverPink) {
+        if (isOverPinkOrHill) {
           line.style.filter =
             "brightness(0) saturate(100%) invert(89%) sepia(56%) saturate(483%) hue-rotate(191deg) brightness(107%) contrast(103%)";
         } else {
@@ -140,7 +143,7 @@
     transform: rotate(-45deg) translate(5px, -5px);
     transition: 0.2s linear;
     /* krydset bliver gult når burgeren er aktiv */
-    background-color: var(--yellow);
+    background-color: var(--light_pink);
   }
 
   /* tilføjer classen i body og html, så det ikke er muligt at scrolle når menuen er åben */
@@ -192,10 +195,6 @@
 
   .menu.active {
     transform: translateX(0);
-  }
-
-  .menu li {
-    margin: 10px 0;
   }
 
   .menu a {
