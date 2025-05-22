@@ -7,8 +7,8 @@ import Burger from "./Burger.astro";
   <div class="filter">
     <a href="/">
       <img src="/assets/bakkefestlogo.svg" alt="Bakkefest logo" class="logo" />
+      <h5>11. - 13. juli // Gilleleje</h5>
     </a>
-    <h5>11. - 13. juli // Gilleleje</h5>
   </div>
   <div>
     <ButtonText
@@ -22,8 +22,9 @@ import Burger from "./Burger.astro";
   </div>
 </header>
 
+
 <script>
-  // Denne funktion kører når der scrolles og tjekker om header skal have filter
+  // denne funktion kører når DOM'en er klar og lytter efter når der bliver scrollet og hiver fat i classen filter
   document.addEventListener("scroll", () => {
     const header = document.querySelector(".filter");
 
@@ -59,6 +60,11 @@ import Burger from "./Burger.astro";
 </script>
 
 <style>
+  .filter a {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* juster afstanden efter behov */
+  }
   .pulse {
     animation-name: pulse_kf;
     animation-duration: 1s;
@@ -67,12 +73,16 @@ import Burger from "./Burger.astro";
     animation-timing-function: ease-in-out;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   @keyframes pulse_kf {
     from {
       scale: 1;
     }
     to {
-      scale: 0.9;
+      scale: 0.98;
     }
   }
 
@@ -85,7 +95,7 @@ import Burger from "./Burger.astro";
     justify-content: space-between;
     width: 100vw;
     padding: 1rem 6rem;
-    background-color: transparent;
+    background-image: linear-gradient(var(--light_pink), transparent);
     z-index: 100;
   }
 
@@ -101,7 +111,7 @@ import Burger from "./Burger.astro";
   }
 
   .logo:hover {
-    scale: 1.2;
+    scale: 1.05;
     transition: 0.3s;
   }
 
@@ -110,7 +120,7 @@ import Burger from "./Burger.astro";
     font-weight: 500;
     font-style: normal;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--pink);
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
