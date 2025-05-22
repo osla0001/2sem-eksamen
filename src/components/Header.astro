@@ -23,32 +23,37 @@ import Burger from "./Burger.astro";
 </header>
 
 <script>
-  // denne funktion kører når DOM'en er klar og lytter efter når der bliver scrollet og hiver fat i classen filter
+  // Denne funktion kører når der scrolles og tjekker om header skal have filter
   document.addEventListener("scroll", () => {
     const header = document.querySelector(".filter");
 
-    // her finder vi et punkt på skærmen, som vi vil tjekke
-    // om der er et element med baggrundsfarven #E71A73, for at kunne ændre headerens farve når den kører over punketet
-    const elements = document.elementsFromPoint(
-      100, // 100px fra venstre
-      60, // 60px fra toppen
-    );
+    // Finder elementer ved punktet (100px fra venstre, 60px fra toppen)
+    const elements = document.elementsFromPoint(100, 60);
 
-    // tjekker om nogen af elementerne har baggrundsfarven #E71A73 (var(--pink)), i sidens styles baggrundsfarver og baggrundsbilleder
-    const isOverPink = Array.from(elements).some((el) => {
+    // Tjekker om nogen af elementerne har pink baggrund, pink SVG fill eller klassen .hill
+    const isOverPinkOrHill = Array.from(elements).some((el) => {
       const styles = window.getComputedStyle(el);
       const bgColor = styles.backgroundColor;
-      const bgImage = styles.backgroundImage;
+      const svgFill =
+        el instanceof SVGElement
+          ? styles.fill || el.getAttribute("fill")
+          : null;
+      const hasHillClass = el.classList && el.classList.contains("hill_filter");
 
-      return bgColor === "rgb(231, 26, 115)"; // RGB for #E71A73
+      return (
+        bgColor === "rgb(231, 26, 115)" ||
+        svgFill === "rgb(231, 26, 115)" ||
+        svgFill === "#e71a73" ||
+        hasHillClass
+      );
     });
 
-    // her tilføjes et filter til fliter classen, når den kører over det ønskede punkt, og hvis det ikke er over det ønskede punkt, fjernes filteret
-    if (isOverPink) {
+    // Tilføj eller fjern filter på header
+    if (isOverPinkOrHill) {
       header.style.filter =
         "brightness(0) saturate(100%) invert(89%) sepia(56%) saturate(483%) hue-rotate(191deg) brightness(107%) contrast(103%)";
     } else {
-      header.style.filter = ""; // fjerner filteret
+      header.style.filter = "";
     }
   });
 </script>
