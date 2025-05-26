@@ -2,7 +2,7 @@
 import ButtonArrow from "./ButtonArrow.astro";
 ---
 
-<section class="text_margin">
+<section class="text_margin2">
   <h2 style="margin-bottom: 25px;">Tidsplan</h2>
   <article class="grid_1-1-1">
     <div>
@@ -21,8 +21,7 @@ import ButtonArrow from "./ButtonArrow.astro";
       <h3>Lørdag d. 12 juli</h3>
       <li><span>12.00</span> – Festpladsen & Ankers tivoli åbner</li>
       <li>
-        <span>13.00</span> – DAMEFROKOST i “Det Store Telt” lukket arrangement til
-        kl. 17.00
+        <span>13.00</span> – DAMEFROKOST i “Det Store Telt” lukket arrangement
       </li>
       <li><span>13.00</span> – STRAY Underholder til Damefrokosten</li>
       <li><span>13.00</span> – BØRNELAND med ansigtsmaling</li>
@@ -76,30 +75,28 @@ import ButtonArrow from "./ButtonArrow.astro";
               }
 
               h2 {
-                margin-top: 2rem;
+                margin-top: 0rem;
               }
 
               .grid_1-1-1 {
-                display: grid;
-                grid-template-columns: 1fr max-content 1fr max-content 1fr;
-                gap: 1rem;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr fit-content 1fr fit-content 1fr;
+                gap: 2rem;
               }
-
               li {
                 font-family: neue-haas-grotesk-display, sans-serif;
                 font-weight: 500;
                 font-style: normal;
-                font-size: 18px;
+                font-size: 15px;
                 line-height: 1.7rem;
                 list-style: none;
                 color: var(--pink);
               }
 
               .line {
-                width: 1px;
-                height: 100%;
+                height: 1px;
+                width: 100%;
                 background-color: var(--pink);
-                height: 100%;
                 margin: 0 auto;
               }
 
@@ -125,24 +122,24 @@ import ButtonArrow from "./ButtonArrow.astro";
                 transition: 0.2s;
               }
 
-              @media (max-width: 600px) {
+              @media (min-width: 600px) {
                 .grid_1-1-1 {
-                  grid-template-columns: 1fr;
-                  grid-template-rows: 1fr fit-content 1fr fit-content 1fr;
-                  gap: 2rem;
+                  display: grid;
+                  grid-template-columns: 1fr max-content 1fr max-content 1fr;
+                  gap: 1rem;
                 }
                 h2 {
-                  margin-top: 0rem;
+                  margin-top: 2rem;
                 }
                 .line {
-                  height: 1px;
-                  width: 100%;
+                  width: 1px;
+                  height: 100%;
                   background-color: var(--pink);
                   margin: 0 auto;
                 }
 
                 li {
-                  font-size: 15px;
+                  font-size: 16px;
                 }
               }
             </style>
@@ -152,3 +149,4 @@ import ButtonArrow from "./ButtonArrow.astro";
     </div>
   </article>
 </section>
+<div class="white_space"></div>
