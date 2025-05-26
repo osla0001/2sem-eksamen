@@ -112,6 +112,7 @@ import ButtonArrow from "./ButtonArrow.astro";
     gap: 0.6rem;
   }
 
+  /* input::placeholder styrer det indhold som står inde i boksen FØR MAN BEGYNDER AT SKRIVE */
   input::placeholder,
   textarea::placeholder {
     color: var(--pink);
@@ -152,7 +153,7 @@ import ButtonArrow from "./ButtonArrow.astro";
     padding: 0;
   }
 
-  /* Herefter har jeg taget fat i type=email igen, men denne gang i placeholder, så jeg kan style teksten! */
+  /* Herefter har jeg taget fat i type=email igen, men denne gang i placeholder, så jeg kan style teksten! Da den er anderledes end de andre indput felter */
   input[type="email"]::placeholder {
     font-size: 1.5rem;
     color: var(--light_pink);
@@ -163,7 +164,7 @@ import ButtonArrow from "./ButtonArrow.astro";
     opacity: 1;
   }
 
-  /* samme for submit aka send knappen */
+  /* samme for submit aka send knappen - skulle også have en anden styling*/
   input[type="submit"] {
     color: var(--light_pink);
     background: none;
