@@ -5,44 +5,48 @@ import ButtonArrow from "./ButtonArrow.astro";
 <img
   src="/assets/bakke-up_big.svg"
   alt="Illustration af bakke, brugt til at skille sektionerne ad"
-  class="hill hill_filter"
+  class="hill"
 />
-<section class="text_margin grid_1-1">
-  <div>
-    <h2>Lyden af bakkefest 2025</h2>
-    <h4>Lyt til vores playliste for 2025 på Spotify</h4>
-    <p>
-      Vil du varme op til Bakkefest sammen med os? Så lyt til den officielle
-      playliste på Spotify og kom i den helt rigtige festivalstemning! Vi ses
-      til Danmarks hyggeligste sommerfest!
-    </p>
-    <div class="flex_row">
-      <a
-        href="https://open.spotify.com/playlist/6eYWPTB8yTQ5zJBM7VDLGd?si=b72219c9b0c84ad6"
-      >
-        <h4>Gå til playliste</h4>
-        <ButtonArrow
-          url="https://open.spotify.com/playlist/6eYWPTB8yTQ5zJBM7VDLGd?si=b72219c9b0c84ad6"
-          background_color="var(--yellow)"
-          arrow_color="var(--pink)"
-        />
-      </a>
+<section>
+  <div class="text_width grid_1-1">
+    <div>
+      <h2>Lyden af bakkefest 2025</h2>
+      <h4>Lyt til vores playliste for 2025 på Spotify</h4>
+      <p>
+        Vil du varme op til Bakkefest sammen med os? Så lyt til den officielle
+        playliste på Spotify og kom i den helt rigtige festivalstemning! Vi ses
+        til Danmarks hyggeligste sommerfest!
+      </p>
+      <div class="flex_row">
+        <a
+          href="https://open.spotify.com/playlist/6eYWPTB8yTQ5zJBM7VDLGd?si=b72219c9b0c84ad6"
+        >
+          <h4>Gå til playliste</h4>
+          <ButtonArrow
+            url="https://open.spotify.com/playlist/6eYWPTB8yTQ5zJBM7VDLGd?si=b72219c9b0c84ad6"
+            background_color="var(--yellow)"
+            arrow_color="var(--pink)"
+          />
+        </a>
+      </div>
     </div>
+
+    <!-- iframe fra spotifys side, hentet fra egen playliste og ændret i width og height til ønsket størrelse -->
+    <iframe
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/6eYWPTB8yTQ5zJBM7VDLGd?utm_source=generator"
+      width="100%"
+      height="400px"
+      allowfullscreen=""
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"></iframe>
   </div>
-  <iframe
-    style="border-radius:12px"
-    src="https://open.spotify.com/embed/playlist/6eYWPTB8yTQ5zJBM7VDLGd?utm_source=generator"
-    width="100%"
-    height="400px"
-    allowfullscreen=""
-    frameborder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy"></iframe>
 </section>
 <img
   src="/assets/bakke-down_small.svg"
   alt="Illustration af bakke, brugt til at skille sektionerne ad"
-  class="hill2 hill_filter"
+  class="hill2"
 />
 
 <style>
