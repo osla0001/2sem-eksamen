@@ -23,7 +23,7 @@ const { src, background_color } = Astro.props;
     display: flex;
     gap: 0.1rem;
     animation: scroll 10s linear infinite;
-    height: 9rem;
+    height: 4rem;
   }
 
   .banner-content img {
@@ -37,6 +37,12 @@ const { src, background_color } = Astro.props;
     }
     to {
       transform: translateX(-50%);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .banner-content {
+      height: 9rem;
     }
   }
 </style>
