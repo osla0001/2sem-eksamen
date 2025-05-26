@@ -61,7 +61,7 @@ const { url, text, text_color, background_color } = Astro.props;
         clearInterval(countdownInterval);
         timer.innerHTML = "00d 00t 00m 00s";
       }
-    });
+    }, 1000);
   </script>
 
   <style>
@@ -70,16 +70,15 @@ const { url, text, text_color, background_color } = Astro.props;
       font-family: monospace, sans-serif;
       font-variant-numeric: tabular-nums;
       font-weight: 500;
-      font-size: 17px;
+      font-size: 22px;
       color: var(--yellow);
       background-color: var(--pink);
       letter-spacing: 2px;
-
-      width: 350px;
-      height: 52.5px;
-
+      width: 270px;
+      height: 41.5px;
       padding: 8px;
       text-align: center;
+      align-items: center;
       /* teksten skal blive på samme linje og bryder ikke */
       white-space: nowrap;
       /* hvis teksten skulle blive længere end boksen, skjules det overskydende tekst */
@@ -87,6 +86,7 @@ const { url, text, text_color, background_color } = Astro.props;
       /* padding og border tælles med i elementets samlede bredde/højde */
       box-sizing: border-box;
       border-radius: 3px;
+      margin-top: 5px;
     }
     .hero {
       background-image: url("/assets/heroimage.webp");
@@ -100,7 +100,7 @@ const { url, text, text_color, background_color } = Astro.props;
 
     .grid_1-1-1 {
       display: grid;
-      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
       height: 100vh;
       width: 100%;
       position: relative;
@@ -114,7 +114,8 @@ const { url, text, text_color, background_color } = Astro.props;
       place-items: center;
     }
     .wordmark {
-      height: 3rem;
+      height: 7rem;
+      width: auto;
       place-self: center;
       align-self: center;
       margin: 0 auto;
@@ -202,20 +203,24 @@ const { url, text, text_color, background_color } = Astro.props;
       }
     }
 
-    @media (min-width: 600px) {
+    @media (min-width: 900px) {
+      .grid_1-1-1 {
+        padding: 0 3rem;
+      }
+      .timer-button {
+        font-size: 28px;
+        width: 350px;
+        margin-top: 10px;
+        padding: 10px;
+        height: 52.7px;
+      }
       .wordmark {
-        height: 16rem;
+        height: 12rem;
         width: auto;
       }
       .clamp1,
       .clamp2 {
         height: 16rem;
-      }
-
-      .timer-button {
-        margin-top: 10px;
-        font-size: 28px;
-        padding: 10px;
       }
     }
 
@@ -224,10 +229,10 @@ const { url, text, text_color, background_color } = Astro.props;
         height: 16rem;
         width: auto;
       }
-
       .clamp1,
       .clamp2 {
         height: 20rem;
+        width: auto;
       }
     }
   </style>
