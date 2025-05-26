@@ -1,7 +1,8 @@
 ---
 import ButtonArrow from "./ButtonArrow.astro";
 ---
-
+<div class="white_space"></div>
+<div class="white_space"></div>
 <section class="text_width">
   <div>
     <h1>HVEM ER VI?</h1>
@@ -37,6 +38,7 @@ import ButtonArrow from "./ButtonArrow.astro";
     </div>
   </div>
 </section>
+<div class="white_space"></div>
 
 <style>
   section {
@@ -66,7 +68,7 @@ import ButtonArrow from "./ButtonArrow.astro";
     gap: 1rem;
     width: fit-content;
     margin-top: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
   }
   .flex_row:hover {
     scale: 1.01;
@@ -76,13 +78,12 @@ import ButtonArrow from "./ButtonArrow.astro";
 
   .grid_1-1 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  .text_margin {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+  .white_space {
+    display: none;
   }
 
   a {
@@ -90,10 +91,17 @@ import ButtonArrow from "./ButtonArrow.astro";
     transition: 0.3s;
   }
 
-  @media (max-width: 800px) {
+  @media (min-width: 800px) {
+
+      .white_space {
+    display: block;
+  }
     .grid_1-1 {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
+
+      .flex_row {
+    margin-bottom: 4rem;
   }
 </style>
