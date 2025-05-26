@@ -9,7 +9,7 @@ import PracticalInfoBox from "./PracticalInfoBox.astro";
 
 <main>
   <section class="text_margin">
-    <div class="tekst_praktisk">
+    <div class="tekst_praktisk text_width">
       <h1>PRAKTISK INFO</h1>
       <p>
         Her finder du den mest nødvendige information om Bakkefesten. Hvis du
@@ -19,7 +19,7 @@ import PracticalInfoBox from "./PracticalInfoBox.astro";
     </div>
   </section>
 
-  <div class="accordion-wrapper text_margin">
+  <div class="accordion-wrapper text_width">
     <PracticalInfoBox
       title="ÅBNINGSTIDER TIL BAKKEFEST"
       content="Selvom det kunne være fedt at feste hele natten, så går den desværre ikke. Vi har brug for lidt tid i de sene nattetimer til at rydde op og gøre klar til næste dag."
@@ -207,7 +207,6 @@ Skaber mellemrum mellem indholdet og bunden af siden -->
 
   @media (min-width: 600px) {
     .tekst_praktisk {
-      max-width: 700px;
       margin-bottom: 3rem;
     }
 
