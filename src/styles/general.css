@@ -40,6 +40,10 @@ body {
   padding: 40px;
 }
 
+.text_margin2 {
+  padding: 40px;
+}
+
 /* Skrifttyper */
 h1 {
   font-family: owners-wide, sans-serif;
@@ -101,14 +105,34 @@ p {
   }
 }
 
-@media (min-width: 1200px) {
+
+.text_width {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  /* giver lidt luft på små skærme */
+  padding: 0 1rem;
+
+
+.footer_width {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  /* giver lidt luft på små skærme */
+  padding: 0 1rem;
+}
+
+/* @media (min-width: 1000px) {
   .text_margin {
     padding: 0 220px;
   }
-}
+
 
 @media (min-width: 1000px) {
   .text_margin {
     padding: 0 160px;
   }
+  
+    @media (min-width: 1200px) {
 }
+ */

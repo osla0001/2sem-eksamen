@@ -7,9 +7,9 @@ import PracticalInfoBox from "./PracticalInfoBox.astro";
 
 <!-- Skaber mellemrum mellem indholdet og toppen af siden -->
 
-<main>
+<section>
   <section class="text_margin">
-    <div class="tekst_praktisk">
+    <div class="tekst_praktisk text_width">
       <h1>PRAKTISK INFO</h1>
       <p>
         Her finder du den mest nødvendige information om Bakkefesten. Hvis du
@@ -19,7 +19,7 @@ import PracticalInfoBox from "./PracticalInfoBox.astro";
     </div>
   </section>
 
-  <div class="accordion-wrapper text_margin">
+  <div class="accordion-wrapper text_width">
     <PracticalInfoBox
       title="ÅBNINGSTIDER TIL BAKKEFEST"
       content="Selvom det kunne være fedt at feste hele natten, så går den desværre ikke. Vi har brug for lidt tid i de sene nattetimer til at rydde op og gøre klar til næste dag."
@@ -177,8 +177,14 @@ import PracticalInfoBox from "./PracticalInfoBox.astro";
       content="Vi tilbyder desværre ikke overnatning eller campingpladser i forbindelse med Bakkefesten. Vi henviser til selv at finde overnatning i Gilleleje og omegn."
     />
   </div>
-</main>
-
+</section>
+<a href="#food-drink" class="scroll-down">
+  <div class="container">
+    <div class="chevron"></div>
+    <div class="chevron"></div>
+    <div class="chevron"></div>
+  </div>
+</a>
 <div style="height: 100px;"></div>
 <!-- 
 Skaber mellemrum mellem indholdet og bunden af siden -->
@@ -205,9 +211,78 @@ Skaber mellemrum mellem indholdet og bunden af siden -->
     font-size: 14px;
   }
 
+  .container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+  }
+
+  .chevron {
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+  }
+
+  .chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+  }
+
+  .chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+  }
+
+  .chevron:before,
+  .chevron:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: var(--green);
+  }
+
+  .chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+  }
+
+  .chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+  }
+
+  @keyframes move {
+    25% {
+      opacity: 1;
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+  }
+
+  @keyframes pulse {
+    to {
+      opacity: 1;
+    }
+  }
+
   @media (min-width: 600px) {
     .tekst_praktisk {
-      max-width: 700px;
       margin-bottom: 3rem;
     }
 
