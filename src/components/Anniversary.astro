@@ -2,11 +2,14 @@
 import ButtonArrow from "./ButtonArrow.astro";
 ---
 
-<img
-  src="/assets/bakke-up_big.svg"
-  alt="Illustration af bakke, brugt til at skille sektionerne ad"
-  class="hill"
-/>
+<div class="section-divider">
+  <img
+    src="/assets/bakke-up_big.svg"
+    alt="Illustration af bakke, brugt til at skille sektionerne ad"
+    class="hill"
+    aria-hidden="true"
+  />
+</div>
 
 <section>
   <div style="height: 40px;"></div>
@@ -49,7 +52,15 @@ import ButtonArrow from "./ButtonArrow.astro";
   </div>
   <div style="height: 80px;"></div>
 </section>
-<img src="/assets/bakke-down_small.svg" alt="Section divider" class="hill2" />
+
+<div class="section-divider">
+  <img
+    src="/assets/bakke-down_small.svg"
+    alt="Section divider"
+    class="hill2"
+    aria-hidden="true"
+  />
+</div>
 
 <style>
   .flex_row {

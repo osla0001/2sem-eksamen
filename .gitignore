@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Ignorer hele mappen sponsor
+public/assets/sponsor/
