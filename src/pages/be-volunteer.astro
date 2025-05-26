@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Banner from "../components/Banner.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import SubmittedVolunteer from "../components/SubmittedVolunteer.astro";
+---
+
+<Layout
+  fanenavn={"Bakkefest | Tak for tilmelding"}
+  meta={"Bakkefest er en festival for alle der elsker musik og fest. Her kan du finde information om festivalen, programmet og praktiske oplysninger."}
+>
+  <Header />
+  <SubmittedVolunteer />
+  <Banner background_color="var(--yellow)" src="bannerlogopink" />
+  <Footer />
+</Layout>

@@ -1,28 +1,24 @@
 ---
 //@ts-nocheck
-import { supabase } from "../library/supabase";
 import ProgramCard from "./ProgramCard.astro";
+// henter data fra supabase med url og key
+const url = "https://yhioxktrqmlazkwnvbit.supabase.co/rest/v1/events?select=*";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InloaW94a3RycW1sYXprd252Yml0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxNjM1MjksImV4cCI6MjA2MjczOTUyOX0.rPSCRtiiBeBLLMGOZz9pd4-ZgiCMnuScZxME3EDLybc";
 
-// Læs valgt dag fra URL
-const requestUrl = new URL(Astro.request.url);
-const selectedDay = requestUrl.searchParams.get("day") ?? "";
+// sørger for, at nøglen sendes afsted så vi har adgang til dataerne
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
 
-// Supabase-query
-let query = supabase.from("events").select("*");
-if (selectedDay) {
-  query = query.eq("day", selectedDay);
-}
-const { data, error } = await query;
-if (error) throw new Error(error.message);
+// gør sådan vi kan se det i vores console og om dataene er hentet korrekt
+const data = await fetch(url, options).then((res) => res.json());
+console.log(data);
 ---
 
 <script type="text/javascript">
-  function getColumns() {
-    if (window.innerWidth <= 683) return 1;
-    if (window.innerWidth <= 1300) return 2;
-    return 3; // fallback til desktop
-  }
-
   function toggleDropdown(idx) {
     document
       .querySelectorAll(".dropdown-row")
@@ -31,29 +27,8 @@ if (error) throw new Error(error.message);
     if (dropdown) {
       dropdown.style.display =
         dropdown.style.display === "block" ? "none" : "block";
-
-      // Dynamisk antal kolonner baseret på skærmbredde
-      const columns = getColumns();
-
-      // Beregn hvilken grid-row dropdown skal have
-      const gridRow = Math.floor(idx / columns) + 2;
-
-      // Sæt grid-row på dropdown
-      dropdown.style.gridRow = gridRow;
     }
   }
-
-  // Opdater dropdown placering ved resize
-  window.addEventListener("resize", () => {
-    document
-      .querySelectorAll(".dropdown-row[style*='display: block']")
-      .forEach((dropdown) => {
-        const idx = Number(dropdown.id.replace("dropdown-", ""));
-        const columns = getColumns();
-        const gridRow = Math.floor(idx / columns) + 2;
-        dropdown.style.gridRow = gridRow;
-      });
-  });
 
   // Luk dropdown ved klik udenfor
   document.addEventListener("mousedown", function (event) {
@@ -70,23 +45,9 @@ if (error) throw new Error(error.message);
   });
 </script>
 
-<section class="text_width">
+<section class="text_margin">
   <h2>Programoversigt</h2>
-  <!-- Dag-filtrering -->
-  <nav class="dag-valg">
-    <a href="/program" class={selectedDay === "" ? "active" : ""}>Alle</a>
-    <a href="?day=Fredag" class={selectedDay === "Fredag" ? "active" : ""}
-      >Fredag</a
-    >
-    <a href="?day=Lørdag" class={selectedDay === "Lørdag" ? "active" : ""}
-      >Lørdag</a
-    >
-    <a href="?day=Søndag" class={selectedDay === "Søndag" ? "active" : ""}
-      >Søndag</a
-    >
-  </nav>
-
-  <!-- viser listen af events, hvor hver event vises med sit eget kort på siden -->
+    <!-- viser listen af events, hvor hver event vises med sit eget kort på siden -->
   <div class="grid_1-1-1" id="program-grid">
     {
       data.map((event, idx) => (
@@ -147,7 +108,6 @@ if (error) throw new Error(error.message);
     border-radius: 10px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
     z-index: 2;
-    grid-row: 3;
   }
   .program-card-wrapper {
     position: relative;
@@ -187,10 +147,5 @@ if (error) throw new Error(error.message);
     color: var(--pink);
     text-transform: uppercase;
   }
-
-  @media (max-width: 684px) {
-    .dropdown-content {
-      grid-template-columns: 1fr;
-    }
-  }
 </style>
+

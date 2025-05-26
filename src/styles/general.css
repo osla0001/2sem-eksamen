@@ -41,6 +41,10 @@ body {
   padding: 40px;
 }
 
+.text_margin2 {
+  padding: 40px;
+}
+
 /* Skrifttyper */
 h1 {
   font-family: owners-wide, sans-serif;
@@ -122,10 +126,10 @@ p {
   .text_margin {
     padding: 0 160px;
   }
-}
+
 
 @media (min-width: 1200px) {
   .text_margin {
     padding: 0 220px;
   }
-} */
+
