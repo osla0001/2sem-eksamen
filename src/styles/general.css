@@ -28,7 +28,7 @@ html {
 
 /* Andet */
 .white_space {
-  height: 80px;
+  height: 40px;
 }
 
 body {
@@ -57,6 +57,7 @@ h2 {
   font-weight: 700;
   font-style: normal;
   font-size: 36px;
+  margin-bottom: 1rem;
 }
 
 h3 {
@@ -105,14 +106,13 @@ p {
   }
 }
 
-
 .text_width {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   /* giver lidt luft på små skærme */
   padding: 0 1rem;
-
+}
 
 .footer_width {
   max-width: 1250px;
@@ -126,13 +126,10 @@ p {
   .text_margin {
     padding: 0 220px;
   }
-
+}
 
 @media (min-width: 1000px) {
   .text_margin {
     padding: 0 160px;
   }
-  
-    @media (min-width: 1200px) {
-}
- */
+} */
