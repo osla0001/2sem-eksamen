@@ -13,7 +13,6 @@ img {
 
 :root {
   scroll-behavior: smooth;
-  /* scroll-padding: 10rem; */
 }
 
 /* Farver */
@@ -106,13 +105,14 @@ p {
   }
 }
 
+
 .text_width {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   /* giver lidt luft på små skærme */
   padding: 0 1rem;
-}
+
 
 .footer_width {
   max-width: 1250px;
@@ -124,12 +124,15 @@ p {
 
 /* @media (min-width: 1000px) {
   .text_margin {
-    padding: 0 160px;
-  }
-
-
-@media (min-width: 1200px) {
-  .text_margin {
     padding: 0 220px;
   }
 
+
+@media (min-width: 1000px) {
+  .text_margin {
+    padding: 0 160px;
+  }
+  
+    @media (min-width: 1200px) {
+}
+ */
