@@ -2,7 +2,7 @@
 import ButtonArrow from "./ButtonArrow.astro";
 ---
 
-<section class="text_margin2">
+<section class="text_width">
   <h2 style="margin-bottom: 25px;">Tidsplan</h2>
   <article class="grid_1-1-1">
     <div>
@@ -78,6 +78,10 @@ import ButtonArrow from "./ButtonArrow.astro";
                 margin-top: 0rem;
               }
 
+              h3 {
+                margin-bottom: 3px;
+              }
+
               .grid_1-1-1 {
                 grid-template-columns: 1fr;
                 grid-template-rows: 1fr fit-content 1fr fit-content 1fr;
@@ -98,6 +102,8 @@ import ButtonArrow from "./ButtonArrow.astro";
                 width: 100%;
                 background-color: var(--pink);
                 margin: 0 auto;
+                margin-top: 10px;
+                margin-bottom: 10px;
               }
 
               .flex_row {
@@ -121,8 +127,14 @@ import ButtonArrow from "./ButtonArrow.astro";
                 color: var(--pink);
                 transition: 0.2s;
               }
+              .white_space {
+                display: none;
+              }
 
               @media (min-width: 600px) {
+                .white_space {
+                  display: block;
+                }
                 .grid_1-1-1 {
                   display: grid;
                   grid-template-columns: 1fr max-content 1fr max-content 1fr;

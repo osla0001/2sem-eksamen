@@ -36,14 +36,6 @@ body {
   overflow-x: hidden;
 }
 
-.text_margin {
-  padding: 40px;
-}
-
-.text_margin2 {
-  padding: 40px;
-}
-
 /* Skrifttyper */
 h1 {
   font-family: owners-wide, sans-serif;
@@ -83,6 +75,14 @@ p {
   max-width: 47rem;
 }
 
+.text_width {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  /* giver lidt luft på små skærme */
+  padding: 0px 40px;
+}
+
 /* Mobilversion */
 @media (max-width: 600px) {
   h1 {
@@ -103,15 +103,12 @@ p {
 
   p {
     font-size: 14px;
+    max-width: 30rem;
   }
-}
 
-.text_width {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  /* giver lidt luft på små skærme */
-  padding: 0 1rem;
+  .text_width {
+    padding: 30px 40px;
+  }
 }
 
 .footer_width {
