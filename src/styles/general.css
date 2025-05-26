@@ -13,7 +13,6 @@ img {
 
 :root {
   scroll-behavior: smooth;
-  /* scroll-padding: 10rem; */
 }
 
 /* Farver */
@@ -102,14 +101,14 @@ p {
   }
 }
 
-@media (min-width: 1000px) {
-  .text_margin {
-    padding: 0 160px;
-  }
-}
-
 @media (min-width: 1200px) {
   .text_margin {
     padding: 0 220px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .text_margin {
+    padding: 0 160px;
   }
 }
