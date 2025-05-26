@@ -1,0 +1,184 @@
+---
+//@ts-nocheck
+import ProgramCard from "./ProgramCard.astro";
+// henter data fra supabase med url og key
+const url = "https://yhioxktrqmlazkwnvbit.supabase.co/rest/v1/events?select=*";
+const key =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InloaW94a3RycW1sYXprd252Yml0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDcxNjM1MjksImV4cCI6MjA2MjczOTUyOX0.rPSCRtiiBeBLLMGOZz9pd4-ZgiCMnuScZxME3EDLybc";
+
+// sørger for, at nøglen sendes afsted så vi har adgang til dataerne
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+// gør sådan vi kan se det i vores console og om dataene er hentet korrekt
+const data = await fetch(url, options).then((res) => res.json());
+console.log(data);
+---
+
+<script type="text/javascript">
+  function getColumns() {
+    if (window.innerWidth <= 683) return 1;
+    if (window.innerWidth <= 1300) return 2;
+    return 3; // fallback til desktop
+  }
+
+  function toggleDropdown(idx) {
+    document
+      .querySelectorAll(".dropdown-row")
+      .forEach((el) => (el.style.display = "none"));
+    const dropdown = document.getElementById(`dropdown-${idx}`);
+    if (dropdown) {
+      dropdown.style.display =
+        dropdown.style.display === "block" ? "none" : "block";
+
+      // Dynamisk antal kolonner baseret på skærmbredde
+      const columns = getColumns();
+
+      // Beregn hvilken grid-row dropdown skal have
+      const gridRow = Math.floor(idx / columns) + 2;
+
+      // Sæt grid-row på dropdown
+      dropdown.style.gridRow = gridRow;
+    }
+  }
+
+  // Opdater dropdown placering ved resize
+  window.addEventListener("resize", () => {
+    document
+      .querySelectorAll(".dropdown-row[style*='display: block']")
+      .forEach((dropdown) => {
+        const idx = Number(dropdown.id.replace("dropdown-", ""));
+        const columns = getColumns();
+        const gridRow = Math.floor(idx / columns) + 2;
+        dropdown.style.gridRow = gridRow;
+      });
+  });
+
+  // Luk dropdown ved klik udenfor
+  document.addEventListener("mousedown", function (event) {
+    const openDropdown = document.querySelector(
+      ".dropdown-row[style*='display: block']",
+    );
+    if (
+      openDropdown &&
+      !openDropdown.contains(event.target) &&
+      !event.target.classList.contains("card-click")
+    ) {
+      openDropdown.style.display = "none";
+    }
+  });
+</script>
+
+<section class="text_margin">
+  <h2>Programoversigt</h2>
+  <!-- viser listen af events, hvor hver event vises med sit eget kort på siden -->
+  <div class="grid_1-1-1" id="program-grid">
+    {
+      data.map((event, idx) => (
+        <>
+          <div class="program-card-wrapper" data-idx={idx}>
+            <div class="card-click" onclick={`toggleDropdown(${idx})`}>
+              <ProgramCard event={event} />
+            </div>
+          </div>
+          <div
+            class="dropdown-row"
+            id={`dropdown-${idx}`}
+            style="display:none;"
+          >
+            <div class="dropdown-content">
+              <div>
+                <h2>{event.name} </h2>
+                <h4>
+                  OPLEV {event.name} SPILLE KL.{" "}
+                  {event.time_start.slice(0, 5).replace(":", ".")} {event.day}
+                </h4>
+                <p>{event.description}</p>
+              </div>
+              <div>
+                <iframe
+                  style="border-radius:12px"
+                  src={event.spotify}
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .grid_1-1-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    margin: 0 auto;
+    padding-bottom: 100px;
+  }
+  .dropdown-row {
+    grid-column: 1 / -1;
+    background: var(--yellow);
+    padding: 2rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    z-index: 2;
+    grid-row: 3;
+  }
+  .program-card-wrapper {
+    position: relative;
+    display: contents;
+  }
+  .dropdown-row {
+    grid-column: 1 / -1; /* Fylder hele grid-bredden */
+    background: var(--yellow);
+    padding: 2rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    z-index: 2;
+    transition:
+      max-height 0.3s,
+      padding 0.3s;
+    overflow: hidden;
+  }
+  .dropdown-row[style*="display:none"] {
+    max-height: 0;
+    padding: 0 1rem;
+  }
+
+  .dropdown-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .dropdown-content h2,
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  h2,
+  h3,
+  h4 {
+    color: var(--pink);
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 684px) {
+    .dropdown-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
