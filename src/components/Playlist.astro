@@ -2,11 +2,15 @@
 import ButtonArrow from "./ButtonArrow.astro";
 ---
 
-<img
-  src="/assets/bakke-up_big.svg"
-  alt="Illustration af bakke, brugt til at skille sektionerne ad"
-  class="hill"
-/>
+<div class="section-divider">
+  <img
+    src="/assets/bakke-up_big.svg"
+    alt="Illustration af bakke, brugt til at skille sektionerne ad"
+    class="hill"
+    aria-hidden="true"
+  />
+</div>
+
 <section>
   <div class="text_width grid_1-1">
     <div>
@@ -44,11 +48,15 @@ import ButtonArrow from "./ButtonArrow.astro";
       loading="lazy"></iframe>
   </div>
 </section>
-<img
-  src="/assets/bakke-down_small.svg"
-  alt="Illustration af bakke, brugt til at skille sektionerne ad"
-  class="hill2"
-/>
+
+<div class="section-divider">
+  <img
+    src="/assets/bakke-down_small.svg"
+    alt="Illustration af bakke, brugt til at skille sektionerne ad"
+    class="hill2"
+    aria-hidden="true"
+  />
+</div>
 
 <style>
   .hill {

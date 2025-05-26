@@ -2,10 +2,13 @@
 const { url, text, text_color, background_color } = Astro.props;
 ---
 
-<a href={url} target="_blank" class="pulse">
-  <button style=`background-color: ${background_color};`>
-    <h5 style=`color: ${text_color};`>{text}</h5>
-  </button>
+<a
+  href={url}
+  target="_blank"
+  class="pulse button-link"
+  style={`background-color: ${background_color};`}
+>
+  <h5 style={`color: ${text_color};`}>{text}</h5>
 </a>
 
 <style>
@@ -25,7 +28,9 @@ const { url, text, text_color, background_color } = Astro.props;
       scale: 0.9;
     }
   }
-  button {
+
+  .button-link {
+    display: inline-block;
     border: none;
     color: inherit;
     cursor: pointer;
@@ -33,11 +38,12 @@ const { url, text, text_color, background_color } = Astro.props;
     padding: 2px 10px;
     border-radius: 3px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: scale 0.3s;
   }
 
-  button:hover {
+  .button-link:hover {
     scale: 1.05;
-    transition: 0.3s;
   }
 
   h5 {
@@ -45,5 +51,6 @@ const { url, text, text_color, background_color } = Astro.props;
     font-weight: 500;
     font-style: normal;
     font-size: 18px;
+    margin: 0;
   }
 </style>

@@ -2,7 +2,15 @@
 import ButtonArrow from "./ButtonArrow.astro";
 ---
 
-<img src="/assets/bakke-up_big.svg" alt="" class="hill" />
+<div class="section-divider">
+  <img
+    src="/assets/bakke-up_big.svg"
+    alt="Illustration af bakke, brugt til at skille sektionerne ad"
+    class="hill"
+    aria-hidden="true"
+  />
+</div>
+
 <section>
   <div class="text_width">
     <h2>Sponsorerne bag bakkefesten</h2>
@@ -15,7 +23,7 @@ import ButtonArrow from "./ButtonArrow.astro";
   </div>
   <div class="white_space"></div>
 
-  <figure class="scrolling-banner">
+  <section class="scrolling-banner">
     <div class="banner-content">
       <img src="/assets/sponsor_transparent/Img01.webp" alt="Super Brugsen" />
       <img
@@ -188,7 +196,7 @@ import ButtonArrow from "./ButtonArrow.astro";
         alt="Hornbæk VVS & Varmeservice"
       />
     </div>
-  </figure>
+  </section>
 </section>
 
 <style>

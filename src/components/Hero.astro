@@ -29,211 +29,211 @@ const { url, text, text_color, background_color } = Astro.props;
 
     <img src="/assets/clamp.svg" alt="Klamme illustration" class="clamp2" />
   </div>
+</section>
 
-  <script>
-    // jeg opretter en konstant som henter timer elementet fra html'en
-    const timer = document.getElementById("timer");
+<script>
+  // jeg opretter en konstant som henter timer elementet fra html'en
+  const timer = document.getElementById("timer");
 
-    // jeg opretter en const der sørger for at tallene i nedtællingen altid er to cifre, så teksten har en stabil bredde. (2 bliver til 02)
-    const pad = (n) => String(n).padStart(2, "0");
+  // jeg opretter en const der sørger for at tallene i nedtællingen altid er to cifre, så teksten har en stabil bredde. (2 bliver til 02)
+  const pad = (n) => String(n).padStart(2, "0");
 
-    // datoen for festivalen vælges her
-    const countdownDate = new Date("Jul 11, 2025 16:00:00").getTime();
+  // datoen for festivalen vælges her
+  const countdownDate = new Date("Jul 11, 2025 16:00:00").getTime();
 
-    // opretter interval som kører hvert sekund
-    const countdownInterval = setInterval(function () {
-      const now = new Date().getTime();
-      const distance = countdownDate - now;
+  // opretter interval som kører hvert sekund
+  const countdownInterval = setInterval(function () {
+    const now = new Date().getTime();
+    const distance = countdownDate - now;
 
-      // Beregner dage, timer, minutter og sekunder i millisekunder
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-      );
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Beregner dage, timer, minutter og sekunder i millisekunder
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      // Opdaterer HTML-elementet med nedtælling
-      timer.innerHTML = `${pad(days)}d ${pad(hours)}t ${pad(minutes)}m ${pad(seconds)}s`;
+    // Opdaterer HTML-elementet med nedtælling
+    timer.innerHTML = `${pad(days)}D ${pad(hours)}T ${pad(minutes)}M ${pad(seconds)}S`;
 
-      // Hvis tiden er udløbet, vis fast tekst
-      if (distance < 0) {
-        clearInterval(countdownInterval);
-        timer.innerHTML = "00d 00t 00m 00s";
-      }
-    }, 1000);
-  </script>
-
-  <style>
-    .timer-button {
-      /* monospace for at sørge for at talle har samme bredde og ikke hopper når de skifter */
-      font-family: monospace, sans-serif;
-      font-variant-numeric: tabular-nums;
-      font-weight: 500;
-      font-size: 22px;
-      color: var(--yellow);
-      background-color: var(--pink);
-      letter-spacing: 2px;
-      width: 270px;
-      height: 41.5px;
-      padding: 8px;
-      text-align: center;
-      align-items: center;
-      /* teksten skal blive på samme linje og bryder ikke */
-      white-space: nowrap;
-      /* hvis teksten skulle blive længere end boksen, skjules det overskydende tekst */
-      overflow: hidden;
-      /* padding og border tælles med i elementets samlede bredde/højde */
-      box-sizing: border-box;
-      border-radius: 3px;
-      margin-top: 5px;
+    // Hvis tiden er udløbet, vis fast tekst
+    if (distance < 0) {
+      clearInterval(countdownInterval);
+      timer.innerHTML = "00D 00T 00M 00S";
     }
-    .hero {
-      background-image: url("/assets/heroimage.webp");
-      background-size: cover;
-      height: 100vh;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
+  }, 1000);
+</script>
 
+<style>
+  .timer-button {
+    /* monospace for at sørge for at talle har samme bredde og ikke hopper når de skifter */
+    font-family: monospace, sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--yellow);
+    background-color: var(--pink);
+    letter-spacing: 2px;
+    width: 270px;
+    height: 41.5px;
+    padding: 8px;
+    text-align: center;
+    align-items: center;
+    /* teksten skal blive på samme linje og bryder ikke */
+    white-space: nowrap;
+    /* hvis teksten skulle blive længere end boksen, skjules det overskydende tekst */
+    overflow: hidden;
+    /* padding og border tælles med i elementets samlede bredde/højde */
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin-top: 5px;
+  }
+  .hero {
+    background-image: url("/assets/heroimage.webp");
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .grid_1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 0 1rem;
+  }
+  .middle {
+    display: flex;
+    flex-direction: column;
+    place-self: center;
+    align-self: center;
+    place-items: center;
+  }
+  .wordmark {
+    height: 7rem;
+    width: auto;
+    place-self: center;
+    align-self: center;
+    margin: 0 auto;
+  }
+
+  .clamp1,
+  .clamp2 {
+    height: 10rem;
+    place-self: center;
+    align-self: center;
+  }
+
+  .clamp2 {
+    transform: scaleX(-100%);
+  }
+
+  .container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+  }
+
+  .chevron {
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+  }
+
+  .chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+  }
+
+  .chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+  }
+
+  .chevron:before,
+  .chevron:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: var(--yellow);
+  }
+
+  .chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+  }
+
+  .chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+  }
+
+  @keyframes move {
+    25% {
+      opacity: 1;
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+  }
+
+  @keyframes pulse {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 900px) {
     .grid_1-1-1 {
-      display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
-      height: 100vh;
-      width: 100%;
-      position: relative;
-      padding: 0 1rem;
+      padding: 0 3rem;
     }
-    .middle {
-      display: flex;
-      flex-direction: column;
-      place-self: center;
-      align-self: center;
-      place-items: center;
+    .timer-button {
+      font-size: 28px;
+      width: 350px;
+      margin-top: 10px;
+      padding: 10px;
+      height: 52.7px;
     }
     .wordmark {
-      height: 7rem;
+      height: 12rem;
       width: auto;
-      place-self: center;
-      align-self: center;
-      margin: 0 auto;
     }
-
     .clamp1,
     .clamp2 {
-      height: 10rem;
-      place-self: center;
-      align-self: center;
+      height: 16rem;
     }
+  }
 
+  @media (min-width: 1200px) {
+    .wordmark {
+      height: 16rem;
+      width: auto;
+    }
+    .clamp1,
     .clamp2 {
-      transform: scaleX(-100%);
+      height: 20rem;
+      width: auto;
     }
-
-    .container {
-      position: absolute;
-      bottom: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 24px;
-      height: 24px;
-    }
-
-    .chevron {
-      position: absolute;
-      width: 28px;
-      height: 2px;
-      opacity: 0;
-      transform: scale3d(0.5, 0.5, 0.5);
-      animation: move 3s ease-out infinite;
-    }
-
-    .chevron:first-child {
-      animation: move 3s ease-out 1s infinite;
-    }
-
-    .chevron:nth-child(2) {
-      animation: move 3s ease-out 2s infinite;
-    }
-
-    .chevron:before,
-    .chevron:after {
-      content: " ";
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: 51%;
-      background: var(--yellow);
-    }
-
-    .chevron:before {
-      left: 0;
-      transform: skew(0deg, 30deg);
-    }
-
-    .chevron:after {
-      right: 0;
-      width: 50%;
-      transform: skew(0deg, -30deg);
-    }
-
-    @keyframes move {
-      25% {
-        opacity: 1;
-      }
-      33% {
-        opacity: 1;
-        transform: translateY(30px);
-      }
-      67% {
-        opacity: 1;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 0;
-        transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
-      }
-    }
-
-    @keyframes pulse {
-      to {
-        opacity: 1;
-      }
-    }
-
-    @media (min-width: 900px) {
-      .grid_1-1-1 {
-        padding: 0 3rem;
-      }
-      .timer-button {
-        font-size: 28px;
-        width: 350px;
-        margin-top: 10px;
-        padding: 10px;
-        height: 52.7px;
-      }
-      .wordmark {
-        height: 12rem;
-        width: auto;
-      }
-      .clamp1,
-      .clamp2 {
-        height: 16rem;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .wordmark {
-        height: 16rem;
-        width: auto;
-      }
-      .clamp1,
-      .clamp2 {
-        height: 20rem;
-        width: auto;
-      }
-    }
-  </style>
-</section>
+  }
+</style>
