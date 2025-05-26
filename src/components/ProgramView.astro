@@ -1,6 +1,11 @@
 ---
 //@ts-nocheck
 import ProgramCard from "./ProgramCard.astro";
+
+// variabler
+let letter = "All",
+  time = "All";
+
 // henter data fra supabase med url og key
 const url = "https://yhioxktrqmlazkwnvbit.supabase.co/rest/v1/events?select=*";
 const key =
@@ -16,6 +21,18 @@ const options = {
 // gør sådan vi kan se det i vores console og om dataene er hentet korrekt
 const data = await fetch(url, options).then((res) => res.json());
 console.log(data);
+
+data.sort((a, b) => {
+  // Først sorteres efter 'day'
+  if (a.day < b.day) return -1;
+  if (a.day > b.day) return 1;
+
+  // Hvis 'day' er ens, sorteres efter 'time_start'
+  if (a.time_start < b.time_start) return -1;
+  if (a.time_start > b.time_start) return 1;
+
+  return 0; // Hvis begge er ens
+});
 ---
 
 <script type="text/javascript">
@@ -74,6 +91,7 @@ console.log(data);
 
 <section class="text_width">
   <h2>Programoversigt</h2>
+
   <!-- viser listen af events, hvor hver event vises med sit eget kort på siden -->
   <div class="grid_1-1-1" id="program-grid">
     {
