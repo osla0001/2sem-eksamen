@@ -61,7 +61,7 @@ const { url, text, text_color, background_color } = Astro.props;
         clearInterval(countdownInterval);
         timer.innerHTML = "00d 00t 00m 00s";
       }
-    }, 1000);
+    });
   </script>
 
   <style>
@@ -218,9 +218,6 @@ const { url, text, text_color, background_color } = Astro.props;
         padding: 10px;
       }
     }
-  </style>
-</section>
-
 
     @media (min-width: 1200px) {
       .wordmark {
