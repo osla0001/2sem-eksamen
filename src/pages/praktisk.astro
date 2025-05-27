@@ -3,20 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/general.css";
 import PracticalSection from "../components/PracticalSection.astro";
 import Banner from "../components/Banner.astro";
-import Header from "../components/Header.astro";
 import FoodDrinkSection from "../components/FoodDrinkSection.astro";
-import Footer from "../components/Footer.astro";
 ---
 
 <Layout
   fanenavn={"Bakkefest | Praktisk info"}
   meta={"Læs om praktisk info til Bakkefest, herunder transport, mad og drikke, samt hvad du skal medbringe."}
 >
-  <Header />
   <main>
     <PracticalSection />
     <FoodDrinkSection />
     <Banner background_color="var(--yellow)" src="bannerlogopink" />
   </main>
-  <Footer />
 </Layout>

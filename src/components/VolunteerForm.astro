@@ -42,7 +42,7 @@
         til 10 år. (Du kan altid få din data slettet ved at henvende dig til os
         på mail til info@bakkefest.dk)<span class="red">*</span>
       </p>
-      <label for="accept" style="margin-top: 1rem;">
+      <label for="accept" style="margin-top: 15px;">
         <input type="checkbox" id="accept" name="accept" required />
         Accepter ovenstående
       </label>
@@ -107,7 +107,7 @@
   }
 
   h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
     color: var(--pink);
     text-transform: uppercase;
   }
@@ -118,8 +118,8 @@
 
   .grid_1-1 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .form_flex {
@@ -162,7 +162,7 @@
     border: 1px solid var(--pink);
     border-radius: 5px;
     padding: 8px;
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
     font-size: 16px;
     font-family: inherit;
     font-weight: 500;
@@ -177,8 +177,8 @@
   label[for="accept"] {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
+    gap: 8px;
+    margin-top: 15px;
     color: var(--pink);
     font-size: 18px;
   }
@@ -199,7 +199,7 @@
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 15px;
     transition: 0.3s;
   }
 
@@ -215,10 +215,9 @@
     left: -9999px;
   }
 
-  @media (max-width: 800px) {
+  @media (min-width: 800px) {
     .grid_1-1 {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+      grid-template-columns: 1fr 1fr;
     }
   }
 </style>

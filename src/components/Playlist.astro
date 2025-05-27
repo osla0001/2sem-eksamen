@@ -79,8 +79,8 @@ import ButtonArrow from "./ButtonArrow.astro";
   }
 
   h4 {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 8px;
+    margin-bottom: 8px;
   }
 
   p {
@@ -91,20 +91,20 @@ import ButtonArrow from "./ButtonArrow.astro";
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    gap: 15px;
     width: fit-content;
     margin-top: 25px;
   }
 
   .grid_1-1 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 30px;
+    grid-template-columns: 1fr;
   }
 
   .text_margin {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   a {
@@ -121,10 +121,10 @@ import ButtonArrow from "./ButtonArrow.astro";
     transition: 0.2s;
   }
 
-  @media (max-width: 800px) {
+  @media (min-width: 800px) {
     .grid_1-1 {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
     }
   }
 </style>

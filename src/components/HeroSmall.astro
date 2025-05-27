@@ -1,9 +1,7 @@
 ---
 const { url, h1, fontSize } = Astro.props;
-import Header from "./Header.astro";
 ---
 
-<Header />
 <section class="grid_1-1-1">
   <!-- Baggrundsvideo -->
   <video autoplay muted loop playsinline class="background-video">
@@ -14,14 +12,13 @@ import Header from "./Header.astro";
   <img src="/assets/clamp.svg" alt="Klamme illustration" class="clamp1" />
   <h1 style={`font-size: ${fontSize};`}>{h1}</h1>
   <img src="/assets/clamp.svg" alt="Klamme illustration" class="clamp2" />
-  <div style="height: 2rem;"></div>
+  <div class="white_space"></div>
   <img
     src="/assets/bakke-divider-4.svg"
     alt="Illustration af bakke, brugt til at skille sektionerne ad"
     class="hill"
   />
 </section>
-<!-- <div style="height: 2rem;"></div> -->
 
 <style>
   .grid_1-1-1 {
@@ -30,7 +27,7 @@ import Header from "./Header.astro";
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 5fr max-content;
     width: 100%;
-    padding: 0 1rem;
+    padding: 0 15px;
     overflow: hidden;
   }
 
@@ -54,7 +51,7 @@ import Header from "./Header.astro";
 
   .clamp1,
   .clamp2 {
-    height: 8rem;
+    height: 130px;
     place-self: center;
     align-self: center;
   }
@@ -77,23 +74,21 @@ import Header from "./Header.astro";
     height: max-content;
     margin: 0 auto;
     overflow: hidden;
-    margin-bottom: -1rem;
-    margin-left: -2rem;
+    margin-bottom: -15px;
+    margin-left: -30px;
   }
 
   @media (min-width: 800px) {
     .hill {
       width: 103.3%;
       overflow: hidden;
-      margin-bottom: -1rem;
-      margin-left: -2rem;
     }
     .h1 {
       font-size: 1rem;
     }
     .clamp1,
     .clamp2 {
-      height: 20rem;
+      height: 320px;
     }
   }
 </style>

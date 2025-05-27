@@ -5,20 +5,17 @@ import TimeSchedule from "../components/TimeSchedule.astro";
 import Playlist from "../components/Playlist.astro";
 import ProgramView from "../components/ProgramView.astro";
 import Banner from "../components/Banner.astro";
-import Footer from "../components/Footer.astro";
-import ButtonArrow from "../components/ButtonArrow.astro";
 ---
 
 <Layout
   fanenavn={"Bakkefest | Program"}
   meta={"Læs om programmet til Bakkefest, herunder tidspunkter, artister og andre spændende arrangementer."}
 >
-  <HeroSmall url="/assets/programvideo.webm" h1="Program" fontSize="6vw" />
   <main>
+    <HeroSmall url="/assets/programvideo.webm" h1="Program" fontSize="6vw" />
     <TimeSchedule />
     <Playlist />
     <ProgramView />
     <Banner background_color="var(--yellow)" src="bannerlogopink" />
   </main>
-  <Footer />
 </Layout>
