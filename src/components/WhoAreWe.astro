@@ -1,6 +1,7 @@
 ---
 import ButtonArrow from "./ButtonArrow.astro";
 ---
+
 <div class="white_space"></div>
 <div class="white_space"></div>
 <section class="text_width">
@@ -53,7 +54,7 @@ import ButtonArrow from "./ButtonArrow.astro";
   }
 
   h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
     color: var(--pink);
   }
 
@@ -65,10 +66,10 @@ import ButtonArrow from "./ButtonArrow.astro";
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    gap: 15px;
     width: fit-content;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
   }
   .flex_row:hover {
     scale: 1.01;
@@ -79,7 +80,7 @@ import ButtonArrow from "./ButtonArrow.astro";
   .grid_1-1 {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 30px;
   }
 
   .white_space {
@@ -92,16 +93,16 @@ import ButtonArrow from "./ButtonArrow.astro";
   }
 
   @media (min-width: 800px) {
-
-      .white_space {
-    display: block;
-  }
+    .white_space {
+      display: block;
+    }
     .grid_1-1 {
       display: grid;
       grid-template-columns: 1fr 1fr;
     }
 
-      .flex_row {
-    margin-bottom: 4rem;
+    .flex_row {
+      margin-bottom: 60px;
+    }
   }
 </style>

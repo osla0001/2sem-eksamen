@@ -45,38 +45,39 @@ h1 {
   font-family: owners-wide, sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 40px;
+  font-size: 1.875rem;
 }
 
 h2 {
   font-family: owners-narrow, sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 36px;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 h3 {
   font-family: owners-narrow, sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 30px;
+  font-size: 1.125rem;
 }
 
 h4 {
   font-family: owners-narrow, sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 20px;
+  font-size: 1rem;
 }
 
 p {
   font-family: neue-haas-grotesk-display, sans-serif;
   font-weight: 500;
   font-style: normal;
-  font-size: 18px;
+  font-size: 0.875rem;
   line-height: 1.7rem;
-  max-width: 47rem;
+  max-width: 80ch;
+  text-wrap: pretty;
 }
 
 .text_width {
@@ -87,26 +88,26 @@ p {
   padding: 0px 40px;
 }
 
-/* Mobilversion */
-@media (max-width: 600px) {
+/* Desktop */
+@media (min-width: 600px) {
   h1 {
-    font-size: 30px;
+    font-size: 2.25rem;
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 2.25rem;
   }
 
   h3 {
-    font-size: 18px;
+    font-size: 1.875rem;
   }
 
   h4 {
-    font-size: 16px;
+    font-size: 1.25rem;
   }
 
   p {
-    font-size: 14px;
+    font-size: 1.125rem;
   }
 
   .text_width {
@@ -119,17 +120,5 @@ p {
   width: 100%;
   margin: 0 auto;
   /* giver lidt luft på små skærme */
-  padding: 0 1rem;
+  padding: 0 15px;
 }
-
-/* @media (min-width: 1000px) {
-  .text_margin {
-    padding: 0 220px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .text_margin {
-    padding: 0 160px;
-  }
-} */

@@ -1,6 +1,6 @@
 # Teknisk dokumentation for Tema 2 eksamensprojekt
 
-Her står vores fælles retningslinjer for dette projekt.
+I dette projekt, har vi arbejdet med re-design af Bakkefest hemmeside. Denne fil, indeholder vores fælles retningslinjer for dette projekt, med korte forklaringer af projektets opbygning og funktionalitet.
 
 ## Indholdsfortegnelse
 
@@ -108,7 +108,6 @@ Vores astro projekt, med vores mapper og filer, er bygget op i denne struktur
 │   │   └── SubmittedVoulenteer.astro
 │   │   └── TimeSchedule.astro
 │   │   └── Voulenteer.astro
-│   │   └── Voulenteer2.astro
 │   │   └── VoulenteerClick.astro
 │   │   └── VoulenteerForm.astro
 │   │   └── WhoAreWe.astro
@@ -171,6 +170,10 @@ Derudover, har vi en white_space class, som bruges til at lave mellemrum i vores
 ### Media querys
 
 Til sidst i vores CSS, har vi samlet overordnede CSS i media querys, for at skabe responsivitet på vores site.
+
+### Måleenheder
+
+Vi bruger px til præcis kontrol over vores whitespace på siden og bruger rem til vores tekst, så den er skalerbar og tilgængelig ift. brugeren indstillinger.
 
 ## Komponenter
 

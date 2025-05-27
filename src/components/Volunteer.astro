@@ -19,7 +19,7 @@ import ButtonArrow from "./ButtonArrow.astro";
       <a href="/frivillig"><h4>Bliv Frivillig</h4></a>
 
       <ButtonArrow
-        url="https://bakkeselskabet.dk/"
+        url="/frivillig"
         background_color="var(--green)"
         arrow_color="var(--yellow)"
       />
@@ -33,10 +33,10 @@ import ButtonArrow from "./ButtonArrow.astro";
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    gap: 15px;
     width: fit-content;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   .flex_row:hover h4 {
@@ -62,7 +62,7 @@ import ButtonArrow from "./ButtonArrow.astro";
     text-transform: uppercase;
   }
   h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
   }
 
   p {
@@ -72,12 +72,12 @@ import ButtonArrow from "./ButtonArrow.astro";
   .grid_1-1 {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 30px;
   }
 
   .text_margin {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   a {
@@ -89,12 +89,12 @@ import ButtonArrow from "./ButtonArrow.astro";
   @media (min-width: 800px) {
     .grid_1-1 {
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 30px;
     }
 
     .flex_row {
-      margin-top: 2rem;
-      margin-bottom: 4rem;
+      margin-top: 30px;
+      margin-bottom: 60px;
     }
   }
 </style>

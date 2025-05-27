@@ -10,11 +10,11 @@
     position: fixed;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 8px;
     top: 75%;
     right: 0;
     background-color: var(--pink);
-    padding: 1rem 0.5rem 1rem 1.2rem;
+    padding: 15px 8px 15px 20px;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     transition: 0.3s;
@@ -24,7 +24,7 @@
   }
 
   img {
-    width: 90px;
+    width: 60px;
     height: auto;
   }
 
@@ -46,10 +46,9 @@
     cursor: pointer;
   }
 
-  @media (max-width: 800px) {
+  @media (min-width: 800px) {
     img {
-      width: 60px;
-      height: auto;
+      width: 90px;
     }
   }
 </style>

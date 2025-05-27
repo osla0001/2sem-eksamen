@@ -109,7 +109,7 @@ import ButtonArrow from "./ButtonArrow.astro";
   form {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 10px;
   }
 
   /* input::placeholder styrer det indhold som står inde i boksen FØR MAN BEGYNDER AT SKRIVE */
@@ -120,7 +120,7 @@ import ButtonArrow from "./ButtonArrow.astro";
     font-family: neue-haas-grotesk-display, sans-serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   input,
@@ -129,7 +129,7 @@ import ButtonArrow from "./ButtonArrow.astro";
     color: var(--pink);
     font-weight: 500;
     font-style: normal;
-    font-size: 14px;
+    font-size: 0.875rem;
     text-align: left; /* Justering af teksten */
   }
 
@@ -137,7 +137,7 @@ import ButtonArrow from "./ButtonArrow.astro";
   textarea,
   button {
     width: 100%;
-    padding: 0.5rem;
+    padding: 8px;
     border: none;
     border-radius: 5px;
   }
@@ -155,12 +155,11 @@ import ButtonArrow from "./ButtonArrow.astro";
 
   /* Herefter har jeg taget fat i type=email igen, men denne gang i placeholder, så jeg kan style teksten! Da den er anderledes end de andre indput felter */
   input[type="email"]::placeholder {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--light_pink);
     font-family: owners-narrow, sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 20px;
     opacity: 1;
   }
 
@@ -175,15 +174,14 @@ import ButtonArrow from "./ButtonArrow.astro";
     font-family: owners-narrow, sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   input[type="submit"]::placeholder {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: var(--light_pink);
     font-family: owners-narrow, sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 20px;
     opacity: 1;
   }
 
@@ -210,8 +208,8 @@ import ButtonArrow from "./ButtonArrow.astro";
   }
 
   .CVR {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-top: 15px;
+    margin-bottom: 30px;
   }
 
   a:hover {
@@ -225,8 +223,8 @@ import ButtonArrow from "./ButtonArrow.astro";
 
   footer {
     background-color: var(--green);
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding-top: 15px;
+    padding-bottom: 30px;
   }
 
   .grid_1-1 {
@@ -238,7 +236,7 @@ import ButtonArrow from "./ButtonArrow.astro";
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin-top: 0.5rem;
+    margin-top: 8px;
   }
 
   .email_input {
@@ -253,7 +251,7 @@ import ButtonArrow from "./ButtonArrow.astro";
   }
 
   .some_info {
-    margin-top: 3rem;
+    margin-top: 45px;
   }
   .img_some {
     display: flex;
@@ -271,7 +269,7 @@ import ButtonArrow from "./ButtonArrow.astro";
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    padding-top: 3rem;
+    padding-top: 45px;
   }
   .footer_left {
     display: flex;
@@ -306,13 +304,13 @@ import ButtonArrow from "./ButtonArrow.astro";
     form {
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: 10px;
       max-width: 100%;
       margin: 0 auto;
     }
 
     button {
-      padding: 2rem;
+      padding: 30px;
     }
     .footer_right {
       display: flex;
@@ -329,16 +327,16 @@ import ButtonArrow from "./ButtonArrow.astro";
 
     input::placeholder,
     textarea::placeholder {
-      font-size: 18px;
+      font-size: 1.125rem;
       line-height: 1.7rem;
     }
     .line {
-      margin-top: -0.3rem;
+      margin-top: -5px;
     }
 
     input,
     textarea {
-      font-size: 18px;
+      font-size: 1.125rem;
     }
   }
 </style>

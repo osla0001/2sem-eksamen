@@ -5,16 +5,14 @@ import Banner from "../components/Banner.astro";
 import Posters from "../components/Posters.astro";
 import PinkPulse from "../components/PinkPulse.astro";
 import PinkPulseInstagram from "../components/PinkPulseInstagram.astro";
-import Footer from "../components/Footer.astro";
-import ButtonArrow from "../components/ButtonArrow.astro";
 ---
 
 <Layout
   fanenavn={"Bakkefest | Forside"}
   meta={"Bakkefest er en festival for alle der elsker musik og fest. Her kan du finde information om festivalen, programmet og praktiske oplysninger."}
 >
-  <Hero />
   <main>
+    <Hero />
     <Banner background_color="var(--pink)" src="bannerlogolightpink" />
     <Posters />
     <PinkPulse />
@@ -22,5 +20,4 @@ import ButtonArrow from "../components/ButtonArrow.astro";
 
     <Banner background_color="var(--yellow)" src="bannerlogopink" />
   </main>
-  <Footer />
 </Layout>

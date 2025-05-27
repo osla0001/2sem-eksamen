@@ -12,7 +12,7 @@ import ButtonArrow from "./ButtonArrow.astro";
 </div>
 
 <section>
-  <div style="height: 40px;"></div>
+  <div class="white_space"></div>
   <div class="text_width grid_1-1">
     <a
       data-flickr-embed="true"
@@ -37,20 +37,9 @@ import ButtonArrow from "./ButtonArrow.astro";
         nogensinde måtte lukke indgangene… <br />Glæd jer til Bakkefesten 2025,
         hvor vi gør det hele igen!
       </p>
-      <!-- <div class="flex_row">
-      <a href="https://bakkeselskabet.dk/"
-        ><h4>Læs mere på Bakkeselskabets hjemmeside</h4></a
-      >
-
-      <ButtonArrow
-        url="https://bakkeselskabet.dk/"
-        background_color="var(--yellow)"
-        arrow_color="var(--green)"
-      />
-    </div> -->
     </div>
   </div>
-  <div style="height: 80px;"></div>
+  <div class="white_space"></div>
 </section>
 
 <div class="section-divider">
@@ -63,14 +52,18 @@ import ButtonArrow from "./ButtonArrow.astro";
 </div>
 
 <style>
+  section {
+    padding-bottom: 20px;
+  }
+
   .flex_row {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
+    gap: 15px;
     width: fit-content;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   .flex_row:hover h4 {
@@ -115,12 +108,7 @@ import ButtonArrow from "./ButtonArrow.astro";
   .grid_1-1 {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .text_margin {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    gap: 30px;
   }
 
   a {
@@ -131,12 +119,12 @@ import ButtonArrow from "./ButtonArrow.astro";
   @media (min-width: 800px) {
     .grid_1-1 {
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 30px;
     }
 
     .flex_row {
-      margin-top: 2rem;
-      margin-bottom: 4rem;
+      margin-top: 30px;
+      margin-bottom: 60px;
     }
   }
 </style>

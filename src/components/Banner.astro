@@ -24,13 +24,13 @@ const { src, background_color } = Astro.props;
 
   .banner-content {
     display: flex;
-    gap: 0.1rem;
+    gap: 1px;
     animation: scroll 10s linear infinite;
-    height: 4rem;
+    height: 60px;
   }
 
   .banner-content img {
-    max-height: 10rem;
+    max-height: 150px;
   }
 
   /* keyframes, som gør at banner-content ruller */
@@ -45,7 +45,7 @@ const { src, background_color } = Astro.props;
 
   @media (min-width: 1200px) {
     .banner-content {
-      height: 9rem;
+      height: 145px;
     }
   }
 </style>
