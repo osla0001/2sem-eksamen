@@ -80,54 +80,65 @@ data.sort((a, b) => {
 </section>
 
 <script type="text/javascript">
+  // Funktion der returnerer antal kolonner baseret på skærmbredden
   function getColumns() {
-    if (window.innerWidth <= 683) return 1;
-    if (window.innerWidth <= 1300) return 2;
-    return 3; // fallback til desktop
+    if (window.innerWidth <= 683) return 1; // Små skærme: 1 kolonne
+    if (window.innerWidth <= 1300) return 2; // Mellem skærme: 2 kolonner
+    return 3; // Store skærme: 3 kolonner
   }
 
+  // Funktion til at åbne/lukke en dropdown baseret på indeks (idx)
   function toggleDropdown(idx) {
+    const dropdown = document.getElementById(`dropdown-${idx}`); // Hent specifik dropdown
+    const isOpen = dropdown && dropdown.style.display === "block"; // Tjek om den allerede er åben
+
+    // Hvis dropdown er åben, luk den
+    if (isOpen) {
+      dropdown.style.display = "none";
+      return;
+    }
+
+    // Luk alle andre åbne dropdowns
     document
       .querySelectorAll(".dropdown-row")
       .forEach((el) => (el.style.display = "none"));
-    const dropdown = document.getElementById(`dropdown-${idx}`);
+
+    // Åbn den valgte dropdown
     if (dropdown) {
-      dropdown.style.display =
-        dropdown.style.display === "block" ? "none" : "block";
+      dropdown.style.display = "block";
 
-      // Dynamisk antal kolonner baseret på skærmbredde
-      const columns = getColumns();
-
-      // Beregn hvilken grid-row dropdown skal have
-      const gridRow = Math.floor(idx / columns) + 2;
-
-      // Sæt grid-row på dropdown
-      dropdown.style.gridRow = gridRow;
+      // Beregn hvilken grid-række dropdown'en skal placeres i
+      const columns = getColumns(); // Hvor mange kolonner har layoutet?
+      const gridRow = Math.floor(idx / columns) + 2; // Beregn hvilken række dropdown’en skal placeres i
+      dropdown.style.gridRow = gridRow; // Sæt rækken i CSS-grid
     }
   }
 
-  // Opdater dropdown placering ved resize
+  // Opdater placeringen af åben dropdown, når vinduet ændrer størrelse
   window.addEventListener("resize", () => {
     document
-      .querySelectorAll(".dropdown-row[style*='display: block']")
+      .querySelectorAll(".dropdown-row[style*='display: block']") // Find alle viste dropdowns
       .forEach((dropdown) => {
-        const idx = Number(dropdown.id.replace("dropdown-", ""));
-        const columns = getColumns();
-        const gridRow = Math.floor(idx / columns) + 2;
-        dropdown.style.gridRow = gridRow;
+        const idx = Number(dropdown.id.replace("dropdown-", "")); // Udtræk indeks fra ID
+        const columns = getColumns(); // Opdater antal kolonner
+        const gridRow = Math.floor(idx / columns) + 2; // Beregn ny række
+        dropdown.style.gridRow = gridRow; // Opdater placering
       });
   });
 
-  // Luk dropdown ved klik udenfor
+  // Luk en åben dropdown, hvis brugeren klikker udenfor kort eller dropdown
   document.addEventListener("mousedown", function (event) {
     const openDropdown = document.querySelector(
       ".dropdown-row[style*='display: block']",
     );
-    if (
-      openDropdown &&
-      !openDropdown.contains(event.target) &&
-      !event.target.classList.contains("card-click")
-    ) {
+    if (!openDropdown) return; // Hvis ingen dropdown er åben, gør ingenting
+
+    // Tjek om klik skete på et kort eller dropdown
+    const isCardClick = event.target.closest(".card-click");
+    const isDropdown = event.target.closest(".dropdown-row");
+
+    // Hvis brugeren klikker udenfor både kort og dropdown, luk dropdown
+    if (!isCardClick && !isDropdown) {
       openDropdown.style.display = "none";
     }
   });
