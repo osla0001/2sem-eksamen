@@ -31,6 +31,54 @@ data.sort((a, b) => {
 });
 ---
 
+<section class="text_width">
+  <div class="white_space"></div>
+  <h2>Programoversigt</h2>
+
+  <!-- viser listen af events, hvor hver event vises med sit eget kort på siden -->
+  <div class="grid_1-1-1" id="program-grid">
+    {
+      data.map((event, idx) => (
+        <>
+          <div class="program-card-wrapper" data-idx={idx}>
+            <div class="card-click" onclick={`toggleDropdown(${idx})`}>
+              <ProgramCard event={event} />
+            </div>
+          </div>
+          <div
+            class="dropdown-row"
+            id={`dropdown-${idx}`}
+            style="display:none;"
+          >
+            <div class="dropdown-content">
+              <div>
+                <h2>{event.name} </h2>
+                <h4>
+                  OPLEV {event.name} SPILLE KL.{" "}
+                  {event.time_start.slice(0, 5).replace(":", ".")} {event.day}
+                </h4>
+                <p>{event.description}</p>
+              </div>
+              <div>
+                <iframe
+                  style="border-radius:12px"
+                  src={event.spotify}
+                  width="100%"
+                  height="352"
+                  frameBorder="0"
+                  allowfullscreen=""
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </>
+      ))
+    }
+  </div>
+</section>
+
 <script type="text/javascript">
   function getColumns() {
     if (window.innerWidth <= 683) return 1;
@@ -84,54 +132,6 @@ data.sort((a, b) => {
     }
   });
 </script>
-
-<section class="text_width">
-  <div class="white_space"></div>
-  <h2>Programoversigt</h2>
-
-  <!-- viser listen af events, hvor hver event vises med sit eget kort på siden -->
-  <div class="grid_1-1-1" id="program-grid">
-    {
-      data.map((event, idx) => (
-        <>
-          <div class="program-card-wrapper" data-idx={idx}>
-            <div class="card-click" onclick={`toggleDropdown(${idx})`}>
-              <ProgramCard event={event} />
-            </div>
-          </div>
-          <div
-            class="dropdown-row"
-            id={`dropdown-${idx}`}
-            style="display:none;"
-          >
-            <div class="dropdown-content">
-              <div>
-                <h2>{event.name} </h2>
-                <h4>
-                  OPLEV {event.name} SPILLE KL.{" "}
-                  {event.time_start.slice(0, 5).replace(":", ".")} {event.day}
-                </h4>
-                <p>{event.description}</p>
-              </div>
-              <div>
-                <iframe
-                  style="border-radius:12px"
-                  src={event.spotify}
-                  width="100%"
-                  height="352"
-                  frameBorder="0"
-                  allowfullscreen=""
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </>
-      ))
-    }
-  </div>
-</section>
 
 <style>
   .grid_1-1-1 {

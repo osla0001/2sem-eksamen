@@ -1,13 +1,12 @@
 <a href="/frivillig"
   ><figure>
     <img src="/assets/volunteer.svg" alt="Knap til at blive frivillig" />
-
     <p>Bliv<br />frivillig</p>
   </figure>
 </a>
 
 <style>
-  figure {
+  a {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -21,6 +20,7 @@
     transition: 0.3s;
     z-index: 100;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
   }
 
   img {
@@ -40,7 +40,7 @@
     line-height: 1;
   }
 
-  figure:hover {
+  a:hover {
     scale: 1.1;
     transition: 0.3s;
     cursor: pointer;
