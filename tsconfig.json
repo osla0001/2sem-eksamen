@@ -1,12 +1,8 @@
+// Dette er et TypeScript dokument. Denne fil styrer, hvordan TypeScript tjekker og kompilerer vores kode i vores Astro-projekt – især med React-support.
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [
-    ".astro/types.d.ts",
-    "**/*"
-  ],
-  "exclude": [
-    "dist"
-  ],
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react"
