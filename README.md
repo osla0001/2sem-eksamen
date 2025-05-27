@@ -1,4 +1,6 @@
-# Teknisk dokumentation for Tema 2 eksamensprojekt
+# Tema 10 - Eksamensprojekt
+
+## Gruppe 8 - Teknisk dokumentationsrapport
 
 I dette projekt, har vi arbejdet med re-design af Bakkefest hemmeside. Denne fil, indeholder vores fælles retningslinjer for dette projekt, med korte forklaringer af projektets opbygning og funktionalitet.
 
@@ -13,9 +15,10 @@ I dette projekt, har vi arbejdet med re-design af Bakkefest hemmeside. Denne fil
   - [Farver](#farver)
   - [Styles](#styles)
   - [Media querys](#media-querys)
+  - [Måleenheder](#måleenheder)
 - [Komponenter](#komponenter)
-  - [Hero og HeroSmall](#herosmall)
-  - [Header og Footer](#footer)
+  - [Hero og HeroSmall](#hero-og-herosmall)
+  - [Header og Footer](#header-og-footer)
   - [Banner](#banner)
   - [Burger](#burger)
   - [ButtonArrow og ButtonText](#buttonarrow-og-buttontext)
@@ -51,6 +54,7 @@ I dette projekt, har vi arbejdet med re-design af Bakkefest hemmeside. Denne fil
   - [Burger-menu (Burger.astro)](#burger-menu-burgerastro)
   - [Nedtælling (Hero.astro)](#nedtælling-heroastro)
   - [Dropdown-kort og grid-placering (ProgramView.astro)](#dropdown-kort-og-grid-placering-programviewastro)
+- [AOS](#aos)
 - [Databasebrug](#databasebrug)
   - [Hentning af data (ProgramView- og ProgramCard.astro)](#hentning-af-data-programview--og-programcardastro)
   - [Brug af data (ProgramCard.astro)](#brug-af-data-programcardastro)
