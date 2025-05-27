@@ -16,6 +16,8 @@ const { fanenavn, meta } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={meta} />
     <!-- Webfonts -->
+    <link rel="preconnect" href="https://use.typekit.net" />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
     <link rel="stylesheet" href="https://use.typekit.net/gez7rds.css" />
     <title>{fanenavn}</title>
   </head>
