@@ -24,6 +24,7 @@ html {
   --light_pink: #fff5fa;
   --gray: #31302e;
   scroll-behavior: smooth;
+  width: 100vw;
 }
 
 /* Andet */
@@ -88,6 +89,14 @@ p {
   padding: 0px 40px;
 }
 
+.footer_width {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  /* giver lidt luft på små skærme */
+  padding: 0px 40px;
+}
+
 /* Desktop */
 @media (min-width: 600px) {
   h1 {
@@ -113,12 +122,4 @@ p {
   .text_width {
     padding: 30px 40px;
   }
-}
-
-.footer_width {
-  max-width: 1250px;
-  width: 100%;
-  margin: 0 auto;
-  /* giver lidt luft på små skærme */
-  padding: 0 15px;
 }

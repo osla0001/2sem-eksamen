@@ -34,7 +34,7 @@ I dette projekt, har vi arbejdet med re-design af Bakkefest hemmeside. Denne fil
   - [index.astro](#indexastro)
   - [program.astro](#programastro)
   - [frivillig.astro](#frivilligastro)
-  - [be-volunteer.astro](#be-volunteerastro)
+  - [bliv-frivillig.astro](#bliv-frivilligastro)
   - [praktisk.astro](#praktiskastro)
   - [bagbakkefest.astro](#bagbakkefestastro)
 - [Komponenter og layout](#komponenter-og-layout)
@@ -80,9 +80,9 @@ Vores astro projekt, med vores mapper og filer, er bygget op i denne struktur
 /
 ├── public/
 │   ├── assets/
-│   │   └── Layout.astro
-│   │   └── Layout.astro
-│   │   └── Layout.astro
+│   │   └── database/
+│   │   └── sponsor_transparent
+│   │   alle fier og mapper i assets indeholder vores billede og videofiler
 ├── src/
 │   ├── components/
 │   │   └── Anniversary.astro
@@ -100,24 +100,25 @@ Vores astro projekt, med vores mapper og filer, er bygget op i denne struktur
 │   │   └── PinkPulseInstagram.astro
 │   │   └── Playlist.astro
 │   │   └── Posters.astro
-│   │   └── PracticalInfoBoxsters.astro
-│   │   └── PracticalInfoSection.astro
+│   │   └── PracticalInfoBox.astro
+│   │   └── PracticalSection.astro
 │   │   └── ProgramCard.astro
 │   │   └── ProgramView.astro
 │   │   └── Sponsor.astro
-│   │   └── SubmittedVoulenteer.astro
 │   │   └── TimeSchedule.astro
-│   │   └── Voulenteer.astro
-│   │   └── VoulenteerClick.astro
-│   │   └── VoulenteerForm.astro
+│   │   └── Volunteer.astro
+│   │   └── VolunteerClick.astro
+│   │   └── VolunteerForm.astro
+│   │   └── VolunteerSubmitted.astro
 │   │   └── WhoAreWe.astro
 │   ├── javascript/
-│   │   └── AOSinit.jsx
+│   │   └── AOSInit.jsx
+│   │   └── burger.js
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
 │   │   └── bagbakkefest.astro
-│   │   └── be-volunteer.astro
+│   │   └── bliv-frivillig.astro
 │   │   └── frivillig.astro
 │   │   └── index.astro
 │   │   └── praktisk.astro
@@ -136,6 +137,8 @@ Vores astro projekt, med vores mapper og filer, er bygget op i denne struktur
 ├── package.json
 │
 └── README.md
+│
+└── tsconfig.json
 ```
 
 ## CSS
@@ -173,7 +176,7 @@ Til sidst i vores CSS, har vi samlet overordnede CSS i media querys, for at skab
 
 ### Måleenheder
 
-Vi bruger px til præcis kontrol over vores whitespace på siden og bruger rem til vores tekst, så den er skalerbar og tilgængelig ift. brugeren indstillinger.
+Vi bruger px til præcis kontrol over vores whitespace på siden og bruger rem til vores tekst, så den er skalerbar og tilgængelig ifm. brugeren indstillinger.
 
 ## Komponenter
 
@@ -250,7 +253,7 @@ Der er flere komponenter knyttet til frivillig-tilmelding:
 
 - `VolunteerForm`: Indeholder selve formularen.
 - `VolunteerClick`: Håndterer interaktion med frivillig-tilmeldingskomponenten, som går igen på siderne.
-- `Volunteer` og `Volunteer2`: Viser information til interesserede frivillige.
+- `Volunteer`: Viser information til interesserede frivillige.
 - `SubmittedVolunteer`: Vises efter gennemført tilmelding.
 
 ## Pages
@@ -269,7 +272,7 @@ Viser dagens program med komponenterne `ProgramCard`, `TimeSchedule` og `Program
 
 Side målrettet frivillige – hvordan man tilmelder sig og hvilke opgaver, man kan hjælpe med. Bruger `Volunteer`, `VolunteerForm`, `SubmittedVolunteer` m.fl.
 
-### be-volunteer.astro
+### bliv-frivillig.astro
 
 En engelsk version af frivillig-siden, sandsynligvis rettet mod internationale brugere eller deltagere.
 
@@ -285,7 +288,7 @@ Fortæller om idéen og teamet bag Bakkefest. Bruger `WhoAreWe`, `Anniversary` o
 
 ### Komponenter
 
-I Astro er en komponent en genanvendelig fil med .astro-endelse. Den fungerer som en separat byggeklods, som kan sættes sammen til at lave en komplet fil. Det kan bruges både til lokale og globale komponenter gennem siderne.
+I Astro er en komponent en genanvendelig fil med .astro-endelse. Den fungerer som en separat byggeklods, som kan sættes sammen til at lave en komplet fil. Det kan bruges både til lokale og globale komponenter gennem siderne. Astro filer kan både indholde scripts og styles, som er uafhængeige af andre komponenter.
 
 ### Layout
 
@@ -441,6 +444,17 @@ window.addEventListener("mousedown", (event) => {
   }
 });
 ```
+
+## AOS
+
+Til projektet har vi installeret AOS, som fungerer som et bibliotek, der har en række animationer til rådighed at bruge til sit site. Den observerer hvor man er på siden, og kigger på hvornår man rammer det element men har sat AOS på, og så kører animationen. AOS tilføjer elementer som:
+
+- opacity
+- transform
+- transition
+- m.m.
+
+AOS er nemt at bruge, fordi der allerede er massere af færdige animationstyper, det reducerer javascript og så kan det tilpasses efter ønske.
 
 ---
 
