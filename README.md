@@ -14,7 +14,7 @@ I dette projekt, har vi arbejdet med re-design af Bakkefest hemmeside. Denne fil
   - [Skrifttyper](#skrifttyper)
   - [Farver](#farver)
   - [Styles](#styles)
-  - [Media querys](#media-querys)
+  - [Media queries](#media-queries)
   - [Måleenheder](#måleenheder)
 - [Komponenter](#komponenter)
   - [Hero og HeroSmall](#hero-og-herosmall)
@@ -174,9 +174,9 @@ Vi har, som det første i vores CSS, lavet et reset, for at fjerne margin og pad
 
 Derudover, har vi en white_space class, som bruges til at lave mellemrum i vores sektioner, og en text_margin class, som samler vores sektioner i midten på siden.
 
-### Media querys
+### Media queries
 
-Til sidst i vores CSS, har vi samlet overordnede CSS i media querys, for at skabe responsivitet på vores site.
+Til sidst i vores CSS, har vi samlet overordnede CSS i media queries, for at skabe responsivitet på vores site.
 
 ### Måleenheder
 
@@ -406,44 +406,43 @@ setInterval(function () {
 ### Dropdown-kort og grid-placering (ProgramView\.astro)
 
 ```js
-// Toggler visning af dropdown-beskrivelser i programmet
-function toggleDropdown(idx) {
-  document
-    .querySelectorAll(".dropdown-row")
-    .forEach((el) => (el.style.display = "none"));
-  const dropdown = document.getElementById(`dropdown-${idx}`);
+// Funktion der returnerer antal kolonner baseret på skærmbredden
+function getColumns() {
+  if (window.innerWidth <= 683) return 1; // Små skærme: 1 kolonne
+  if (window.innerWidth <= 1300) return 2; // Mellem skærme: 2 kolonner
+  return 3; // Store skærme: 3 kolonner
 
-  if (dropdown) {
-    dropdown.style.display =
-      dropdown.style.display === "block" ? "none" : "block";
-    const columns = getColumns();
-    const gridRow = Math.floor(idx / columns) + 2;
-    dropdown.style.gridRow = gridRow;
-  }
+  // Beregn hvilken grid-række dropdown'en skal placeres i
+  const columns = getColumns(); // Hvor mange kolonner har layoutet?
+  const gridRow = Math.floor(idx / columns) + 2; // Beregn hvilken række dropdown’en skal placeres i
+  dropdown.style.gridRow = gridRow; // Sæt rækken i CSS-grid
 }
 
-// Genberegner placering ved resize
+// Opdater placeringen af åben dropdown, når vinduet ændrer størrelse
 window.addEventListener("resize", () => {
   document
-    .querySelectorAll(".dropdown-row[style*='display: block']")
+    .querySelectorAll(".dropdown-row[style*='display: block']") // Find alle viste dropdowns
     .forEach((dropdown) => {
-      const idx = Number(dropdown.id.replace("dropdown-", ""));
-      const columns = getColumns();
-      const gridRow = Math.floor(idx / columns) + 2;
-      dropdown.style.gridRow = gridRow;
+      const idx = Number(dropdown.id.replace("dropdown-", "")); // Udtræk indeks fra ID
+      const columns = getColumns(); // Opdater antal kolonner
+      const gridRow = Math.floor(idx / columns) + 2; // Beregn ny række
+      dropdown.style.gridRow = gridRow; // Opdater placering
     });
 });
 
-// Luk dropdown hvis man klikker udenfor
-window.addEventListener("mousedown", (event) => {
+// Luk en åben dropdown, hvis brugeren klikker udenfor kort eller dropdown
+document.addEventListener("mousedown", function (event) {
   const openDropdown = document.querySelector(
     ".dropdown-row[style*='display: block']",
   );
-  if (
-    openDropdown &&
-    !openDropdown.contains(event.target) &&
-    !event.target.classList.contains("card-click")
-  ) {
+  if (!openDropdown) return; // Hvis ingen dropdown er åben, gør ingenting
+
+  // Tjek om klik skete på et kort eller dropdown
+  const isCardClick = event.target.closest(".card-click");
+  const isDropdown = event.target.closest(".dropdown-row");
+
+  // Hvis brugeren klikker udenfor både kort og dropdown, luk dropdown
+  if (!isCardClick && !isDropdown) {
     openDropdown.style.display = "none";
   }
 });
