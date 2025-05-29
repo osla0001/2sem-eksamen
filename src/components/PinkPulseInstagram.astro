@@ -1,3 +1,7 @@
+---
+import ButtonArrow from "./ButtonArrow.astro";
+---
+
 <section class="pink-pulse-instagram">
   <div class="text_width">
     <div data-aos="fade-right">
@@ -9,51 +13,90 @@
         Bakkefest!
       </p>
     </div>
-    <div class="instagram-imgs" data-aos="fade-left">
-      <img
-        src="/assets/instagram-1.webp"
-        width="166"
-        height="249"
-        alt="Sildebord til Bakkefest"
-      />
-      <img
-        src="/assets/instagram-2.webp"
-        width="166"
-        height="249"
-        alt="Cristopher koncert under Bakkefest"
-      />
-      <img
-        src="/assets/instagram-3.webp"
-        width="166"
-        height="249"
-        alt="Gruppe af mennesker der danser"
-        class="hide"
-      />
-      <img
-        src="/assets/instagram-4.webp"
-        width="166"
-        height="249"
-        alt="Mand i blå trøje der holder en øl"
-        class="hide"
-      />
-      <img
-        src="/assets/instagram-5.webp"
-        width="166"
-        height="249"
-        alt="Lille barn på bej hen til person i ande kostume"
-        class="hide"
-      />
+    <div data-aos="fade-left">
+      <div class="instagram-imgs">
+        <img
+          src="/assets/instagram-1.webp"
+          width="166"
+          height="249"
+          alt="Sildebord til Bakkefest"
+        />
+        <img
+          src="/assets/instagram-2.webp"
+          width="166"
+          height="249"
+          alt="Cristopher koncert under Bakkefest"
+        />
+        <img
+          src="/assets/instagram-3.webp"
+          width="166"
+          height="249"
+          alt="Gruppe af mennesker der danser"
+          class="hide"
+        />
+        <img
+          src="/assets/instagram-4.webp"
+          width="166"
+          height="249"
+          alt="Mand i blå trøje der holder en øl"
+          class="hide"
+        />
+        <img
+          src="/assets/instagram-5.webp"
+          width="166"
+          height="249"
+          alt="Lille barn på bej hen til person i ande kostume"
+          class="hide"
+        />
+      </div>
+      <div class="flex_row">
+        <a href="https://www.instagram.com/bakkefest"
+          ><h4>Udforsk vores Instagram</h4></a
+        >
+
+        <ButtonArrow
+          url="https://www.instagram.com/bakkefest"
+          background_color="var(--yellow)"
+          arrow_color="var(--pink)"
+        />
+      </div>
     </div>
   </div>
 </section>
 
 <style>
+  .flex_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    width: fit-content;
+    margin-top: 15px;
+    margin-inline-start: auto;
+  }
+
+  a {
+    text-decoration: none;
+    transition: 0.2s;
+    color: var(--grey);
+  }
+
+  .flex_row:hover h4 {
+    color: var(--yellow);
+  }
+
+  .flex_row:hover {
+    scale: 1.01;
+    transition: 0.2s;
+  }
+
   .instagram-imgs img {
     width: 100%;
     aspect-ratio: 2 / 3;
     object-fit: cover;
     border-radius: 8px;
   }
+
   .pink-pulse-instagram {
     background-color: var(--pink);
     padding-top: 60px;
