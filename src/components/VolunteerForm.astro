@@ -1,91 +1,96 @@
-<div style="height: 150px;"></div>
-<section class="text_width" style="margin-bottom: 15px;">
-  <h1>Bliv frivillig</h1>
-  <p>
-    Vi har brug for dig til at hjælpe med at gøre Bakkefest til en uforglemmelig
-    oplevelse. Som frivillig får du mulighed for at bidrage til festivalen fra
-    start til slut. Vi har brug for ekstra hænder til alt lige fra opsætning og
-    nedtagning til hjælp med praktiske opgaver under selve festivalen. Tilmeld
-    dig som frivillig og vær med til at skabe en fantastisk festivaloplevelse
-    for alle. Vi ser frem til at have dig med!
-  </p>
-</section>
+<div class="white_space2"></div>
 <section class="text_width">
-  <form action="/bliv-frivillig" method="POST" class="grid_1-1">
-    <div class="form_flex">
-      <label for="name" class="visually-hidden">Fulde navn</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Fulde navn"
-        required
-      />
-      <label for="email" class="visually-hidden">E-mail</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="E-mail"
-        required
-      />
-      <label for="phone" class="visually-hidden">Telefon nr.</label>
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="Telefonnummer"
-        required
-      />
-      <p class="accept">
-        Jeg giver hermed tilladelse til at Bakkefesten må gemme mine data i op
-        til 10 år. (Du kan altid få din data slettet ved at henvende dig til os
-        på mail til info@bakkefest.dk)<span class="red">*</span>
-      </p>
-      <label for="accept" style="margin-top: 15px;">
-        <input type="checkbox" id="accept" name="accept" required />
-        Accepter ovenstående
-      </label>
-    </div>
-    <div class="form_flex">
-      <label for="arbejde"></label>
-      <select id="arbejde" name="arbejde" required>
-        <option value="" disabled selected>Jeg vil kunne arbejde...</option>
-        <option value="før-festen">Før bakkefesten</option>
-        <option value="under-festen">Under hele bakkefesten</option>
-        <option value="efter-festen">Om fredagen</option>
-        <option value="efter-festen">Om lørdagen</option>
-        <option value="efter-festen">Om søndagen</option>
-        <option value="hele-weekenden">Efter bakkefesten</option>
-      </select>
+  <div>
+    <h1>Bliv frivillig</h1>
+    <p>
+      Vi har brug for dig til at hjælpe med at gøre Bakkefest til en
+      uforglemmelig oplevelse. Som frivillig får du mulighed for at bidrage til
+      festivalen fra start til slut. Vi har brug for ekstra hænder til alt lige
+      fra opsætning og nedtagning til hjælp med praktiske opgaver under selve
+      festivalen. Tilmeld dig som frivillig og vær med til at skabe en
+      fantastisk festivaloplevelse for alle. Vi ser frem til at have dig med!
+    </p>
+  </div>
+  <div>
+    <div class="white_space"></div>
+    <form action="/bliv-frivillig" method="POST" class="grid_1-1">
+      <div class="form_flex">
+        <label for="name" class="visually-hidden">Fulde navn</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Fulde navn"
+          required
+        />
+        <label for="email" class="visually-hidden">E-mail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="E-mail"
+          required
+        />
+        <label for="phone" class="visually-hidden">Telefon nr.</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Telefonnummer"
+          required
+        />
+        <p class="accept">
+          Jeg giver hermed tilladelse til at Bakkefesten må gemme mine data i op
+          til 10 år. (Du kan altid få din data slettet ved at henvende dig til
+          os på mail til info@bakkefest.dk)<span class="red">*</span>
+        </p>
+        <label for="accept" style="margin-top: 15px;">
+          <input type="checkbox" id="accept" name="accept" required />
+          Accepter ovenstående
+        </label>
+      </div>
+      <div class="form_flex">
+        <label for="arbejde"></label>
+        <select id="arbejde" name="arbejde" required>
+          <option value="" disabled selected>Jeg vil kunne arbejde...</option>
+          <option value="før-festen">Før bakkefesten</option>
+          <option value="under-festen">Under hele bakkefesten</option>
+          <option value="efter-festen">Om fredagen</option>
+          <option value="efter-festen">Om lørdagen</option>
+          <option value="efter-festen">Om søndagen</option>
+          <option value="hele-weekenden">Efter bakkefesten</option>
+        </select>
 
-      <label for="gruppe"></label>
-      <select id="gruppe" name="gruppe" required>
-        <option value="" disabled selected>Jeg ønsker at blive del af...</option
-        >
-        <option value="service">Service crew</option>
-        <option value="indgang">Indgangs crew</option>
-        <option value="vagt">Vagt crew</option>
-        <option value="indgang">Plads crew</option>
-        <option value="scene">Scene crew</option>
-        <option value="bar">Bar crew</option>
-      </select>
+        <label for="gruppe"></label>
+        <select id="gruppe" name="gruppe" required>
+          <option value="" disabled selected
+            >Jeg ønsker at blive del af...</option
+          >
+          <option value="service">Service crew</option>
+          <option value="indgang">Indgangs crew</option>
+          <option value="vagt">Vagt crew</option>
+          <option value="indgang">Plads crew</option>
+          <option value="scene">Scene crew</option>
+          <option value="bar">Bar crew</option>
+        </select>
 
-      <label for="tshirt"></label>
-      <select id="tshirt" name="tshirt" required>
-        <option value="" disabled selected>Min T-shirt størrelse er...</option>
-        <option value="s">S</option>
-        <option value="m">M</option>
-        <option value="l">L</option>
-        <option value="xl">XL</option>
-        <option value="xxl">XXL</option>
-        <option value="xxl">XXXL</option>
-      </select>
+        <label for="tshirt"></label>
+        <select id="tshirt" name="tshirt" required>
+          <option value="" disabled selected>Min T-shirt størrelse er...</option
+          >
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="l">L</option>
+          <option value="xl">XL</option>
+          <option value="xxl">XXL</option>
+          <option value="xxl">XXXL</option>
+        </select>
 
-      <button type="submit">Bliv Frivillig</button>
-    </div>
-  </form>
-  <div class="white_space2"></div>
+        <button type="submit">Bliv Frivillig</button>
+      </div>
+    </form>
+    <div class="white_space2"></div>
+  </div>
 </section>
 
 <style>

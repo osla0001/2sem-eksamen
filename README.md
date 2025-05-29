@@ -159,7 +159,6 @@ I vores html har vi stylet farvevariabler som følgende:
 
 ```css
 html {
-  --variable: #000000;
   --pink: #e71a73;
   --yellow: #fffd87;
   --green: #3f4e3e;

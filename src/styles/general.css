@@ -17,7 +17,6 @@ img {
 
 /* Farver */
 html {
-  --variable: #000000;
   --pink: #e71a73;
   --yellow: #fffd87;
   --green: #3f4e3e;
@@ -77,7 +76,7 @@ p {
   font-style: normal;
   font-size: 0.875rem;
   line-height: 1.7rem;
-  max-width: 80ch;
+  max-width: 65ch;
   text-wrap: pretty;
 }
 
