@@ -119,7 +119,6 @@ Vores astro projekt, med vores mapper og filer, er bygget op i denne struktur
 │   │   └── WhoAreWe.astro
 │   ├── javascript/
 │   │   └── AOSInit.jsx
-│   │   └── burger.js
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/
