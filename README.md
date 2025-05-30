@@ -19,6 +19,7 @@ I dette projekt, har vi arbejdet med re-design af Bakkefest hemmeside. Denne fil
 - [Komponenter](#komponenter)
   - [Hero og HeroSmall](#hero-og-herosmall)
   - [Header og Footer](#header-og-footer)
+  - [Hill](#hill)
   - [Banner](#banner)
   - [Burger](#burger)
   - [ButtonArrow og ButtonText](#buttonarrow-og-buttontext)
@@ -100,6 +101,7 @@ Vores astro projekt, med vores mapper og filer, er bygget op i denne struktur
 │   │   └── Header.astro
 │   │   └── Hero.astro
 │   │   └── HeroSmall.astro
+│   │   └── Hill.astro
 │   │   └── PinkPulse.astro
 │   │   └── PinkPulseInstagram.astro
 │   │   └── Playlist.astro
@@ -193,6 +195,10 @@ Viser store billedsektioner øverst på udvalgte sider. Bruges til at skabe blik
 
 `Header` indeholder navigationsmenuen og burger-menu til mobilvisning.
 `Footer` afslutter siden med kontaktinfo, sociale links og evt. nyhedsbrev.
+
+### Hill
+
+Dette komponent fungerer som en sektions skillevæg. Det er udelukkende et dekorativt komponent, som har funktionen aria-hidden for at fjerne det tilgængelighed voice-over.
 
 ### Banner
 

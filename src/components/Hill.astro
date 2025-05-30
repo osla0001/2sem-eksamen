@@ -1,0 +1,25 @@
+---
+const { src, hill } = Astro.props;
+---
+
+<div class="section-divider">
+  <img
+    src={src}
+    width="950"
+    height="116"
+    alt="Illustration af bakke, brugt til at skille sektionerne ad"
+    class={hill}
+    aria-hidden="true"
+  />
+</div>
+
+<style>
+  .hill {
+    margin-bottom: -2px;
+  }
+
+  .hill2 {
+    transform: rotate(180deg);
+    margin-top: -2px;
+  }
+</style>
