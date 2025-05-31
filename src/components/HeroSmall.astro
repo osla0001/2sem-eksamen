@@ -9,11 +9,10 @@ const { url, urlFallback, h1, fontSize } = Astro.props;
     <source src={urlFallback} type="video/mp4" />
   </video>
 
-  <div class="filler"></div>
+  <div class="white_space2"></div>
   <img src="/assets/clamp.svg" alt="Klamme illustration" class="clamp1" />
   <h1 style={`font-size: ${fontSize};`}>{h1}</h1>
   <img src="/assets/clamp.svg" alt="Klamme illustration" class="clamp2" />
-  <div class="white_space"></div>
   <img
     src="/assets/bakke-divider-4.svg"
     alt="Illustration af bakke, brugt til at skille sektionerne ad"
@@ -39,6 +38,7 @@ const { url, urlFallback, h1, fontSize } = Astro.props;
     height: 100%;
     object-fit: cover; /* Sørger for, at videoen dækker hele sektionen */
     z-index: -1; /* Placerer videoen bag indholdet */
+    aspect-ratio: 16 / 9; /* Bevarer videoens aspektforhold */
   }
 
   h1 {
@@ -60,7 +60,7 @@ const { url, urlFallback, h1, fontSize } = Astro.props;
     transform: scaleX(-100%);
   }
 
-  .filler {
+  .white_space2 {
     grid-column: 1 / span 3;
     height: 100px;
   }
