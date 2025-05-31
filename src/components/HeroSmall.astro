@@ -1,11 +1,12 @@
 ---
-const { url, h1, fontSize } = Astro.props;
+const { url, urlFallback, h1, fontSize } = Astro.props;
 ---
 
 <section class="grid_1-1-1">
   <!-- Baggrundsvideo -->
   <video autoplay muted loop playsinline class="background-video">
-    <source src={url} type="video/mp4" />
+    <source src={url} type="video/webm" />
+    <source src={urlFallback} type="video/mp4" />
   </video>
 
   <div class="filler"></div>

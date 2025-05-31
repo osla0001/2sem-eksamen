@@ -12,7 +12,12 @@ import Banner from "../components/Banner.astro";
   meta={"Læs om programmet til Bakkefest, herunder tidspunkter, artister og andre spændende arrangementer."}
 >
   <main>
-    <HeroSmall url="/assets/programvideo.webm" h1="Program" fontSize="6vw" />
+    <HeroSmall
+      url="/assets/programvideo.webm"
+      urlFallback="/assets/programvideo.mp4"
+      h1="Program"
+      fontSize="6vw"
+    />
     <TimeSchedule />
     <Playlist />
     <ProgramView />
