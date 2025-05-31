@@ -16,9 +16,9 @@ const AOSInit = () => {
       duration: 1000, // Animationens varighed i millisekunder
       once: true, // Animationen kører kun én gang pr. element
       disable: function () {
-        // Returnerer true hvis skærmbredden er 600px eller mindre (typisk mobil)
+        // Returnerer true hvis skærmbredden er 800px eller mindre (mobil)
         // Dermed bliver AOS deaktiveret på mobil
-        return window.innerWidth <= 600;
+        return window.innerWidth <= 800;
       },
     });
   }, []);
