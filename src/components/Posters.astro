@@ -1,5 +1,6 @@
 ---
 import ButtonArrow from "./ButtonArrow.astro";
+import Hill from "./Hill.astro";
 ---
 
 <section class="poster-grid">
@@ -34,52 +35,53 @@ import ButtonArrow from "./ButtonArrow.astro";
       />
     </div>
   </div>
-
-  <style>
-    .poster-button {
-      background-color: var(--green);
-      padding-top: 40px;
-      padding-bottom: 30px;
-      display: flex;
-      gap: 20px;
-    }
-
-    .poster-button h1 {
-      color: var(--light_pink);
-    }
-    .poster-button a {
-      text-decoration: none;
-    }
-    .flex_row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 15px;
-      width: fit-content;
-      margin-top: 30px;
-      margin-bottom: 30px;
-      transition: 0.2s;
-    }
-    .flex_row:hover {
-      scale: 1.01;
-      color: var(--pink);
-      transition: 0.2s;
-    }
-
-    .text_width {
-      padding: 0 40px;
-    }
-
-    .poster-grid {
-      background-color: var(--green);
-    }
-
-    @media (min-width: 600px) {
-      .poster-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0px;
-      }
-    }
-  </style>
 </section>
+<Hill src="/assets/bakke-divider-1.svg" hill="hill3" />
+
+<style>
+  .poster-button {
+    background-color: var(--green);
+    padding-top: 40px;
+    padding-bottom: 30px;
+    display: flex;
+    gap: 20px;
+  }
+
+  .poster-button h1 {
+    color: var(--light_pink);
+  }
+  .poster-button a {
+    text-decoration: none;
+  }
+  .flex_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    width: fit-content;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    transition: 0.2s;
+  }
+  .flex_row:hover {
+    scale: 1.01;
+    color: var(--pink);
+    transition: 0.2s;
+  }
+
+  .text_width {
+    padding: 0 40px;
+  }
+
+  .poster-grid {
+    background-color: var(--green);
+  }
+
+  @media (min-width: 600px) {
+    .poster-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0px;
+    }
+  }
+</style>

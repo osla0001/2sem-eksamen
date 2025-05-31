@@ -25,15 +25,21 @@ const { fanenavn, meta } = Astro.props;
     <Header />
     <slot />
     <Footer />
-    <AOSInit client:load />
+    <div class="aos">
+      <AOSInit client:load />
+    </div>
   </body>
 </html>
 
+<!-- et ekstra lag, at sikre sig aos ikke virker i mobil -->
 <style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
+  .aos {
+    display: none;
+  }
+
+  @media (min-width: 800px) {
+    .aos {
+      display: block;
+    }
   }
 </style>

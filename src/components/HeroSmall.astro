@@ -28,7 +28,6 @@ const { url, urlFallback, h1, fontSize } = Astro.props;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 5fr max-content;
     width: 100%;
-    padding: 0 15px;
     overflow: hidden;
   }
 
@@ -69,19 +68,12 @@ const { url, urlFallback, h1, fontSize } = Astro.props;
   .hill {
     grid-column: 1 / span 3;
     margin-block-start: auto;
-    width: 150%;
     height: max-content;
     margin: 0 auto;
     overflow: hidden;
-    margin-bottom: -15px;
-    margin-left: -30px;
   }
 
   @media (min-width: 800px) {
-    .hill {
-      width: 103.3%;
-      overflow: hidden;
-    }
     .h1 {
       font-size: 1rem;
     }
