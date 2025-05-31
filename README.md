@@ -197,7 +197,7 @@ Viser store billedsektioner øverst på udvalgte sider. Bruges til at skabe blik
 
 ### Hill
 
-Dette komponent fungerer som en sektions skillevæg. Det er udelukkende et dekorativt komponent, som har funktionen aria-hidden for at fjerne det tilgængelighed voice-over.
+Dette komponent fungerer som en sektions skillevæg. Det er udelukkende et dekorativt komponent, som har funktionen aria-hidden for at fjerne dets tilgængelighed ved brug af voice-over.
 
 ### Banner
 
@@ -205,7 +205,7 @@ Et simpelt komponent til visning af det visuelle banner – med tekst af Bakkefe
 
 ### Burger
 
-Styrer animation med script og visning af mobilmenu (burgermenu).
+Styrer animation med script til visning af burgermenu, som både anvendes i desktop- og mobilview.
 
 ### ButtonArrow og ButtonText
 
@@ -245,7 +245,7 @@ Et informativt komponent der fortæller om holdet bag Bakkefest. Tekst og billed
 
 ### Anniversary
 
-Et dekorativt komponent til at fejre jubilæum med grafik og tekst.
+Et dekorativt komponent til at fejre Bakkefests 100 års jubilæum med billeder og tekst.
 
 ### PracticalSection og PracticalInfoBox
 
@@ -270,7 +270,7 @@ Projektets sider er defineret i `pages/` og udgør hovednavigationen på hjemmes
 
 ### index.astro
 
-Forsiden for Bakkefest med introduktion, hero, program og stemningsskabende indhold. Bygger på `Hero`, `Playlist`, `PinkPulse`, `WhoAreWe` og andre nøglekomponenter.
+Forsiden for Bakkefest med introduktion, hero, program og stemningsskabende indhold. Bygger på `Hero`, `Posters`, `PinkPulse` og `PinkPulseInstagram`.
 
 ### program.astro
 
@@ -282,7 +282,7 @@ Side målrettet frivillige – hvordan man tilmelder sig og hvilke opgaver, man 
 
 ### bliv-frivillig.astro
 
-En engelsk version af frivillig-siden, sandsynligvis rettet mod internationale brugere eller deltagere.
+Side du bliver ført til efter du har tilmeldt dig som frivillig på `frivillig` siden.
 
 ### praktisk.astro
 
@@ -336,7 +336,7 @@ I denne sektion, beskriver vi vores brug af scripts, hvad de er brugt til og hvo
   - Viser dage, timer, minutter og sekunder.
   - Hvis tiden er udløbet, vises "00d 00t 00m 00s".
 
-### ProgramView\.astro
+### ProgramView.astro
 
 - Importerer `ProgramCard.astro`.
 - Mapper hvert event til en komponent + en dropdown.
@@ -506,7 +506,7 @@ const formattedTime = event.time_start.slice(0, 5).replace(":", ".");
 
 - Viser navn, billede og formateret tidspunkt.
 
-### Udvidet brug i dropdown (ProgramView\.astro)
+### Udvidet brug i dropdown (ProgramView.astro)
 
 ```astro
 <h2>{event.name}</h2>
